@@ -1,74 +1,136 @@
+import time
+import base64
 import streamlit as st
 import pandas as pd
+
 from frontend.utils.api import get_my_reports
 from frontend.utils.map_utils import build_report_map
+from frontend.components.ui import (
+    priority_badge, status_badge, ai_badge,
+    metric_card, section_header, alert,
+)
 from streamlit_folium import st_folium
 
-
-def priority_badge(p):
-    colors = {"High": "#e63946", "Medium": "#f4a261", "Low": "#2a9d8f"}
-    c = colors.get(p, "#888")
-    return f"<span style='background:{c};color:#fff;padding:2px 10px;border-radius:12px;font-size:0.8rem'>{p}</span>"
-
-
-def status_badge(s):
-    colors = {"Pending": "#adb5bd", "In Progress": "#4895ef", "Resolved": "#2a9d8f"}
-    c = colors.get(s, "#888")
-    return f"<span style='background:{c};color:#fff;padding:2px 10px;border-radius:12px;font-size:0.8rem'>{s}</span>"
+REFRESH_INTERVAL = 30
 
 
 def show():
-    st.markdown("<h2 style='color:#0077B6'>👤 My Reports Dashboard</h2>", unsafe_allow_html=True)
     token = st.session_state.get("token")
     if not token:
-        st.warning("Please log in.")
+        alert("Please log in.", "error")
         return
 
-    code, data = get_my_reports(token)
-    if code != 200:
-        st.error("Could not load reports.")
+    st.markdown("<h2 style='color:#0077B6'>👤 My Reports Dashboard</h2>",
+                unsafe_allow_html=True)
+
+    # Refresh controls
+    col_r1, col_r2, col_r3 = st.columns([2, 1, 1])
+    with col_r1:
+        last_ts = st.session_state.get("user_last_refresh", time.time())
+        st.caption(f"🔄 Last updated: {time.strftime('%H:%M:%S', time.localtime(last_ts))}")
+    with col_r2:
+        auto_on = st.toggle("Auto-refresh", value=True, key="user_auto_refresh")
+    with col_r3:
+        if st.button("↺ Refresh Now", use_container_width=True):
+            st.session_state["user_last_refresh"] = time.time()
+            st.rerun()
+
+    with st.spinner("Loading your reports…"):
+        success, data = get_my_reports(token)
+
+    if not success:
+        alert(data.get("error", "Could not load reports."), "error")
         return
 
-    if not data:
-        st.info("You haven't submitted any reports yet.")
-        if st.button("Submit Your First Report"):
+    reports = data.get("reports", [])
+
+    if not reports:
+        alert("You haven't submitted any reports yet.", "info")
+        if st.button("📍 Submit Your First Report", type="primary"):
             st.session_state["page"] = "submit_report"
             st.rerun()
         return
 
+    df = pd.DataFrame(reports)
+
     # Summary cards
-    df = pd.DataFrame(data)
-    col1, col2, col3, col4 = st.columns(4)
-    with col1:
-        st.markdown(f"""<div style='background:#0077B6;color:#fff;padding:1rem;border-radius:12px;text-align:center'>
-            <h3>{len(df)}</h3><p>Total Reports</p></div>""", unsafe_allow_html=True)
-    with col2:
-        high = len(df[df["priority"] == "High"]) if "priority" in df else 0
-        st.markdown(f"""<div style='background:#e63946;color:#fff;padding:1rem;border-radius:12px;text-align:center'>
-            <h3>{high}</h3><p>High Priority</p></div>""", unsafe_allow_html=True)
-    with col3:
-        resolved = len(df[df["status"] == "Resolved"]) if "status" in df else 0
-        st.markdown(f"""<div style='background:#2a9d8f;color:#fff;padding:1rem;border-radius:12px;text-align:center'>
-            <h3>{resolved}</h3><p>Resolved</p></div>""", unsafe_allow_html=True)
-    with col4:
-        avg_score = round(df["risk_score"].mean(), 1) if "risk_score" in df else 0
-        st.markdown(f"""<div style='background:#f4a261;color:#fff;padding:1rem;border-radius:12px;text-align:center'>
-            <h3>{avg_score}</h3><p>Avg Risk Score</p></div>""", unsafe_allow_html=True)
+    section_header("Summary", "📊")
+    cols = st.columns(4)
+    with cols[0]:
+        st.markdown(metric_card("Total Reports", len(df), "#0077B6"), unsafe_allow_html=True)
+    with cols[1]:
+        high = int((df["priority"] == "High").sum()) if "priority" in df else 0
+        st.markdown(metric_card("High Priority", high, "#e63946"), unsafe_allow_html=True)
+    with cols[2]:
+        resolved = int((df["status"] == "Resolved").sum()) if "status" in df else 0
+        st.markdown(metric_card("Resolved", resolved, "#2a9d8f"), unsafe_allow_html=True)
+    with cols[3]:
+        avg = round(df["risk_score"].mean(), 1) if "risk_score" in df else 0
+        st.markdown(metric_card("Avg Risk Score", avg, "#f4a261"), unsafe_allow_html=True)
 
-    st.markdown("### 🗺️ My Reports on Map")
-    m = build_report_map(data)
-    st_folium(m, width=700, height=400)
+    # Map
+    section_header("My Reports on Map", "🗺️")
+    valid = [r for r in reports if r.get("latitude") and r.get("longitude")]
+    if valid:
+        center_lat = sum(r["latitude"]  for r in valid) / len(valid)
+        center_lon = sum(r["longitude"] for r in valid) / len(valid)
+        m = build_report_map(valid, center_lat=center_lat, center_lon=center_lon)
+        st_folium(m, width=700, height=400)
+    else:
+        alert("No geolocated reports to display.", "info")
 
-    st.markdown("### 📋 Report List")
-    for r in sorted(data, key=lambda x: x.get("risk_score", 0), reverse=True):
-        with st.expander(f"[{r.get('category','N/A')}] — Risk {r.get('risk_score','?')}/100 | {r.get('created_at','')[:10]}"):
-            col1, col2 = st.columns([2, 1])
-            with col1:
+    # Report list
+    section_header("Report History", "📋")
+    if "priority" in df:
+        sel_prio = st.selectbox("Filter by priority", ["All", "High", "Medium", "Low"])
+        filtered = reports if sel_prio == "All" else [r for r in reports if r.get("priority") == sel_prio]
+    else:
+        filtered = reports
+
+    for r in sorted(filtered, key=lambda x: x.get("risk_score", 0), reverse=True):
+        exp_label = (
+            f"[{r.get('category','?')}]  "
+            f"Risk {r.get('risk_score','?')}/100  |  "
+            f"{r.get('created_at','')[:10]}"
+        )
+        with st.expander(exp_label):
+            c1, c2 = st.columns([3, 1])
+            with c1:
                 st.write(f"**Description:** {r.get('description','')}")
-                st.write(f"**Location:** {r.get('location_label', f\"{r.get('latitude','?')}, {r.get('longitude','?')}\")}")
-                st.markdown(f"**Priority:** {priority_badge(r.get('priority',''))}", unsafe_allow_html=True)
-                st.markdown(f"**Status:** {status_badge(r.get('status',''))}", unsafe_allow_html=True)
-            with col2:
+
+                loc = r.get("location_label") or "{}, {}".format(
+                    r.get("latitude", "?"), r.get("longitude", "?")
+                )
+                st.write(f"**Location:** {loc}")
+
+                src_map = {"gps": "📡 GPS", "manual": "✏️ Manual", "map_click": "🗺️ Map click"}
+                src_label = src_map.get(r.get("location_source", "manual"), "Manual")
+                acc = r.get("location_accuracy")
+                acc_str = f" (±{acc:.0f}m)" if acc else ""
+                st.write(f"**Location source:** {src_label}{acc_str}")
+
+                st.markdown(
+                    f"**Priority:** {priority_badge(r.get('priority',''))}  "
+                    f"&nbsp;**Status:** {status_badge(r.get('status',''))}",
+                    unsafe_allow_html=True,
+                )
+                st.markdown(ai_badge(r.get("ai_powered", False)), unsafe_allow_html=True)
+
+                if r.get("reasoning"):
+                    st.caption(f"🤖 {r['reasoning']}")
+                if r.get("recommended_action"):
+                    st.caption(f"🔧 {r['recommended_action']}")
+
+            with c2:
                 if r.get("image_base64"):
-                    import base64
-                    st.image(base64.b64decode(r["image_base64"]), width=180)
+                    try:
+                        st.image(base64.b64decode(r["image_base64"]), width=160)
+                    except Exception:
+                        st.caption("Image unavailable")
+
+    # Auto-refresh
+    if auto_on:
+        remaining = max(0, REFRESH_INTERVAL - (time.time() - st.session_state.get("user_last_refresh", 0)))
+        st.caption(f"⏱ Next auto-refresh in {int(remaining)}s")
+        time.sleep(1)
+        st.rerun()
