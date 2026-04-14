@@ -16,11 +16,19 @@ st.markdown("""
   [data-testid="stAppViewContainer"] { background: #f0f4f8; }
   [data-testid="stSidebar"]          { background: #ffffff; border-right: 1px solid #e2e8f0; }
   .block-container                   { padding-top: 1.5rem; }
-  .stButton > button                 { border-radius: 8px; font-weight: 600; transition: all .15s; }
+  .stButton > button                 { border-radius: 8px; font-weight: 600; }
   .stButton > button[kind="primary"] { background: #0077B6; border: none; }
   .stButton > button[kind="primary"]:hover { background: #005f8e; }
   h1, h2, h3, h4                    { font-family: 'Segoe UI', sans-serif; }
-  .stExpander                        { border-radius: 10px !important; border: 1px solid #e2e8f0 !important; }
+  [data-testid="stSidebarNav"]       { display: none !important; }
+</style>
+""", unsafe_allow_html=True)
+
+# Hide Streamlit's auto multi-page nav completely
+st.markdown("""
+<style>
+  section[data-testid="stSidebarNav"] { display: none !important; }
+  div[data-testid="stSidebarNavItems"] { display: none !important; }
 </style>
 """, unsafe_allow_html=True)
 
@@ -32,7 +40,7 @@ for k, v in defaults.items():
     if k not in st.session_state:
         st.session_state[k] = v
 
-from frontend.pages import login, register, submit_report, user_dashboard, admin_dashboard, analytics
+from frontend._pages import login, register, submit_report, user_dashboard, admin_dashboard, analytics
 
 if st.session_state.get("token"):
     with st.sidebar:
@@ -54,19 +62,17 @@ if st.session_state.get("token"):
         )
         st.markdown("---")
 
-        if st.button("📍 Submit Report",  use_container_width=True):
+        if st.button("📍 Submit Report", use_container_width=True):
             st.session_state["page"] = "submit_report"
             st.rerun()
-
-        if st.button("👤 My Dashboard",   use_container_width=True):
+        if st.button("👤 My Dashboard", use_container_width=True):
             st.session_state["page"] = "user_dashboard"
             st.rerun()
-
         if st.session_state.get("role") == "admin":
-            if st.button("🛠️ Admin Panel",  use_container_width=True):
+            if st.button("🛠️ Admin Panel", use_container_width=True):
                 st.session_state["page"] = "admin_dashboard"
                 st.rerun()
-            if st.button("🌍 Analytics",    use_container_width=True):
+            if st.button("🌍 Analytics", use_container_width=True):
                 st.session_state["page"] = "analytics"
                 st.rerun()
 

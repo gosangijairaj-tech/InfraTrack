@@ -450,3 +450,6 @@ ValueError: password cannot be longer than 72 bytes, truncate manually if necess
 [2026-04-13 17:37:49] INFO     infratrack — InfraTrack API started. Environment loaded.
 [2026-04-13 17:39:22] INFO     infratrack — InfraTrack API shutting down.
 [2026-04-13 17:39:31] INFO     infratrack — InfraTrack API started. Environment loaded.
+[2026-04-14 09:04:35] INFO     infratrack — InfraTrack API started. Environment loaded.
+[2026-04-14 09:08:05] WARNING  infratrack — HTTP 400 on POST /auth/register — Username already taken
+[2026-04-14 09:08:13] WARNING  infratrack — HTTP 400 on POST /auth/register — Username already taken
