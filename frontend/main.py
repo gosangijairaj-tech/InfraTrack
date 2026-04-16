@@ -13,22 +13,22 @@ st.set_page_config(
 
 st.markdown("""
 <style>
-  [data-testid="stAppViewContainer"] { background: #f0f4f8; }
-  [data-testid="stSidebar"]          { background: #ffffff; border-right: 1px solid #e2e8f0; }
-  .block-container                   { padding-top: 1.5rem; }
-  .stButton > button                 { border-radius: 8px; font-weight: 600; }
-  .stButton > button[kind="primary"] { background: #0077B6; border: none; }
-  .stButton > button[kind="primary"]:hover { background: #005f8e; }
-  h1, h2, h3, h4                    { font-family: 'Segoe UI', sans-serif; }
-  [data-testid="stSidebarNav"]       { display: none !important; }
+[data-testid="stAppViewContainer"] { background: #f0f4f8; }
+[data-testid="stSidebar"]          { background: #ffffff; border-right: 1px solid #e2e8f0; }
+.block-container                   { padding-top: 1.5rem; }
+.stButton > button                 { border-radius: 8px; font-weight: 600; }
+.stButton > button[kind="primary"] { background: #0077B6; border: none; }
+.stButton > button[kind="primary"]:hover { background: #005f8e; }
+h1, h2, h3, h4                    { font-family: 'Segoe UI', sans-serif; }
+[data-testid="stSidebarNav"]       { display: none !important; }
 </style>
 """, unsafe_allow_html=True)
 
 # Hide Streamlit's auto multi-page nav completely
 st.markdown("""
 <style>
-  section[data-testid="stSidebarNav"] { display: none !important; }
-  div[data-testid="stSidebarNavItems"] { display: none !important; }
+section[data-testid="stSidebarNav"] { display: none !important; }
+div[data-testid="stSidebarNavItems"] { display: none !important; }
 </style>
 """, unsafe_allow_html=True)
 
@@ -46,9 +46,9 @@ if st.session_state.get("token"):
     with st.sidebar:
         st.markdown("""
         <div style='text-align:center;padding:1rem 0 0.5rem 0'>
-          <span style='font-size:2rem'>🏗️</span>
-          <h3 style='margin:0;color:#0077B6;font-weight:800'>InfraTrack</h3>
-          <p style='font-size:0.75rem;color:#64748b;margin:0'>Infrastructure Monitor</p>
+        <span style='font-size:2rem'>🏗️</span>
+        <h3 style='margin:0;color:#0077B6;font-weight:800'>InfraTrack</h3>
+        <p style='font-size:0.75rem;color:#64748b;margin:0'>Infrastructure Monitor</p>
         </div>
         """, unsafe_allow_html=True)
 
@@ -62,21 +62,31 @@ if st.session_state.get("token"):
         )
         st.markdown("---")
 
+        role = st.session_state.get("role")
+
+        # Common actions (all users)
         if st.button("📍 Submit Report", use_container_width=True):
             st.session_state["page"] = "submit_report"
             st.rerun()
+
         if st.button("👤 My Dashboard", use_container_width=True):
             st.session_state["page"] = "user_dashboard"
             st.rerun()
-        if st.session_state.get("role") == "admin":
+
+        # Admin only
+        if role == "admin":
             if st.button("🛠️ Admin Panel", use_container_width=True):
                 st.session_state["page"] = "admin_dashboard"
                 st.rerun()
+
+        # Admin + Authority
+        if role in ["admin", "authority"]:
             if st.button("🌍 Analytics", use_container_width=True):
                 st.session_state["page"] = "analytics"
                 st.rerun()
 
         st.markdown("---")
+
         if st.button("🚪 Logout", use_container_width=True):
             for k in list(st.session_state.keys()):
                 del st.session_state[k]

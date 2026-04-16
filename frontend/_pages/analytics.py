@@ -14,8 +14,8 @@ REFRESH_INTERVAL = 30
 
 def show():
     token = st.session_state.get("token")
-    if not token or st.session_state.get("role") != "admin":
-        alert("Admin access required.", "error")
+    if not token or st.session_state.get("role") not in ["admin", "authority"]:
+        alert("Access denied.", "error")
         return
 
     st.markdown("<h2 style='color:#0077B6'>🌍 Analytics Dashboard</h2>", unsafe_allow_html=True)

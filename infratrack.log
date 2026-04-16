@@ -601,3 +601,323 @@ AttributeError: 'ReportCreate' object has no attribute 'location_source'
 [2026-04-16 13:25:47] INFO     infratrack — InfraTrack API shutting down.
 [2026-04-16 13:25:53] INFO     infratrack — InfraTrack API started. Environment loaded.
 [2026-04-16 13:25:55] INFO     infratrack — InfraTrack API started. Environment loaded.
+[2026-04-16 13:36:40] INFO     infratrack — InfraTrack API shutting down.
+[2026-04-16 13:37:09] INFO     infratrack — InfraTrack API started. Environment loaded.
+[2026-04-16 13:42:09] INFO     infratrack — InfraTrack API shutting down.
+[2026-04-16 13:42:12] INFO     infratrack — InfraTrack API started. Environment loaded.
+[2026-04-16 13:42:40] INFO     infratrack — InfraTrack API shutting down.
+[2026-04-16 13:42:43] INFO     infratrack — InfraTrack API started. Environment loaded.
+[2026-04-16 13:42:44] INFO     infratrack — InfraTrack API started. Environment loaded.
+[2026-04-16 13:42:48] INFO     infratrack — InfraTrack API shutting down.
+[2026-04-16 13:42:50] INFO     infratrack — InfraTrack API started. Environment loaded.
+[2026-04-16 13:43:06] INFO     infratrack — InfraTrack API shutting down.
+[2026-04-16 13:43:08] INFO     infratrack — InfraTrack API started. Environment loaded.
+[2026-04-16 13:43:09] INFO     infratrack — InfraTrack API shutting down.
+[2026-04-16 13:43:10] INFO     infratrack — InfraTrack API started. Environment loaded.
+[2026-04-16 13:46:26] INFO     infratrack — InfraTrack API shutting down.
+[2026-04-16 13:46:28] INFO     infratrack — InfraTrack API started. Environment loaded.
+[2026-04-16 13:46:29] INFO     infratrack — InfraTrack API started. Environment loaded.
+[2026-04-16 13:47:19] ERROR    backend.ai_engine — AI engine config error: ANTHROPIC_API_KEY is not configured in .env
+[2026-04-16 13:47:19] WARNING  backend.ai_engine — Using fallback analysis. Reason: API key not configured: ANTHROPIC_API_KEY is not configured in .env
+[2026-04-16 13:47:19] INFO     backend.routes.report_routes — Report submitted by Minister — score=35
+[2026-04-16 13:49:42] INFO     infratrack — InfraTrack API shutting down.
+[2026-04-16 13:49:48] INFO     infratrack — InfraTrack API started. Environment loaded.
+[2026-04-16 13:49:53] INFO     infratrack — InfraTrack API started. Environment loaded.
+[2026-04-16 13:49:56] INFO     infratrack — InfraTrack API started. Environment loaded.
+[2026-04-16 13:49:57] INFO     infratrack — InfraTrack API started. Environment loaded.
+[2026-04-16 13:50:11] WARNING  infratrack — HTTP 403 on GET /reports/analytics — Admin access required.
+[2026-04-16 13:50:11] WARNING  infratrack — HTTP 403 on GET /admin/stats — Admins only
+[2026-04-16 13:50:27] INFO     infratrack — InfraTrack API shutting down.
+[2026-04-16 13:50:29] INFO     infratrack — InfraTrack API started. Environment loaded.
+[2026-04-16 13:52:18] INFO     infratrack — InfraTrack API shutting down.
+[2026-04-16 13:52:20] INFO     infratrack — InfraTrack API started. Environment loaded.
+[2026-04-16 13:52:22] INFO     infratrack — InfraTrack API started. Environment loaded.
+[2026-04-16 13:52:25] INFO     infratrack — InfraTrack API shutting down.
+[2026-04-16 13:52:26] INFO     infratrack — InfraTrack API started. Environment loaded.
+[2026-04-16 13:52:33] WARNING  infratrack — HTTP 403 on GET /admin/stats — Admins only
+[2026-04-16 13:52:35] WARNING  infratrack — HTTP 403 on GET /admin/stats — Admins only
+[2026-04-16 13:52:36] WARNING  infratrack — HTTP 403 on GET /admin/stats — Admins only
+[2026-04-16 13:52:37] WARNING  infratrack — HTTP 403 on GET /admin/stats — Admins only
+[2026-04-16 13:52:39] WARNING  infratrack — HTTP 403 on GET /admin/stats — Admins only
+[2026-04-16 13:52:40] WARNING  infratrack — HTTP 403 on GET /admin/stats — Admins only
+[2026-04-16 13:52:41] WARNING  infratrack — HTTP 403 on GET /admin/stats — Admins only
+[2026-04-16 13:52:42] WARNING  infratrack — HTTP 403 on GET /admin/stats — Admins only
+[2026-04-16 13:52:44] WARNING  infratrack — HTTP 403 on GET /admin/stats — Admins only
+[2026-04-16 13:52:45] WARNING  infratrack — HTTP 403 on GET /admin/stats — Admins only
+[2026-04-16 13:52:46] WARNING  infratrack — HTTP 403 on GET /admin/stats — Admins only
+[2026-04-16 13:52:47] WARNING  infratrack — HTTP 403 on GET /admin/stats — Admins only
+[2026-04-16 13:52:49] WARNING  infratrack — HTTP 403 on GET /admin/stats — Admins only
+[2026-04-16 13:52:49] WARNING  infratrack — HTTP 403 on GET /admin/stats — Admins only
+[2026-04-16 13:52:50] WARNING  infratrack — HTTP 403 on GET /admin/stats — Admins only
+[2026-04-16 13:52:52] WARNING  infratrack — HTTP 403 on GET /admin/stats — Admins only
+[2026-04-16 13:52:53] WARNING  infratrack — HTTP 403 on GET /admin/stats — Admins only
+[2026-04-16 13:52:54] WARNING  infratrack — HTTP 403 on GET /admin/stats — Admins only
+[2026-04-16 13:52:56] WARNING  infratrack — HTTP 403 on GET /admin/stats — Admins only
+[2026-04-16 13:52:57] WARNING  infratrack — HTTP 403 on GET /admin/stats — Admins only
+[2026-04-16 13:52:58] WARNING  infratrack — HTTP 403 on GET /admin/stats — Admins only
+[2026-04-16 13:53:00] WARNING  infratrack — HTTP 403 on GET /admin/stats — Admins only
+[2026-04-16 13:53:01] WARNING  infratrack — HTTP 403 on GET /admin/stats — Admins only
+[2026-04-16 13:53:02] WARNING  infratrack — HTTP 403 on GET /admin/stats — Admins only
+[2026-04-16 13:53:03] WARNING  infratrack — HTTP 403 on GET /admin/stats — Admins only
+[2026-04-16 13:53:05] WARNING  infratrack — HTTP 403 on GET /admin/stats — Admins only
+[2026-04-16 13:53:06] WARNING  infratrack — HTTP 403 on GET /admin/stats — Admins only
+[2026-04-16 13:53:07] WARNING  infratrack — HTTP 403 on GET /admin/stats — Admins only
+[2026-04-16 13:53:08] WARNING  infratrack — HTTP 403 on GET /admin/stats — Admins only
+[2026-04-16 13:53:10] WARNING  infratrack — HTTP 403 on GET /admin/stats — Admins only
+[2026-04-16 13:53:11] WARNING  infratrack — HTTP 403 on GET /admin/stats — Admins only
+[2026-04-16 13:53:12] WARNING  infratrack — HTTP 403 on GET /admin/stats — Admins only
+[2026-04-16 13:53:13] WARNING  infratrack — HTTP 403 on GET /admin/stats — Admins only
+[2026-04-16 13:53:15] WARNING  infratrack — HTTP 403 on GET /admin/stats — Admins only
+[2026-04-16 13:53:16] WARNING  infratrack — HTTP 403 on GET /admin/stats — Admins only
+[2026-04-16 13:53:17] WARNING  infratrack — HTTP 403 on GET /admin/stats — Admins only
+[2026-04-16 13:53:18] WARNING  infratrack — HTTP 403 on GET /admin/stats — Admins only
+[2026-04-16 13:53:20] WARNING  infratrack — HTTP 403 on GET /admin/stats — Admins only
+[2026-04-16 13:53:21] WARNING  infratrack — HTTP 403 on GET /admin/stats — Admins only
+[2026-04-16 13:53:22] WARNING  infratrack — HTTP 403 on GET /admin/stats — Admins only
+[2026-04-16 13:53:23] WARNING  infratrack — HTTP 403 on GET /admin/stats — Admins only
+[2026-04-16 13:53:25] WARNING  infratrack — HTTP 403 on GET /admin/stats — Admins only
+[2026-04-16 13:53:26] WARNING  infratrack — HTTP 403 on GET /admin/stats — Admins only
+[2026-04-16 13:53:27] WARNING  infratrack — HTTP 403 on GET /admin/stats — Admins only
+[2026-04-16 13:53:28] WARNING  infratrack — HTTP 403 on GET /admin/stats — Admins only
+[2026-04-16 13:53:30] WARNING  infratrack — HTTP 403 on GET /admin/stats — Admins only
+[2026-04-16 13:53:31] WARNING  infratrack — HTTP 403 on GET /admin/stats — Admins only
+[2026-04-16 13:53:32] WARNING  infratrack — HTTP 403 on GET /admin/stats — Admins only
+[2026-04-16 13:53:33] WARNING  infratrack — HTTP 403 on GET /admin/stats — Admins only
+[2026-04-16 13:53:35] WARNING  infratrack — HTTP 403 on GET /admin/stats — Admins only
+[2026-04-16 13:53:36] WARNING  infratrack — HTTP 403 on GET /admin/stats — Admins only
+[2026-04-16 13:53:37] WARNING  infratrack — HTTP 403 on GET /admin/stats — Admins only
+[2026-04-16 13:53:38] WARNING  infratrack — HTTP 403 on GET /admin/stats — Admins only
+[2026-04-16 13:53:40] WARNING  infratrack — HTTP 403 on GET /admin/stats — Admins only
+[2026-04-16 13:53:41] WARNING  infratrack — HTTP 403 on GET /admin/stats — Admins only
+[2026-04-16 13:53:42] WARNING  infratrack — HTTP 403 on GET /admin/stats — Admins only
+[2026-04-16 13:53:43] WARNING  infratrack — HTTP 403 on GET /admin/stats — Admins only
+[2026-04-16 13:53:45] WARNING  infratrack — HTTP 403 on GET /admin/stats — Admins only
+[2026-04-16 13:53:46] WARNING  infratrack — HTTP 403 on GET /admin/stats — Admins only
+[2026-04-16 13:53:47] WARNING  infratrack — HTTP 403 on GET /admin/stats — Admins only
+[2026-04-16 13:53:49] WARNING  infratrack — HTTP 403 on GET /admin/stats — Admins only
+[2026-04-16 13:53:50] WARNING  infratrack — HTTP 403 on GET /admin/stats — Admins only
+[2026-04-16 13:53:51] WARNING  infratrack — HTTP 403 on GET /admin/stats — Admins only
+[2026-04-16 13:53:52] WARNING  infratrack — HTTP 403 on GET /admin/stats — Admins only
+[2026-04-16 13:53:53] WARNING  infratrack — HTTP 403 on GET /admin/stats — Admins only
+[2026-04-16 13:53:55] WARNING  infratrack — HTTP 403 on GET /admin/stats — Admins only
+[2026-04-16 13:53:56] WARNING  infratrack — HTTP 403 on GET /admin/stats — Admins only
+[2026-04-16 13:53:57] WARNING  infratrack — HTTP 403 on GET /admin/stats — Admins only
+[2026-04-16 13:53:58] WARNING  infratrack — HTTP 403 on GET /admin/stats — Admins only
+[2026-04-16 13:54:00] WARNING  infratrack — HTTP 403 on GET /admin/stats — Admins only
+[2026-04-16 13:54:01] WARNING  infratrack — HTTP 403 on GET /admin/stats — Admins only
+[2026-04-16 13:54:02] WARNING  infratrack — HTTP 403 on GET /admin/stats — Admins only
+[2026-04-16 13:54:03] WARNING  infratrack — HTTP 403 on GET /admin/stats — Admins only
+[2026-04-16 13:54:05] WARNING  infratrack — HTTP 403 on GET /admin/stats — Admins only
+[2026-04-16 13:54:06] WARNING  infratrack — HTTP 403 on GET /admin/stats — Admins only
+[2026-04-16 13:54:07] WARNING  infratrack — HTTP 403 on GET /admin/stats — Admins only
+[2026-04-16 13:54:08] WARNING  infratrack — HTTP 403 on GET /admin/stats — Admins only
+[2026-04-16 13:54:10] WARNING  infratrack — HTTP 403 on GET /admin/stats — Admins only
+[2026-04-16 13:54:11] WARNING  infratrack — HTTP 403 on GET /admin/stats — Admins only
+[2026-04-16 13:54:12] WARNING  infratrack — HTTP 403 on GET /admin/stats — Admins only
+[2026-04-16 13:54:13] WARNING  infratrack — HTTP 403 on GET /admin/stats — Admins only
+[2026-04-16 13:54:15] WARNING  infratrack — HTTP 403 on GET /admin/stats — Admins only
+[2026-04-16 13:54:16] WARNING  infratrack — HTTP 403 on GET /admin/stats — Admins only
+[2026-04-16 13:54:17] WARNING  infratrack — HTTP 403 on GET /admin/stats — Admins only
+[2026-04-16 13:54:19] WARNING  infratrack — HTTP 403 on GET /admin/stats — Admins only
+[2026-04-16 13:54:20] WARNING  infratrack — HTTP 403 on GET /admin/stats — Admins only
+[2026-04-16 13:54:21] WARNING  infratrack — HTTP 403 on GET /admin/stats — Admins only
+[2026-04-16 13:54:22] WARNING  infratrack — HTTP 403 on GET /admin/stats — Admins only
+[2026-04-16 13:54:24] WARNING  infratrack — HTTP 403 on GET /admin/stats — Admins only
+[2026-04-16 13:54:25] WARNING  infratrack — HTTP 403 on GET /admin/stats — Admins only
+[2026-04-16 13:54:27] WARNING  infratrack — HTTP 403 on GET /admin/stats — Admins only
+[2026-04-16 13:54:28] WARNING  infratrack — HTTP 403 on GET /admin/stats — Admins only
+[2026-04-16 13:54:29] WARNING  infratrack — HTTP 403 on GET /admin/stats — Admins only
+[2026-04-16 13:54:30] WARNING  infratrack — HTTP 403 on GET /admin/stats — Admins only
+[2026-04-16 13:54:32] WARNING  infratrack — HTTP 403 on GET /admin/stats — Admins only
+[2026-04-16 13:54:33] WARNING  infratrack — HTTP 403 on GET /admin/stats — Admins only
+[2026-04-16 13:54:35] WARNING  infratrack — HTTP 403 on GET /admin/stats — Admins only
+[2026-04-16 13:54:36] WARNING  infratrack — HTTP 403 on GET /admin/stats — Admins only
+[2026-04-16 13:54:37] WARNING  infratrack — HTTP 403 on GET /admin/stats — Admins only
+[2026-04-16 13:54:38] WARNING  infratrack — HTTP 403 on GET /admin/stats — Admins only
+[2026-04-16 13:54:39] WARNING  infratrack — HTTP 403 on GET /admin/stats — Admins only
+[2026-04-16 13:54:41] WARNING  infratrack — HTTP 403 on GET /admin/stats — Admins only
+[2026-04-16 13:54:42] WARNING  infratrack — HTTP 403 on GET /admin/stats — Admins only
+[2026-04-16 13:54:43] WARNING  infratrack — HTTP 403 on GET /admin/stats — Admins only
+[2026-04-16 13:54:45] WARNING  infratrack — HTTP 403 on GET /admin/stats — Admins only
+[2026-04-16 13:54:46] WARNING  infratrack — HTTP 403 on GET /admin/stats — Admins only
+[2026-04-16 13:54:47] WARNING  infratrack — HTTP 403 on GET /admin/stats — Admins only
+[2026-04-16 13:54:48] WARNING  infratrack — HTTP 403 on GET /admin/stats — Admins only
+[2026-04-16 13:54:50] WARNING  infratrack — HTTP 403 on GET /admin/stats — Admins only
+[2026-04-16 13:54:51] WARNING  infratrack — HTTP 403 on GET /admin/stats — Admins only
+[2026-04-16 13:54:52] WARNING  infratrack — HTTP 403 on GET /admin/stats — Admins only
+[2026-04-16 13:54:53] WARNING  infratrack — HTTP 403 on GET /admin/stats — Admins only
+[2026-04-16 13:54:55] WARNING  infratrack — HTTP 403 on GET /admin/stats — Admins only
+[2026-04-16 13:54:56] WARNING  infratrack — HTTP 403 on GET /admin/stats — Admins only
+[2026-04-16 13:54:57] WARNING  infratrack — HTTP 403 on GET /admin/stats — Admins only
+[2026-04-16 13:54:58] WARNING  infratrack — HTTP 403 on GET /admin/stats — Admins only
+[2026-04-16 13:55:00] WARNING  infratrack — HTTP 403 on GET /admin/stats — Admins only
+[2026-04-16 13:55:01] WARNING  infratrack — HTTP 403 on GET /admin/stats — Admins only
+[2026-04-16 13:55:02] WARNING  infratrack — HTTP 403 on GET /admin/stats — Admins only
+[2026-04-16 13:55:03] WARNING  infratrack — HTTP 403 on GET /admin/stats — Admins only
+[2026-04-16 13:55:05] WARNING  infratrack — HTTP 403 on GET /admin/stats — Admins only
+[2026-04-16 13:55:06] WARNING  infratrack — HTTP 403 on GET /admin/stats — Admins only
+[2026-04-16 13:55:07] WARNING  infratrack — HTTP 403 on GET /admin/stats — Admins only
+[2026-04-16 13:55:09] WARNING  infratrack — HTTP 403 on GET /admin/stats — Admins only
+[2026-04-16 13:55:10] WARNING  infratrack — HTTP 403 on GET /admin/stats — Admins only
+[2026-04-16 13:55:11] WARNING  infratrack — HTTP 403 on GET /admin/stats — Admins only
+[2026-04-16 13:55:12] WARNING  infratrack — HTTP 403 on GET /admin/stats — Admins only
+[2026-04-16 13:55:14] WARNING  infratrack — HTTP 403 on GET /admin/stats — Admins only
+[2026-04-16 13:55:15] WARNING  infratrack — HTTP 403 on GET /admin/stats — Admins only
+[2026-04-16 13:55:16] WARNING  infratrack — HTTP 403 on GET /admin/stats — Admins only
+[2026-04-16 13:55:17] WARNING  infratrack — HTTP 403 on GET /admin/stats — Admins only
+[2026-04-16 13:55:19] WARNING  infratrack — HTTP 403 on GET /admin/stats — Admins only
+[2026-04-16 13:55:20] WARNING  infratrack — HTTP 403 on GET /admin/stats — Admins only
+[2026-04-16 13:55:21] WARNING  infratrack — HTTP 403 on GET /admin/stats — Admins only
+[2026-04-16 13:55:22] WARNING  infratrack — HTTP 403 on GET /admin/stats — Admins only
+[2026-04-16 13:55:24] WARNING  infratrack — HTTP 403 on GET /admin/stats — Admins only
+[2026-04-16 13:55:25] WARNING  infratrack — HTTP 403 on GET /admin/stats — Admins only
+[2026-04-16 13:55:26] WARNING  infratrack — HTTP 403 on GET /admin/stats — Admins only
+[2026-04-16 13:55:28] WARNING  infratrack — HTTP 403 on GET /admin/stats — Admins only
+[2026-04-16 13:55:29] WARNING  infratrack — HTTP 403 on GET /admin/stats — Admins only
+[2026-04-16 13:55:30] WARNING  infratrack — HTTP 403 on GET /admin/stats — Admins only
+[2026-04-16 13:55:31] WARNING  infratrack — HTTP 403 on GET /admin/stats — Admins only
+[2026-04-16 13:55:33] WARNING  infratrack — HTTP 403 on GET /admin/stats — Admins only
+[2026-04-16 13:55:34] WARNING  infratrack — HTTP 403 on GET /admin/stats — Admins only
+[2026-04-16 13:55:35] WARNING  infratrack — HTTP 403 on GET /admin/stats — Admins only
+[2026-04-16 13:55:36] WARNING  infratrack — HTTP 403 on GET /admin/stats — Admins only
+[2026-04-16 13:55:38] WARNING  infratrack — HTTP 403 on GET /admin/stats — Admins only
+[2026-04-16 13:55:39] WARNING  infratrack — HTTP 403 on GET /admin/stats — Admins only
+[2026-04-16 13:55:40] WARNING  infratrack — HTTP 403 on GET /admin/stats — Admins only
+[2026-04-16 13:55:41] WARNING  infratrack — HTTP 403 on GET /admin/stats — Admins only
+[2026-04-16 13:55:43] WARNING  infratrack — HTTP 403 on GET /admin/stats — Admins only
+[2026-04-16 13:55:44] WARNING  infratrack — HTTP 403 on GET /admin/stats — Admins only
+[2026-04-16 13:55:45] WARNING  infratrack — HTTP 403 on GET /admin/stats — Admins only
+[2026-04-16 13:55:46] WARNING  infratrack — HTTP 403 on GET /admin/stats — Admins only
+[2026-04-16 13:55:48] WARNING  infratrack — HTTP 403 on GET /admin/stats — Admins only
+[2026-04-16 13:55:49] WARNING  infratrack — HTTP 403 on GET /admin/stats — Admins only
+[2026-04-16 13:55:50] WARNING  infratrack — HTTP 403 on GET /admin/stats — Admins only
+[2026-04-16 13:55:51] WARNING  infratrack — HTTP 403 on GET /admin/stats — Admins only
+[2026-04-16 13:55:53] WARNING  infratrack — HTTP 403 on GET /admin/stats — Admins only
+[2026-04-16 13:55:54] WARNING  infratrack — HTTP 403 on GET /admin/stats — Admins only
+[2026-04-16 13:55:55] WARNING  infratrack — HTTP 403 on GET /admin/stats — Admins only
+[2026-04-16 13:55:56] WARNING  infratrack — HTTP 403 on GET /admin/stats — Admins only
+[2026-04-16 13:55:58] WARNING  infratrack — HTTP 403 on GET /admin/stats — Admins only
+[2026-04-16 13:55:59] WARNING  infratrack — HTTP 403 on GET /admin/stats — Admins only
+[2026-04-16 13:56:00] WARNING  infratrack — HTTP 403 on GET /admin/stats — Admins only
+[2026-04-16 13:56:01] WARNING  infratrack — HTTP 403 on GET /admin/stats — Admins only
+[2026-04-16 13:56:03] WARNING  infratrack — HTTP 403 on GET /admin/stats — Admins only
+[2026-04-16 13:56:04] WARNING  infratrack — HTTP 403 on GET /admin/stats — Admins only
+[2026-04-16 13:56:05] WARNING  infratrack — HTTP 403 on GET /admin/stats — Admins only
+[2026-04-16 13:56:06] WARNING  infratrack — HTTP 403 on GET /admin/stats — Admins only
+[2026-04-16 13:56:08] WARNING  infratrack — HTTP 403 on GET /admin/stats — Admins only
+[2026-04-16 13:56:09] WARNING  infratrack — HTTP 403 on GET /admin/stats — Admins only
+[2026-04-16 13:56:10] WARNING  infratrack — HTTP 403 on GET /admin/stats — Admins only
+[2026-04-16 13:56:12] WARNING  infratrack — HTTP 403 on GET /admin/stats — Admins only
+[2026-04-16 13:56:13] WARNING  infratrack — HTTP 403 on GET /admin/stats — Admins only
+[2026-04-16 13:56:14] WARNING  infratrack — HTTP 403 on GET /admin/stats — Admins only
+[2026-04-16 13:56:15] WARNING  infratrack — HTTP 403 on GET /admin/stats — Admins only
+[2026-04-16 13:56:17] WARNING  infratrack — HTTP 403 on GET /admin/stats — Admins only
+[2026-04-16 13:56:18] WARNING  infratrack — HTTP 403 on GET /admin/stats — Admins only
+[2026-04-16 13:56:19] WARNING  infratrack — HTTP 403 on GET /admin/stats — Admins only
+[2026-04-16 13:56:20] WARNING  infratrack — HTTP 403 on GET /admin/stats — Admins only
+[2026-04-16 13:56:21] WARNING  infratrack — HTTP 403 on GET /admin/stats — Admins only
+[2026-04-16 13:56:23] WARNING  infratrack — HTTP 403 on GET /admin/stats — Admins only
+[2026-04-16 13:56:24] WARNING  infratrack — HTTP 403 on GET /admin/stats — Admins only
+[2026-04-16 13:56:25] WARNING  infratrack — HTTP 403 on GET /admin/stats — Admins only
+[2026-04-16 13:56:26] WARNING  infratrack — HTTP 403 on GET /admin/stats — Admins only
+[2026-04-16 13:56:28] WARNING  infratrack — HTTP 403 on GET /admin/stats — Admins only
+[2026-04-16 13:56:29] WARNING  infratrack — HTTP 403 on GET /admin/stats — Admins only
+[2026-04-16 13:56:30] WARNING  infratrack — HTTP 403 on GET /admin/stats — Admins only
+[2026-04-16 13:56:32] WARNING  infratrack — HTTP 403 on GET /admin/stats — Admins only
+[2026-04-16 13:56:33] WARNING  infratrack — HTTP 403 on GET /admin/stats — Admins only
+[2026-04-16 13:56:34] WARNING  infratrack — HTTP 403 on GET /admin/stats — Admins only
+[2026-04-16 13:56:35] WARNING  infratrack — HTTP 403 on GET /admin/stats — Admins only
+[2026-04-16 13:56:36] WARNING  infratrack — HTTP 403 on GET /admin/stats — Admins only
+[2026-04-16 13:56:38] WARNING  infratrack — HTTP 403 on GET /admin/stats — Admins only
+[2026-04-16 13:56:39] WARNING  infratrack — HTTP 403 on GET /admin/stats — Admins only
+[2026-04-16 13:56:40] WARNING  infratrack — HTTP 403 on GET /admin/stats — Admins only
+[2026-04-16 13:56:42] WARNING  infratrack — HTTP 403 on GET /admin/stats — Admins only
+[2026-04-16 13:56:43] WARNING  infratrack — HTTP 403 on GET /admin/stats — Admins only
+[2026-04-16 13:56:44] WARNING  infratrack — HTTP 403 on GET /admin/stats — Admins only
+[2026-04-16 13:56:45] WARNING  infratrack — HTTP 403 on GET /admin/stats — Admins only
+[2026-04-16 13:56:47] WARNING  infratrack — HTTP 403 on GET /admin/stats — Admins only
+[2026-04-16 13:56:48] WARNING  infratrack — HTTP 403 on GET /admin/stats — Admins only
+[2026-04-16 13:56:49] WARNING  infratrack — HTTP 403 on GET /admin/stats — Admins only
+[2026-04-16 13:56:51] WARNING  infratrack — HTTP 403 on GET /admin/stats — Admins only
+[2026-04-16 13:56:52] WARNING  infratrack — HTTP 403 on GET /admin/stats — Admins only
+[2026-04-16 13:56:53] WARNING  infratrack — HTTP 403 on GET /admin/stats — Admins only
+[2026-04-16 13:56:55] WARNING  infratrack — HTTP 403 on GET /admin/stats — Admins only
+[2026-04-16 13:56:56] WARNING  infratrack — HTTP 403 on GET /admin/stats — Admins only
+[2026-04-16 13:56:57] WARNING  infratrack — HTTP 403 on GET /admin/stats — Admins only
+[2026-04-16 13:56:58] WARNING  infratrack — HTTP 403 on GET /admin/stats — Admins only
+[2026-04-16 13:57:00] WARNING  infratrack — HTTP 403 on GET /admin/stats — Admins only
+[2026-04-16 13:57:01] WARNING  infratrack — HTTP 403 on GET /admin/stats — Admins only
+[2026-04-16 13:57:02] WARNING  infratrack — HTTP 403 on GET /admin/stats — Admins only
+[2026-04-16 13:57:04] WARNING  infratrack — HTTP 403 on GET /admin/stats — Admins only
+[2026-04-16 13:57:05] WARNING  infratrack — HTTP 403 on GET /admin/stats — Admins only
+[2026-04-16 13:57:06] WARNING  infratrack — HTTP 403 on GET /admin/stats — Admins only
+[2026-04-16 13:57:08] WARNING  infratrack — HTTP 403 on GET /admin/stats — Admins only
+[2026-04-16 13:57:09] WARNING  infratrack — HTTP 403 on GET /admin/stats — Admins only
+[2026-04-16 13:57:10] WARNING  infratrack — HTTP 403 on GET /admin/stats — Admins only
+[2026-04-16 13:57:11] WARNING  infratrack — HTTP 403 on GET /admin/stats — Admins only
+[2026-04-16 13:57:13] WARNING  infratrack — HTTP 403 on GET /admin/stats — Admins only
+[2026-04-16 13:57:14] WARNING  infratrack — HTTP 403 on GET /admin/stats — Admins only
+[2026-04-16 13:57:15] WARNING  infratrack — HTTP 403 on GET /admin/stats — Admins only
+[2026-04-16 13:57:17] WARNING  infratrack — HTTP 403 on GET /admin/stats — Admins only
+[2026-04-16 13:57:18] WARNING  infratrack — HTTP 403 on GET /admin/stats — Admins only
+[2026-04-16 13:57:19] WARNING  infratrack — HTTP 403 on GET /admin/stats — Admins only
+[2026-04-16 13:57:20] WARNING  infratrack — HTTP 403 on GET /admin/stats — Admins only
+[2026-04-16 13:57:22] WARNING  infratrack — HTTP 403 on GET /admin/stats — Admins only
+[2026-04-16 13:57:23] WARNING  infratrack — HTTP 403 on GET /admin/stats — Admins only
+[2026-04-16 13:57:24] WARNING  infratrack — HTTP 403 on GET /admin/stats — Admins only
+[2026-04-16 13:57:25] WARNING  infratrack — HTTP 403 on GET /admin/stats — Admins only
+[2026-04-16 13:57:27] WARNING  infratrack — HTTP 403 on GET /admin/stats — Admins only
+[2026-04-16 13:57:28] WARNING  infratrack — HTTP 403 on GET /admin/stats — Admins only
+[2026-04-16 13:57:29] WARNING  infratrack — HTTP 403 on GET /admin/stats — Admins only
+[2026-04-16 13:57:30] WARNING  infratrack — HTTP 403 on GET /admin/stats — Admins only
+[2026-04-16 13:57:32] WARNING  infratrack — HTTP 403 on GET /admin/stats — Admins only
+[2026-04-16 13:57:33] WARNING  infratrack — HTTP 403 on GET /admin/stats — Admins only
+[2026-04-16 13:57:34] WARNING  infratrack — HTTP 403 on GET /admin/stats — Admins only
+[2026-04-16 13:57:35] WARNING  infratrack — HTTP 403 on GET /admin/stats — Admins only
+[2026-04-16 13:57:37] WARNING  infratrack — HTTP 403 on GET /admin/stats — Admins only
+[2026-04-16 13:57:38] WARNING  infratrack — HTTP 403 on GET /admin/stats — Admins only
+[2026-04-16 13:57:39] WARNING  infratrack — HTTP 403 on GET /admin/stats — Admins only
+[2026-04-16 13:57:41] WARNING  infratrack — HTTP 403 on GET /admin/stats — Admins only
+[2026-04-16 13:57:42] WARNING  infratrack — HTTP 403 on GET /admin/stats — Admins only
+[2026-04-16 13:57:43] WARNING  infratrack — HTTP 403 on GET /admin/stats — Admins only
+[2026-04-16 13:57:44] WARNING  infratrack — HTTP 403 on GET /admin/stats — Admins only
+[2026-04-16 13:57:46] WARNING  infratrack — HTTP 403 on GET /admin/stats — Admins only
+[2026-04-16 13:57:47] WARNING  infratrack — HTTP 403 on GET /admin/stats — Admins only
+[2026-04-16 13:57:48] WARNING  infratrack — HTTP 403 on GET /admin/stats — Admins only
+[2026-04-16 13:57:49] WARNING  infratrack — HTTP 403 on GET /admin/stats — Admins only
+[2026-04-16 13:57:51] WARNING  infratrack — HTTP 403 on GET /admin/stats — Admins only
+[2026-04-16 13:57:52] WARNING  infratrack — HTTP 403 on GET /admin/stats — Admins only
+[2026-04-16 13:57:53] WARNING  infratrack — HTTP 403 on GET /admin/stats — Admins only
+[2026-04-16 13:57:54] WARNING  infratrack — HTTP 403 on GET /admin/stats — Admins only
+[2026-04-16 13:57:56] WARNING  infratrack — HTTP 403 on GET /admin/stats — Admins only
+[2026-04-16 13:57:57] WARNING  infratrack — HTTP 403 on GET /admin/stats — Admins only
+[2026-04-16 13:57:58] WARNING  infratrack — HTTP 403 on GET /admin/stats — Admins only
+[2026-04-16 13:58:00] WARNING  infratrack — HTTP 403 on GET /admin/stats — Admins only
+[2026-04-16 13:58:01] WARNING  infratrack — HTTP 403 on GET /admin/stats — Admins only
+[2026-04-16 13:58:02] WARNING  infratrack — HTTP 403 on GET /admin/stats — Admins only
+[2026-04-16 13:58:03] WARNING  infratrack — HTTP 403 on GET /admin/stats — Admins only
+[2026-04-16 13:58:05] WARNING  infratrack — HTTP 403 on GET /admin/stats — Admins only
+[2026-04-16 13:58:06] WARNING  infratrack — HTTP 403 on GET /admin/stats — Admins only
+[2026-04-16 13:58:07] WARNING  infratrack — HTTP 403 on GET /admin/stats — Admins only
+[2026-04-16 13:58:08] WARNING  infratrack — HTTP 403 on GET /admin/stats — Admins only
+[2026-04-16 13:58:09] WARNING  infratrack — HTTP 403 on GET /admin/stats — Admins only
+[2026-04-16 13:58:11] WARNING  infratrack — HTTP 403 on GET /admin/stats — Admins only
+[2026-04-16 13:58:12] WARNING  infratrack — HTTP 403 on GET /admin/stats — Admins only
+[2026-04-16 13:58:13] WARNING  infratrack — HTTP 403 on GET /admin/stats — Admins only
+[2026-04-16 13:58:15] WARNING  infratrack — HTTP 403 on GET /admin/stats — Admins only
+[2026-04-16 13:58:16] WARNING  infratrack — HTTP 403 on GET /admin/stats — Admins only
+[2026-04-16 13:58:17] WARNING  infratrack — HTTP 403 on GET /admin/stats — Admins only
+[2026-04-16 13:58:18] WARNING  infratrack — HTTP 403 on GET /admin/stats — Admins only
+[2026-04-16 13:58:20] WARNING  infratrack — HTTP 403 on GET /admin/stats — Admins only
+[2026-04-16 13:58:21] WARNING  infratrack — HTTP 403 on GET /admin/stats — Admins only
+[2026-04-16 13:58:22] WARNING  infratrack — HTTP 403 on GET /admin/stats — Admins only
+[2026-04-16 13:58:23] WARNING  infratrack — HTTP 403 on GET /admin/stats — Admins only
+[2026-04-16 13:58:25] WARNING  infratrack — HTTP 403 on GET /admin/stats — Admins only
+[2026-04-16 13:58:26] WARNING  infratrack — HTTP 403 on GET /admin/stats — Admins only
+[2026-04-16 13:58:28] WARNING  infratrack — HTTP 403 on GET /admin/stats — Admins only
+[2026-04-16 13:58:29] WARNING  infratrack — HTTP 403 on GET /admin/stats — Admins only
+[2026-04-16 13:58:30] WARNING  infratrack — HTTP 403 on GET /admin/stats — Admins only
+[2026-04-16 13:58:32] WARNING  infratrack — HTTP 403 on GET /admin/stats — Admins only
+[2026-04-16 13:58:33] WARNING  infratrack — HTTP 403 on GET /admin/stats — Admins only
+[2026-04-16 13:58:35] WARNING  infratrack — HTTP 403 on GET /admin/stats — Admins only
+[2026-04-16 13:58:36] WARNING  infratrack — HTTP 403 on GET /admin/stats — Admins only

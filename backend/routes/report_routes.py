@@ -119,7 +119,7 @@ def all_reports(
 # ── Analytics ────────────────────────────────────────────────────────────────
 @router.get("/analytics")
 def analytics(current_user: dict = Depends(get_current_user)):
-    if current_user["role"] != "admin":
+    if current_user["role"] not in ["admin", "authority"]:
         raise HTTPException(status_code=403, detail="Admin access required.")
 
     cat_pipeline = [
