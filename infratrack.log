@@ -453,3 +453,151 @@ ValueError: password cannot be longer than 72 bytes, truncate manually if necess
 [2026-04-14 09:04:35] INFO     infratrack — InfraTrack API started. Environment loaded.
 [2026-04-14 09:08:05] WARNING  infratrack — HTTP 400 on POST /auth/register — Username already taken
 [2026-04-14 09:08:13] WARNING  infratrack — HTTP 400 on POST /auth/register — Username already taken
+[2026-04-16 12:49:05] INFO     infratrack — InfraTrack API started. Environment loaded.
+[2026-04-16 12:49:06] INFO     infratrack — InfraTrack API shutting down.
+[2026-04-16 12:49:17] INFO     infratrack — InfraTrack API started. Environment loaded.
+[2026-04-16 12:53:12] WARNING  infratrack — HTTP 401 on POST /auth/login — Invalid credentials
+[2026-04-16 12:54:40] WARNING  infratrack — HTTP 401 on POST /auth/login — Invalid credentials
+[2026-04-16 12:58:26] INFO     infratrack — InfraTrack API shutting down.
+[2026-04-16 12:58:27] INFO     infratrack — InfraTrack API started. Environment loaded.
+[2026-04-16 12:58:35] INFO     infratrack — InfraTrack API shutting down.
+[2026-04-16 12:58:36] INFO     infratrack — InfraTrack API started. Environment loaded.
+[2026-04-16 12:58:39] INFO     infratrack — InfraTrack API shutting down.
+[2026-04-16 12:58:41] INFO     infratrack — InfraTrack API started. Environment loaded.
+[2026-04-16 13:01:18] INFO     infratrack — InfraTrack API shutting down.
+[2026-04-16 13:01:49] INFO     infratrack — InfraTrack API started. Environment loaded.
+[2026-04-16 13:06:40] WARNING  infratrack — HTTP 401 on POST /auth/login — Invalid credentials
+[2026-04-16 13:13:00] INFO     infratrack — InfraTrack API shutting down.
+[2026-04-16 13:13:02] INFO     infratrack — InfraTrack API started. Environment loaded.
+[2026-04-16 13:13:06] INFO     infratrack — InfraTrack API shutting down.
+[2026-04-16 13:13:07] INFO     infratrack — InfraTrack API started. Environment loaded.
+[2026-04-16 13:13:09] INFO     infratrack — InfraTrack API shutting down.
+[2026-04-16 13:13:12] INFO     infratrack — InfraTrack API started. Environment loaded.
+[2026-04-16 13:13:21] INFO     infratrack — InfraTrack API shutting down.
+[2026-04-16 13:13:22] INFO     infratrack — InfraTrack API started. Environment loaded.
+[2026-04-16 13:13:24] INFO     infratrack — InfraTrack API started. Environment loaded.
+[2026-04-16 13:14:52] ERROR    backend.ai_engine — AI engine config error: ANTHROPIC_API_KEY is not configured in .env
+[2026-04-16 13:14:52] WARNING  backend.ai_engine — Using fallback analysis. Reason: API key not configured: ANTHROPIC_API_KEY is not configured in .env
+[2026-04-16 13:14:52] ERROR    infratrack — Unhandled exception on POST /reports/submit:
+Traceback (most recent call last):
+  File "/home/codespace/.local/lib/python3.12/site-packages/starlette/middleware/errors.py", line 164, in __call__
+    await self.app(scope, receive, _send)
+  File "/home/codespace/.local/lib/python3.12/site-packages/starlette/middleware/cors.py", line 85, in __call__
+    await self.app(scope, receive, send)
+  File "/home/codespace/.local/lib/python3.12/site-packages/starlette/middleware/exceptions.py", line 65, in __call__
+    await wrap_app_handling_exceptions(self.app, conn)(scope, receive, send)
+  File "/home/codespace/.local/lib/python3.12/site-packages/starlette/_exception_handler.py", line 64, in wrapped_app
+    raise exc
+  File "/home/codespace/.local/lib/python3.12/site-packages/starlette/_exception_handler.py", line 53, in wrapped_app
+    await app(scope, receive, sender)
+  File "/home/codespace/.local/lib/python3.12/site-packages/starlette/routing.py", line 756, in __call__
+    await self.middleware_stack(scope, receive, send)
+  File "/home/codespace/.local/lib/python3.12/site-packages/starlette/routing.py", line 776, in app
+    await route.handle(scope, receive, send)
+  File "/home/codespace/.local/lib/python3.12/site-packages/starlette/routing.py", line 297, in handle
+    await self.app(scope, receive, send)
+  File "/home/codespace/.local/lib/python3.12/site-packages/starlette/routing.py", line 77, in app
+    await wrap_app_handling_exceptions(app, request)(scope, receive, send)
+  File "/home/codespace/.local/lib/python3.12/site-packages/starlette/_exception_handler.py", line 64, in wrapped_app
+    raise exc
+  File "/home/codespace/.local/lib/python3.12/site-packages/starlette/_exception_handler.py", line 53, in wrapped_app
+    await app(scope, receive, sender)
+  File "/home/codespace/.local/lib/python3.12/site-packages/starlette/routing.py", line 72, in app
+    response = await func(request)
+               ^^^^^^^^^^^^^^^^^^^
+  File "/home/codespace/.local/lib/python3.12/site-packages/fastapi/routing.py", line 278, in app
+    raw_response = await run_endpoint_function(
+                   ^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/codespace/.local/lib/python3.12/site-packages/fastapi/routing.py", line 193, in run_endpoint_function
+    return await run_in_threadpool(dependant.call, **values)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/codespace/.local/lib/python3.12/site-packages/starlette/concurrency.py", line 42, in run_in_threadpool
+    return await anyio.to_thread.run_sync(func, *args)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/codespace/.local/lib/python3.12/site-packages/anyio/to_thread.py", line 63, in run_sync
+    return await get_async_backend().run_sync_in_worker_thread(
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/codespace/.local/lib/python3.12/site-packages/anyio/_backends/_asyncio.py", line 2518, in run_sync_in_worker_thread
+    return await future
+           ^^^^^^^^^^^^
+  File "/home/codespace/.local/lib/python3.12/site-packages/anyio/_backends/_asyncio.py", line 1002, in run
+    result = context.run(func, *args)
+             ^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/workspaces/InfraTrack/backend/routes/report_routes.py", line 68, in submit_report
+    "location_source":   data.location_source,
+                         ^^^^^^^^^^^^^^^^^^^^
+  File "/home/codespace/.local/lib/python3.12/site-packages/pydantic/main.py", line 811, in __getattr__
+    raise AttributeError(f'{type(self).__name__!r} object has no attribute {item!r}')
+AttributeError: 'ReportCreate' object has no attribute 'location_source'
+
+[2026-04-16 13:14:54] ERROR    backend.ai_engine — AI engine config error: ANTHROPIC_API_KEY is not configured in .env
+[2026-04-16 13:14:54] WARNING  backend.ai_engine — Using fallback analysis. Reason: API key not configured: ANTHROPIC_API_KEY is not configured in .env
+[2026-04-16 13:14:54] ERROR    infratrack — Unhandled exception on POST /reports/submit:
+Traceback (most recent call last):
+  File "/home/codespace/.local/lib/python3.12/site-packages/starlette/middleware/errors.py", line 164, in __call__
+    await self.app(scope, receive, _send)
+  File "/home/codespace/.local/lib/python3.12/site-packages/starlette/middleware/cors.py", line 85, in __call__
+    await self.app(scope, receive, send)
+  File "/home/codespace/.local/lib/python3.12/site-packages/starlette/middleware/exceptions.py", line 65, in __call__
+    await wrap_app_handling_exceptions(self.app, conn)(scope, receive, send)
+  File "/home/codespace/.local/lib/python3.12/site-packages/starlette/_exception_handler.py", line 64, in wrapped_app
+    raise exc
+  File "/home/codespace/.local/lib/python3.12/site-packages/starlette/_exception_handler.py", line 53, in wrapped_app
+    await app(scope, receive, sender)
+  File "/home/codespace/.local/lib/python3.12/site-packages/starlette/routing.py", line 756, in __call__
+    await self.middleware_stack(scope, receive, send)
+  File "/home/codespace/.local/lib/python3.12/site-packages/starlette/routing.py", line 776, in app
+    await route.handle(scope, receive, send)
+  File "/home/codespace/.local/lib/python3.12/site-packages/starlette/routing.py", line 297, in handle
+    await self.app(scope, receive, send)
+  File "/home/codespace/.local/lib/python3.12/site-packages/starlette/routing.py", line 77, in app
+    await wrap_app_handling_exceptions(app, request)(scope, receive, send)
+  File "/home/codespace/.local/lib/python3.12/site-packages/starlette/_exception_handler.py", line 64, in wrapped_app
+    raise exc
+  File "/home/codespace/.local/lib/python3.12/site-packages/starlette/_exception_handler.py", line 53, in wrapped_app
+    await app(scope, receive, sender)
+  File "/home/codespace/.local/lib/python3.12/site-packages/starlette/routing.py", line 72, in app
+    response = await func(request)
+               ^^^^^^^^^^^^^^^^^^^
+  File "/home/codespace/.local/lib/python3.12/site-packages/fastapi/routing.py", line 278, in app
+    raw_response = await run_endpoint_function(
+                   ^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/codespace/.local/lib/python3.12/site-packages/fastapi/routing.py", line 193, in run_endpoint_function
+    return await run_in_threadpool(dependant.call, **values)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/codespace/.local/lib/python3.12/site-packages/starlette/concurrency.py", line 42, in run_in_threadpool
+    return await anyio.to_thread.run_sync(func, *args)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/codespace/.local/lib/python3.12/site-packages/anyio/to_thread.py", line 63, in run_sync
+    return await get_async_backend().run_sync_in_worker_thread(
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/codespace/.local/lib/python3.12/site-packages/anyio/_backends/_asyncio.py", line 2518, in run_sync_in_worker_thread
+    return await future
+           ^^^^^^^^^^^^
+  File "/home/codespace/.local/lib/python3.12/site-packages/anyio/_backends/_asyncio.py", line 1002, in run
+    result = context.run(func, *args)
+             ^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/workspaces/InfraTrack/backend/routes/report_routes.py", line 68, in submit_report
+    "location_source":   data.location_source,
+                         ^^^^^^^^^^^^^^^^^^^^
+  File "/home/codespace/.local/lib/python3.12/site-packages/pydantic/main.py", line 811, in __getattr__
+    raise AttributeError(f'{type(self).__name__!r} object has no attribute {item!r}')
+AttributeError: 'ReportCreate' object has no attribute 'location_source'
+
+[2026-04-16 13:18:08] INFO     infratrack — InfraTrack API shutting down.
+[2026-04-16 13:18:10] INFO     infratrack — InfraTrack API started. Environment loaded.
+[2026-04-16 13:18:22] WARNING  infratrack — HTTP 401 on POST /auth/login — Invalid credentials
+[2026-04-16 13:19:26] ERROR    backend.ai_engine — AI engine config error: ANTHROPIC_API_KEY is not configured in .env
+[2026-04-16 13:19:26] WARNING  backend.ai_engine — Using fallback analysis. Reason: API key not configured: ANTHROPIC_API_KEY is not configured in .env
+[2026-04-16 13:19:26] INFO     backend.routes.report_routes — Report submitted by infra — score=35
+[2026-04-16 13:21:45] INFO     infratrack — InfraTrack API shutting down.
+[2026-04-16 13:21:48] INFO     infratrack — InfraTrack API started. Environment loaded.
+[2026-04-16 13:21:50] INFO     infratrack — InfraTrack API started. Environment loaded.
+[2026-04-16 13:24:36] INFO     infratrack — InfraTrack API shutting down.
+[2026-04-16 13:24:39] INFO     infratrack — InfraTrack API started. Environment loaded.
+[2026-04-16 13:25:25] INFO     infratrack — InfraTrack API shutting down.
+[2026-04-16 13:25:28] INFO     infratrack — InfraTrack API started. Environment loaded.
+[2026-04-16 13:25:29] INFO     infratrack — InfraTrack API started. Environment loaded.
+[2026-04-16 13:25:47] INFO     infratrack — InfraTrack API shutting down.
+[2026-04-16 13:25:53] INFO     infratrack — InfraTrack API started. Environment loaded.
+[2026-04-16 13:25:55] INFO     infratrack — InfraTrack API started. Environment loaded.

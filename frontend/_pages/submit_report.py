@@ -88,6 +88,8 @@ def show():
     image_b64 = ""
     if uploaded:
         img = Image.open(uploaded)
+        if img.mode in ("RGBA", "P"):
+            img = img.convert("RGB")
         img.thumbnail((900, 900))
         buf = io.BytesIO()
         img.save(buf, format="JPEG", quality=85)

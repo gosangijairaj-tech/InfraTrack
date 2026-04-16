@@ -103,7 +103,7 @@ def show():
         section_header(f"Map ({len(filtered)} reports)", "🗺️")
         valid = [r for r in filtered.to_dict("records") if r.get("latitude") and r.get("longitude")]
         if valid:
-            m = build_report_map(valid, cluster=len(valid) > 20)
+            m = build_report_map(valid)
             st_folium(m, width=700, height=420)
         else:
             alert("No geolocated reports match the filter.", "info")

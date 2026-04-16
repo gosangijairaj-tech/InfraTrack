@@ -19,6 +19,8 @@ class ReportCreate(BaseModel):
     longitude: float
     location_label: Optional[str] = ""
     image_base64: Optional[str] = ""
+    location_source: Optional[str] = "manual"
+    location_accuracy: Optional[float] = None
 
 
 class ReportStatusUpdate(BaseModel):
