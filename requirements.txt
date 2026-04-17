@@ -17,3 +17,4 @@ folium==0.16.0
 streamlit-folium==0.20.0
 pandas==2.2.2
 plotly==5.22.0
+joblib >= 1.5.1
