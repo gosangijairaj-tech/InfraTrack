@@ -182,4 +182,8 @@ def update_category_config(
     )
 
 def health_check():
-    return _call("GET", "/")
+    try:
+        r = requests.get(BASE_URL, timeout=60)
+        return True, {"status": r.status_code, "text": r.text[:200]}
+    except Exception as e:
+        return False, {"error": str(e)}
