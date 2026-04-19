@@ -146,7 +146,7 @@ def show():
     ok, hdata = health_check()
 
     if not ok:
-        st.error("❌ Cannot reach backend.")
+        st.error(f"❌ Cannot reach backend: {hdata}")
         return
 
     col1, col2, col3 = st.columns([1, 1.5, 1])
