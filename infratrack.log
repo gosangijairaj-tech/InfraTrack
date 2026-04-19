@@ -168,3 +168,126 @@
 [2026-04-19 05:53:37] INFO     infratrack — InfraTrack API shutting down.
 [2026-04-19 05:53:38] INFO     infratrack — InfraTrack API started. Environment loaded.
 [2026-04-19 05:53:40] INFO     infratrack — InfraTrack API shutting down.
+[2026-04-19 16:13:02] INFO     infratrack — InfraTrack API started. Environment loaded.
+[2026-04-19 16:19:03] WARNING  infratrack — HTTP 401 on POST /auth/login — Invalid credentials
+[2026-04-19 16:19:30] WARNING  infratrack — HTTP 401 on POST /auth/login — Invalid credentials
+[2026-04-19 16:21:36] WARNING  infratrack — HTTP 401 on POST /auth/login — Invalid credentials
+[2026-04-19 16:25:51] INFO     backend.ai_engine — Calling OpenRouter (Gemma 3 12B)...
+[2026-04-19 16:25:51] ERROR    backend.ai_engine — AI error: OpenRouter API error 401: {"error":{"message":"User not found.","code":401}}
+Traceback (most recent call last):
+  File "/workspaces/InfraTrack/backend/ai_engine.py", line 144, in analyze_report
+    raw_text = _call_llm(prompt).strip()
+               ^^^^^^^^^^^^^^^^^
+  File "/workspaces/InfraTrack/backend/ai_engine.py", line 45, in _call_llm
+    raise Exception(f"OpenRouter API error {response.status_code}: {response.text}")
+Exception: OpenRouter API error 401: {"error":{"message":"User not found.","code":401}}
+[2026-04-19 16:25:51] WARNING  backend.ai_engine — Using fallback analysis. Reason: OpenRouter API error 401: {"error":{"message":"User not found.","code":401}}
+[2026-04-19 16:25:51] INFO     backend.routes.report_routes — Report submitted by user — score=35
+[2026-04-19 16:41:05] INFO     infratrack — InfraTrack API shutting down.
+[2026-04-19 16:41:09] INFO     infratrack — InfraTrack API started. Environment loaded.
+[2026-04-19 16:41:11] INFO     infratrack — InfraTrack API shutting down.
+[2026-04-19 16:41:16] INFO     infratrack — InfraTrack API started. Environment loaded.
+[2026-04-19 16:41:45] INFO     infratrack — InfraTrack API shutting down.
+[2026-04-19 16:41:53] INFO     infratrack — InfraTrack API started. Environment loaded.
+[2026-04-19 16:41:56] INFO     infratrack — InfraTrack API started. Environment loaded.
+[2026-04-19 16:41:57] INFO     infratrack — InfraTrack API shutting down.
+[2026-04-19 16:41:59] INFO     infratrack — InfraTrack API started. Environment loaded.
+[2026-04-19 16:43:06] INFO     infratrack — InfraTrack API shutting down.
+[2026-04-19 16:43:10] INFO     infratrack — InfraTrack API started. Environment loaded.
+[2026-04-19 16:43:12] INFO     infratrack — InfraTrack API shutting down.
+[2026-04-19 16:43:15] INFO     infratrack — InfraTrack API started. Environment loaded.
+[2026-04-19 16:43:46] INFO     infratrack — InfraTrack API shutting down.
+[2026-04-19 16:43:48] INFO     infratrack — InfraTrack API started. Environment loaded.
+[2026-04-19 16:43:52] INFO     infratrack — InfraTrack API shutting down.
+[2026-04-19 16:43:55] INFO     infratrack — InfraTrack API started. Environment loaded.
+[2026-04-19 16:43:57] INFO     infratrack — InfraTrack API shutting down.
+[2026-04-19 16:43:59] INFO     infratrack — InfraTrack API started. Environment loaded.
+[2026-04-19 16:49:23] INFO     infratrack — InfraTrack API shutting down.
+[2026-04-19 16:49:24] INFO     infratrack — InfraTrack API started. Environment loaded.
+[2026-04-19 16:49:30] INFO     infratrack — InfraTrack API shutting down.
+[2026-04-19 16:49:32] INFO     infratrack — InfraTrack API started. Environment loaded.
+[2026-04-19 16:49:33] INFO     infratrack — InfraTrack API shutting down.
+[2026-04-19 16:49:35] INFO     infratrack — InfraTrack API started. Environment loaded.
+[2026-04-19 16:51:01] INFO     infratrack — InfraTrack API shutting down.
+[2026-04-19 16:51:02] INFO     infratrack — InfraTrack API started. Environment loaded.
+[2026-04-19 16:51:25] INFO     infratrack — InfraTrack API shutting down.
+[2026-04-19 16:51:27] INFO     infratrack — InfraTrack API started. Environment loaded.
+[2026-04-19 16:51:28] INFO     infratrack — InfraTrack API started. Environment loaded.
+[2026-04-19 16:53:04] INFO     infratrack — InfraTrack API shutting down.
+[2026-04-19 16:53:05] INFO     infratrack — InfraTrack API started. Environment loaded.
+[2026-04-19 16:53:07] INFO     infratrack — InfraTrack API started. Environment loaded.
+[2026-04-19 16:54:58] INFO     infratrack — InfraTrack API shutting down.
+[2026-04-19 16:55:07] INFO     infratrack — InfraTrack API started. Environment loaded.
+[2026-04-19 16:55:27] INFO     infratrack — InfraTrack API shutting down.
+[2026-04-19 16:55:28] INFO     infratrack — InfraTrack API started. Environment loaded.
+[2026-04-19 16:56:40] INFO     infratrack — InfraTrack API shutting down.
+[2026-04-19 16:56:42] INFO     infratrack — InfraTrack API started. Environment loaded.
+[2026-04-19 16:56:51] INFO     infratrack — InfraTrack API shutting down.
+[2026-04-19 16:56:53] INFO     infratrack — InfraTrack API started. Environment loaded.
+[2026-04-19 17:03:01] INFO     infratrack — InfraTrack API shutting down.
+[2026-04-19 17:03:03] INFO     infratrack — InfraTrack API started. Environment loaded.
+[2026-04-19 17:03:35] INFO     infratrack — InfraTrack API shutting down.
+[2026-04-19 17:03:38] INFO     infratrack — InfraTrack API started. Environment loaded.
+[2026-04-19 17:03:40] INFO     infratrack — InfraTrack API started. Environment loaded.
+[2026-04-19 17:03:41] INFO     infratrack — InfraTrack API shutting down.
+[2026-04-19 17:03:43] INFO     infratrack — InfraTrack API started. Environment loaded.
+[2026-04-19 17:03:44] INFO     infratrack — InfraTrack API shutting down.
+[2026-04-19 17:03:45] INFO     infratrack — InfraTrack API started. Environment loaded.
+[2026-04-19 17:03:46] INFO     infratrack — InfraTrack API shutting down.
+[2026-04-19 17:03:47] INFO     infratrack — InfraTrack API started. Environment loaded.
+[2026-04-19 17:04:36] INFO     infratrack — InfraTrack API shutting down.
+[2026-04-19 17:04:38] INFO     infratrack — InfraTrack API started. Environment loaded.
+[2026-04-19 17:04:39] INFO     infratrack — InfraTrack API shutting down.
+[2026-04-19 17:04:40] INFO     infratrack — InfraTrack API started. Environment loaded.
+[2026-04-19 17:04:42] INFO     infratrack — InfraTrack API shutting down.
+[2026-04-19 17:04:44] INFO     infratrack — InfraTrack API started. Environment loaded.
+[2026-04-19 17:04:44] INFO     infratrack — InfraTrack API shutting down.
+[2026-04-19 17:04:46] INFO     infratrack — InfraTrack API started. Environment loaded.
+[2026-04-19 17:04:48] INFO     infratrack — InfraTrack API shutting down.
+[2026-04-19 17:04:49] INFO     infratrack — InfraTrack API started. Environment loaded.
+[2026-04-19 17:04:51] INFO     infratrack — InfraTrack API shutting down.
+[2026-04-19 17:04:53] INFO     infratrack — InfraTrack API started. Environment loaded.
+[2026-04-19 17:06:26] INFO     infratrack — InfraTrack API shutting down.
+[2026-04-19 17:06:28] INFO     infratrack — InfraTrack API started. Environment loaded.
+[2026-04-19 17:06:29] INFO     infratrack — InfraTrack API started. Environment loaded.
+[2026-04-19 17:06:59] INFO     infratrack — InfraTrack API shutting down.
+[2026-04-19 17:07:01] INFO     infratrack — InfraTrack API started. Environment loaded.
+[2026-04-19 17:07:19] INFO     infratrack — InfraTrack API shutting down.
+[2026-04-19 17:07:21] INFO     infratrack — InfraTrack API started. Environment loaded.
+[2026-04-19 17:07:35] INFO     infratrack — InfraTrack API shutting down.
+[2026-04-19 17:07:37] INFO     infratrack — InfraTrack API started. Environment loaded.
+[2026-04-19 17:07:40] INFO     infratrack — InfraTrack API started. Environment loaded.
+[2026-04-19 17:08:03] INFO     infratrack — InfraTrack API shutting down.
+[2026-04-19 17:08:05] INFO     infratrack — InfraTrack API started. Environment loaded.
+[2026-04-19 17:08:06] INFO     infratrack — InfraTrack API started. Environment loaded.
+[2026-04-19 17:08:40] INFO     infratrack — InfraTrack API shutting down.
+[2026-04-19 17:08:42] INFO     infratrack — InfraTrack API started. Environment loaded.
+[2026-04-19 17:08:43] INFO     infratrack — InfraTrack API shutting down.
+[2026-04-19 17:08:45] INFO     infratrack — InfraTrack API started. Environment loaded.
+[2026-04-19 17:08:46] INFO     infratrack — InfraTrack API started. Environment loaded.
+[2026-04-19 17:09:16] INFO     infratrack — InfraTrack API shutting down.
+[2026-04-19 17:09:18] INFO     infratrack — InfraTrack API started. Environment loaded.
+[2026-04-19 17:09:47] INFO     infratrack — InfraTrack API shutting down.
+[2026-04-19 17:09:49] INFO     infratrack — InfraTrack API started. Environment loaded.
+[2026-04-19 17:10:11] INFO     infratrack — InfraTrack API shutting down.
+[2026-04-19 17:10:13] INFO     infratrack — InfraTrack API started. Environment loaded.
+[2026-04-19 17:10:46] INFO     infratrack — InfraTrack API shutting down.
+[2026-04-19 17:10:48] INFO     infratrack — InfraTrack API started. Environment loaded.
+[2026-04-19 17:10:50] INFO     infratrack — InfraTrack API shutting down.
+[2026-04-19 17:10:52] INFO     infratrack — InfraTrack API started. Environment loaded.
+[2026-04-19 17:10:53] INFO     infratrack — InfraTrack API started. Environment loaded.
+[2026-04-19 17:11:00] INFO     infratrack — InfraTrack API shutting down.
+[2026-04-19 17:11:02] INFO     infratrack — InfraTrack API started. Environment loaded.
+[2026-04-19 17:11:35] INFO     infratrack — InfraTrack API shutting down.
+[2026-04-19 17:11:38] INFO     infratrack — InfraTrack API started. Environment loaded.
+[2026-04-19 17:11:39] INFO     infratrack — InfraTrack API shutting down.
+[2026-04-19 17:11:40] INFO     infratrack — InfraTrack API started. Environment loaded.
+[2026-04-19 17:11:46] INFO     infratrack — InfraTrack API shutting down.
+[2026-04-19 17:11:47] INFO     infratrack — InfraTrack API started. Environment loaded.
+[2026-04-19 17:11:49] INFO     infratrack — InfraTrack API started. Environment loaded.
+[2026-04-19 17:12:02] INFO     infratrack — InfraTrack API shutting down.
+[2026-04-19 17:12:04] INFO     infratrack — InfraTrack API started. Environment loaded.
+[2026-04-19 17:12:09] INFO     infratrack — InfraTrack API shutting down.
+[2026-04-19 17:12:10] INFO     infratrack — InfraTrack API started. Environment loaded.
+[2026-04-19 17:12:34] INFO     infratrack — InfraTrack API shutting down.
+[2026-04-19 17:12:35] INFO     infratrack — InfraTrack API started. Environment loaded.
