@@ -1,13 +1,20 @@
 import streamlit as st
 import base64
+import os
 from frontend.utils.api import login_user, health_check
+
 
 def get_base64_image(path):
     with open(path, "rb") as img:
         return base64.b64encode(img.read()).decode()
 
+
 def show():
-    img = get_base64_image("/workspaces/InfraTrack/images/background.jpg")
+    # Dynamic path for local + cloud deployment
+    BASE_DIR = os.path.dirname(os.path.dirname(os.path.dirname(__file__)))
+    img_path = os.path.join(BASE_DIR, "images", "background.jpg")
+
+    img = get_base64_image(img_path)
 
     st.markdown(f"""
     <style>
@@ -25,12 +32,10 @@ def show():
         background-attachment: fixed;
     }}
 
-    /* Transparent Header */
     [data-testid="stHeader"] {{
         background: rgba(0,0,0,0);
     }}
 
-    /* Transparent Sidebar */
     [data-testid="stSidebar"] {{
         background: rgba(0,0,0,0);
     }}
@@ -141,13 +146,12 @@ def show():
     ok, hdata = health_check()
 
     if not ok:
-        st.error("❌ Cannot reach backend. Start FastAPI on port 8000.")
+        st.error("❌ Cannot reach backend.")
         return
 
     col1, col2, col3 = st.columns([1, 1.5, 1])
 
     with col2:
-
         st.markdown("<div class='login-box'>", unsafe_allow_html=True)
 
         st.subheader("Sign In")
@@ -169,7 +173,6 @@ def show():
 
             if not username or not password:
                 st.warning("Please fill in all fields.")
-
             else:
                 with st.spinner("Logging in..."):
                     success, data = login_user(username, password)
@@ -180,7 +183,6 @@ def show():
                     st.session_state["role"] = data["role"]
                     st.session_state["page"] = "user_dashboard"
                     st.rerun()
-
                 else:
                     msg = data.get("error") or data.get("detail", "Login failed.")
                     st.error(f"❌ {msg}")
