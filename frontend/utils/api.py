@@ -183,7 +183,15 @@ def update_category_config(
 
 def health_check():
     try:
-        r = requests.get(BASE_URL, timeout=60)
-        return True, {"status": r.status_code, "text": r.text[:200]}
+        r = requests.get(
+            "https://infratrack-h30y.onrender.com",
+            timeout=60
+        )
+        return True, {
+            "status_code": r.status_code,
+            "text": r.text[:300]
+        }
     except Exception as e:
-        return False, {"error": str(e)}
+        return False, {
+            "error": str(e)
+        }
