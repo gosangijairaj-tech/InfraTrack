@@ -182,4 +182,4 @@ def update_category_config(
     )
 
 def health_check():
-    return _call("GET", "/health")
+    return _call("GET", "/")
