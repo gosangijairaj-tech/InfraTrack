@@ -23,7 +23,6 @@ def show():
     st.markdown("<h2 style='color:#0077B6'>👤 My Reports Dashboard</h2>",
                 unsafe_allow_html=True)
 
-    # Refresh controls
     col_r1, col_r2, col_r3 = st.columns([2, 1, 1])
     with col_r1:
         last_ts = st.session_state.get("user_last_refresh", time.time())
@@ -53,7 +52,6 @@ def show():
 
     df = pd.DataFrame(reports)
 
-    # Summary cards
     section_header("Summary", "📊")
     cols = st.columns(4)
     with cols[0]:
@@ -68,7 +66,6 @@ def show():
         avg = round(df["risk_score"].mean(), 1) if "risk_score" in df else 0
         st.markdown(metric_card("Avg Risk Score", avg, "#f4a261"), unsafe_allow_html=True)
 
-    # Map
     section_header("My Reports on Map", "🗺️")
     valid = [r for r in reports if r.get("latitude") and r.get("longitude")]
     if valid:
@@ -79,7 +76,6 @@ def show():
     else:
         alert("No geolocated reports to display.", "info")
 
-    # Report list
     section_header("Report History", "📋")
     if "priority" in df:
         sel_prio = st.selectbox("Filter by priority", ["All", "High", "Medium", "Low"])
@@ -127,8 +123,6 @@ def show():
                         st.image(base64.b64decode(r["image_base64"]), width=160)
                     except Exception:
                         st.caption("Image unavailable")
-
-    # Auto-refresh
     if auto_on:
         remaining = max(0, REFRESH_INTERVAL - (time.time() - st.session_state.get("user_last_refresh", 0)))
         st.caption(f"⏱ Next auto-refresh in {int(remaining)}s")

@@ -1,1119 +1,170 @@
-[2026-04-12 06:30:42] INFO     infratrack — InfraTrack API started. Environment loaded.
-[2026-04-12 06:32:00] INFO     infratrack — InfraTrack API shutting down.
-[2026-04-12 06:32:04] INFO     infratrack — InfraTrack API started. Environment loaded.
-[2026-04-12 06:32:18] INFO     infratrack — InfraTrack API shutting down.
-[2026-04-12 06:32:20] INFO     infratrack — InfraTrack API started. Environment loaded.
-[2026-04-12 06:33:11] INFO     infratrack — InfraTrack API shutting down.
-[2026-04-12 06:33:16] INFO     infratrack — InfraTrack API started. Environment loaded.
-[2026-04-12 06:34:10] INFO     infratrack — InfraTrack API shutting down.
-[2026-04-12 06:34:14] INFO     infratrack — InfraTrack API started. Environment loaded.
-[2026-04-12 06:34:18] INFO     infratrack — InfraTrack API started. Environment loaded.
-[2026-04-12 06:35:57] INFO     infratrack — InfraTrack API shutting down.
-[2026-04-12 06:36:00] INFO     infratrack — InfraTrack API started. Environment loaded.
-[2026-04-12 06:36:51] WARNING  infratrack — HTTP 401 on POST /auth/login — Invalid credentials
-[2026-04-12 06:38:25] WARNING  passlib.handlers.bcrypt — (trapped) error reading bcrypt version
-Traceback (most recent call last):
-  File "/workspaces/InfraTrack/venv/lib/python3.12/site-packages/passlib/handlers/bcrypt.py", line 620, in _load_backend_mixin
-    version = _bcrypt.__about__.__version__
-              ^^^^^^^^^^^^^^^^^
-AttributeError: module 'bcrypt' has no attribute '__about__'
-[2026-04-12 06:38:25] ERROR    infratrack — Unhandled exception on POST /auth/register:
-Traceback (most recent call last):
-  File "/workspaces/InfraTrack/venv/lib/python3.12/site-packages/starlette/middleware/errors.py", line 164, in __call__
-    await self.app(scope, receive, _send)
-  File "/workspaces/InfraTrack/venv/lib/python3.12/site-packages/starlette/middleware/cors.py", line 85, in __call__
-    await self.app(scope, receive, send)
-  File "/workspaces/InfraTrack/venv/lib/python3.12/site-packages/starlette/middleware/exceptions.py", line 65, in __call__
-    await wrap_app_handling_exceptions(self.app, conn)(scope, receive, send)
-  File "/workspaces/InfraTrack/venv/lib/python3.12/site-packages/starlette/_exception_handler.py", line 64, in wrapped_app
-    raise exc
-  File "/workspaces/InfraTrack/venv/lib/python3.12/site-packages/starlette/_exception_handler.py", line 53, in wrapped_app
-    await app(scope, receive, sender)
-  File "/workspaces/InfraTrack/venv/lib/python3.12/site-packages/starlette/routing.py", line 756, in __call__
-    await self.middleware_stack(scope, receive, send)
-  File "/workspaces/InfraTrack/venv/lib/python3.12/site-packages/starlette/routing.py", line 776, in app
-    await route.handle(scope, receive, send)
-  File "/workspaces/InfraTrack/venv/lib/python3.12/site-packages/starlette/routing.py", line 297, in handle
-    await self.app(scope, receive, send)
-  File "/workspaces/InfraTrack/venv/lib/python3.12/site-packages/starlette/routing.py", line 77, in app
-    await wrap_app_handling_exceptions(app, request)(scope, receive, send)
-  File "/workspaces/InfraTrack/venv/lib/python3.12/site-packages/starlette/_exception_handler.py", line 64, in wrapped_app
-    raise exc
-  File "/workspaces/InfraTrack/venv/lib/python3.12/site-packages/starlette/_exception_handler.py", line 53, in wrapped_app
-    await app(scope, receive, sender)
-  File "/workspaces/InfraTrack/venv/lib/python3.12/site-packages/starlette/routing.py", line 72, in app
-    response = await func(request)
-               ^^^^^^^^^^^^^^^^^^^
-  File "/workspaces/InfraTrack/venv/lib/python3.12/site-packages/fastapi/routing.py", line 278, in app
-    raw_response = await run_endpoint_function(
-                   ^^^^^^^^^^^^^^^^^^^^^^^^^^^^
-  File "/workspaces/InfraTrack/venv/lib/python3.12/site-packages/fastapi/routing.py", line 193, in run_endpoint_function
-    return await run_in_threadpool(dependant.call, **values)
-           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
-  File "/workspaces/InfraTrack/venv/lib/python3.12/site-packages/starlette/concurrency.py", line 42, in run_in_threadpool
-    return await anyio.to_thread.run_sync(func, *args)
-           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
-  File "/workspaces/InfraTrack/venv/lib/python3.12/site-packages/anyio/to_thread.py", line 63, in run_sync
-    return await get_async_backend().run_sync_in_worker_thread(
-           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
-  File "/workspaces/InfraTrack/venv/lib/python3.12/site-packages/anyio/_backends/_asyncio.py", line 2518, in run_sync_in_worker_thread
-    return await future
-           ^^^^^^^^^^^^
-  File "/workspaces/InfraTrack/venv/lib/python3.12/site-packages/anyio/_backends/_asyncio.py", line 1002, in run
-    result = context.run(func, *args)
-             ^^^^^^^^^^^^^^^^^^^^^^^^
-  File "/workspaces/InfraTrack/backend/routes/user_routes.py", line 31, in register
-    "password": hash_password(data.password),
-                ^^^^^^^^^^^^^^^^^^^^^^^^^^^^
-  File "/workspaces/InfraTrack/backend/auth.py", line 18, in hash_password
-    return pwd_context.hash(password)
-           ^^^^^^^^^^^^^^^^^^^^^^^^^^
-  File "/workspaces/InfraTrack/venv/lib/python3.12/site-packages/passlib/context.py", line 2258, in hash
-    return record.hash(secret, **kwds)
-           ^^^^^^^^^^^^^^^^^^^^^^^^^^^
-  File "/workspaces/InfraTrack/venv/lib/python3.12/site-packages/passlib/utils/handlers.py", line 779, in hash
-    self.checksum = self._calc_checksum(secret)
-                    ^^^^^^^^^^^^^^^^^^^^^^^^^^^
-  File "/workspaces/InfraTrack/venv/lib/python3.12/site-packages/passlib/handlers/bcrypt.py", line 591, in _calc_checksum
-    self._stub_requires_backend()
-  File "/workspaces/InfraTrack/venv/lib/python3.12/site-packages/passlib/utils/handlers.py", line 2254, in _stub_requires_backend
-    cls.set_backend()
-  File "/workspaces/InfraTrack/venv/lib/python3.12/site-packages/passlib/utils/handlers.py", line 2156, in set_backend
-    return owner.set_backend(name, dryrun=dryrun)
-           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
-  File "/workspaces/InfraTrack/venv/lib/python3.12/site-packages/passlib/utils/handlers.py", line 2163, in set_backend
-    return cls.set_backend(name, dryrun=dryrun)
-           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
-  File "/workspaces/InfraTrack/venv/lib/python3.12/site-packages/passlib/utils/handlers.py", line 2188, in set_backend
-    cls._set_backend(name, dryrun)
-  File "/workspaces/InfraTrack/venv/lib/python3.12/site-packages/passlib/utils/handlers.py", line 2311, in _set_backend
-    super(SubclassBackendMixin, cls)._set_backend(name, dryrun)
-  File "/workspaces/InfraTrack/venv/lib/python3.12/site-packages/passlib/utils/handlers.py", line 2224, in _set_backend
-    ok = loader(**kwds)
-         ^^^^^^^^^^^^^^
-  File "/workspaces/InfraTrack/venv/lib/python3.12/site-packages/passlib/handlers/bcrypt.py", line 626, in _load_backend_mixin
-    return mixin_cls._finalize_backend_mixin(name, dryrun)
-           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
-  File "/workspaces/InfraTrack/venv/lib/python3.12/site-packages/passlib/handlers/bcrypt.py", line 421, in _finalize_backend_mixin
-    if detect_wrap_bug(IDENT_2A):
-       ^^^^^^^^^^^^^^^^^^^^^^^^^
-  File "/workspaces/InfraTrack/venv/lib/python3.12/site-packages/passlib/handlers/bcrypt.py", line 380, in detect_wrap_bug
-    if verify(secret, bug_hash):
-       ^^^^^^^^^^^^^^^^^^^^^^^^
-  File "/workspaces/InfraTrack/venv/lib/python3.12/site-packages/passlib/utils/handlers.py", line 792, in verify
-    return consteq(self._calc_checksum(secret), chk)
-                   ^^^^^^^^^^^^^^^^^^^^^^^^^^^
-  File "/workspaces/InfraTrack/venv/lib/python3.12/site-packages/passlib/handlers/bcrypt.py", line 655, in _calc_checksum
-    hash = _bcrypt.hashpw(secret, config)
-           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
-ValueError: password cannot be longer than 72 bytes, truncate manually if necessary (e.g. my_password[:72])
-
-[2026-04-12 06:38:57] INFO     infratrack — InfraTrack API shutting down.
-[2026-04-12 06:38:58] INFO     infratrack — InfraTrack API started. Environment loaded.
-[2026-04-12 06:39:08] INFO     infratrack — InfraTrack API shutting down.
-[2026-04-12 06:39:10] INFO     infratrack — InfraTrack API started. Environment loaded.
-[2026-04-12 06:40:18] INFO     infratrack — InfraTrack API shutting down.
-[2026-04-12 06:40:21] INFO     infratrack — InfraTrack API started. Environment loaded.
-[2026-04-12 06:40:24] INFO     infratrack — InfraTrack API started. Environment loaded.
-[2026-04-12 06:41:25] WARNING  passlib.handlers.bcrypt — (trapped) error reading bcrypt version
-Traceback (most recent call last):
-  File "/workspaces/InfraTrack/venv/lib/python3.12/site-packages/passlib/handlers/bcrypt.py", line 620, in _load_backend_mixin
-    version = _bcrypt.__about__.__version__
-              ^^^^^^^^^^^^^^^^^
-AttributeError: module 'bcrypt' has no attribute '__about__'
-[2026-04-12 06:41:25] ERROR    infratrack — Unhandled exception on POST /auth/register:
-Traceback (most recent call last):
-  File "/workspaces/InfraTrack/venv/lib/python3.12/site-packages/starlette/middleware/errors.py", line 164, in __call__
-    await self.app(scope, receive, _send)
-  File "/workspaces/InfraTrack/venv/lib/python3.12/site-packages/starlette/middleware/cors.py", line 85, in __call__
-    await self.app(scope, receive, send)
-  File "/workspaces/InfraTrack/venv/lib/python3.12/site-packages/starlette/middleware/exceptions.py", line 65, in __call__
-    await wrap_app_handling_exceptions(self.app, conn)(scope, receive, send)
-  File "/workspaces/InfraTrack/venv/lib/python3.12/site-packages/starlette/_exception_handler.py", line 64, in wrapped_app
-    raise exc
-  File "/workspaces/InfraTrack/venv/lib/python3.12/site-packages/starlette/_exception_handler.py", line 53, in wrapped_app
-    await app(scope, receive, sender)
-  File "/workspaces/InfraTrack/venv/lib/python3.12/site-packages/starlette/routing.py", line 756, in __call__
-    await self.middleware_stack(scope, receive, send)
-  File "/workspaces/InfraTrack/venv/lib/python3.12/site-packages/starlette/routing.py", line 776, in app
-    await route.handle(scope, receive, send)
-  File "/workspaces/InfraTrack/venv/lib/python3.12/site-packages/starlette/routing.py", line 297, in handle
-    await self.app(scope, receive, send)
-  File "/workspaces/InfraTrack/venv/lib/python3.12/site-packages/starlette/routing.py", line 77, in app
-    await wrap_app_handling_exceptions(app, request)(scope, receive, send)
-  File "/workspaces/InfraTrack/venv/lib/python3.12/site-packages/starlette/_exception_handler.py", line 64, in wrapped_app
-    raise exc
-  File "/workspaces/InfraTrack/venv/lib/python3.12/site-packages/starlette/_exception_handler.py", line 53, in wrapped_app
-    await app(scope, receive, sender)
-  File "/workspaces/InfraTrack/venv/lib/python3.12/site-packages/starlette/routing.py", line 72, in app
-    response = await func(request)
-               ^^^^^^^^^^^^^^^^^^^
-  File "/workspaces/InfraTrack/venv/lib/python3.12/site-packages/fastapi/routing.py", line 278, in app
-    raw_response = await run_endpoint_function(
-                   ^^^^^^^^^^^^^^^^^^^^^^^^^^^^
-  File "/workspaces/InfraTrack/venv/lib/python3.12/site-packages/fastapi/routing.py", line 193, in run_endpoint_function
-    return await run_in_threadpool(dependant.call, **values)
-           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
-  File "/workspaces/InfraTrack/venv/lib/python3.12/site-packages/starlette/concurrency.py", line 42, in run_in_threadpool
-    return await anyio.to_thread.run_sync(func, *args)
-           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
-  File "/workspaces/InfraTrack/venv/lib/python3.12/site-packages/anyio/to_thread.py", line 63, in run_sync
-    return await get_async_backend().run_sync_in_worker_thread(
-           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
-  File "/workspaces/InfraTrack/venv/lib/python3.12/site-packages/anyio/_backends/_asyncio.py", line 2518, in run_sync_in_worker_thread
-    return await future
-           ^^^^^^^^^^^^
-  File "/workspaces/InfraTrack/venv/lib/python3.12/site-packages/anyio/_backends/_asyncio.py", line 1002, in run
-    result = context.run(func, *args)
-             ^^^^^^^^^^^^^^^^^^^^^^^^
-  File "/workspaces/InfraTrack/backend/routes/user_routes.py", line 31, in register
-    "password": hash_password(data.password),
-                ^^^^^^^^^^^^^^^^^^^^^^^^^^^^
-  File "/workspaces/InfraTrack/backend/auth.py", line 18, in hash_password
-    return pwd_context.hash(password)
-           ^^^^^^^^^^^^^^^^^^^^^^^^^^
-  File "/workspaces/InfraTrack/venv/lib/python3.12/site-packages/passlib/context.py", line 2258, in hash
-    return record.hash(secret, **kwds)
-           ^^^^^^^^^^^^^^^^^^^^^^^^^^^
-  File "/workspaces/InfraTrack/venv/lib/python3.12/site-packages/passlib/utils/handlers.py", line 779, in hash
-    self.checksum = self._calc_checksum(secret)
-                    ^^^^^^^^^^^^^^^^^^^^^^^^^^^
-  File "/workspaces/InfraTrack/venv/lib/python3.12/site-packages/passlib/handlers/bcrypt.py", line 591, in _calc_checksum
-    self._stub_requires_backend()
-  File "/workspaces/InfraTrack/venv/lib/python3.12/site-packages/passlib/utils/handlers.py", line 2254, in _stub_requires_backend
-    cls.set_backend()
-  File "/workspaces/InfraTrack/venv/lib/python3.12/site-packages/passlib/utils/handlers.py", line 2156, in set_backend
-    return owner.set_backend(name, dryrun=dryrun)
-           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
-  File "/workspaces/InfraTrack/venv/lib/python3.12/site-packages/passlib/utils/handlers.py", line 2163, in set_backend
-    return cls.set_backend(name, dryrun=dryrun)
-           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
-  File "/workspaces/InfraTrack/venv/lib/python3.12/site-packages/passlib/utils/handlers.py", line 2188, in set_backend
-    cls._set_backend(name, dryrun)
-  File "/workspaces/InfraTrack/venv/lib/python3.12/site-packages/passlib/utils/handlers.py", line 2311, in _set_backend
-    super(SubclassBackendMixin, cls)._set_backend(name, dryrun)
-  File "/workspaces/InfraTrack/venv/lib/python3.12/site-packages/passlib/utils/handlers.py", line 2224, in _set_backend
-    ok = loader(**kwds)
-         ^^^^^^^^^^^^^^
-  File "/workspaces/InfraTrack/venv/lib/python3.12/site-packages/passlib/handlers/bcrypt.py", line 626, in _load_backend_mixin
-    return mixin_cls._finalize_backend_mixin(name, dryrun)
-           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
-  File "/workspaces/InfraTrack/venv/lib/python3.12/site-packages/passlib/handlers/bcrypt.py", line 421, in _finalize_backend_mixin
-    if detect_wrap_bug(IDENT_2A):
-       ^^^^^^^^^^^^^^^^^^^^^^^^^
-  File "/workspaces/InfraTrack/venv/lib/python3.12/site-packages/passlib/handlers/bcrypt.py", line 380, in detect_wrap_bug
-    if verify(secret, bug_hash):
-       ^^^^^^^^^^^^^^^^^^^^^^^^
-  File "/workspaces/InfraTrack/venv/lib/python3.12/site-packages/passlib/utils/handlers.py", line 792, in verify
-    return consteq(self._calc_checksum(secret), chk)
-                   ^^^^^^^^^^^^^^^^^^^^^^^^^^^
-  File "/workspaces/InfraTrack/venv/lib/python3.12/site-packages/passlib/handlers/bcrypt.py", line 655, in _calc_checksum
-    hash = _bcrypt.hashpw(secret, config)
-           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
-ValueError: password cannot be longer than 72 bytes, truncate manually if necessary (e.g. my_password[:72])
-
-[2026-04-12 06:51:33] INFO     infratrack — InfraTrack API shutting down.
-[2026-04-12 06:51:36] INFO     infratrack — InfraTrack API started. Environment loaded.
-[2026-04-12 06:51:38] INFO     infratrack — InfraTrack API started. Environment loaded.
-[2026-04-12 06:52:52] WARNING  passlib.handlers.bcrypt — (trapped) error reading bcrypt version
-Traceback (most recent call last):
-  File "/workspaces/InfraTrack/venv/lib/python3.12/site-packages/passlib/handlers/bcrypt.py", line 620, in _load_backend_mixin
-    version = _bcrypt.__about__.__version__
-              ^^^^^^^^^^^^^^^^^
-AttributeError: module 'bcrypt' has no attribute '__about__'
-[2026-04-12 06:52:52] ERROR    infratrack — Unhandled exception on POST /auth/register:
-Traceback (most recent call last):
-  File "/workspaces/InfraTrack/venv/lib/python3.12/site-packages/starlette/middleware/errors.py", line 164, in __call__
-    await self.app(scope, receive, _send)
-  File "/workspaces/InfraTrack/venv/lib/python3.12/site-packages/starlette/middleware/cors.py", line 85, in __call__
-    await self.app(scope, receive, send)
-  File "/workspaces/InfraTrack/venv/lib/python3.12/site-packages/starlette/middleware/exceptions.py", line 65, in __call__
-    await wrap_app_handling_exceptions(self.app, conn)(scope, receive, send)
-  File "/workspaces/InfraTrack/venv/lib/python3.12/site-packages/starlette/_exception_handler.py", line 64, in wrapped_app
-    raise exc
-  File "/workspaces/InfraTrack/venv/lib/python3.12/site-packages/starlette/_exception_handler.py", line 53, in wrapped_app
-    await app(scope, receive, sender)
-  File "/workspaces/InfraTrack/venv/lib/python3.12/site-packages/starlette/routing.py", line 756, in __call__
-    await self.middleware_stack(scope, receive, send)
-  File "/workspaces/InfraTrack/venv/lib/python3.12/site-packages/starlette/routing.py", line 776, in app
-    await route.handle(scope, receive, send)
-  File "/workspaces/InfraTrack/venv/lib/python3.12/site-packages/starlette/routing.py", line 297, in handle
-    await self.app(scope, receive, send)
-  File "/workspaces/InfraTrack/venv/lib/python3.12/site-packages/starlette/routing.py", line 77, in app
-    await wrap_app_handling_exceptions(app, request)(scope, receive, send)
-  File "/workspaces/InfraTrack/venv/lib/python3.12/site-packages/starlette/_exception_handler.py", line 64, in wrapped_app
-    raise exc
-  File "/workspaces/InfraTrack/venv/lib/python3.12/site-packages/starlette/_exception_handler.py", line 53, in wrapped_app
-    await app(scope, receive, sender)
-  File "/workspaces/InfraTrack/venv/lib/python3.12/site-packages/starlette/routing.py", line 72, in app
-    response = await func(request)
-               ^^^^^^^^^^^^^^^^^^^
-  File "/workspaces/InfraTrack/venv/lib/python3.12/site-packages/fastapi/routing.py", line 278, in app
-    raw_response = await run_endpoint_function(
-                   ^^^^^^^^^^^^^^^^^^^^^^^^^^^^
-  File "/workspaces/InfraTrack/venv/lib/python3.12/site-packages/fastapi/routing.py", line 193, in run_endpoint_function
-    return await run_in_threadpool(dependant.call, **values)
-           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
-  File "/workspaces/InfraTrack/venv/lib/python3.12/site-packages/starlette/concurrency.py", line 42, in run_in_threadpool
-    return await anyio.to_thread.run_sync(func, *args)
-           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
-  File "/workspaces/InfraTrack/venv/lib/python3.12/site-packages/anyio/to_thread.py", line 63, in run_sync
-    return await get_async_backend().run_sync_in_worker_thread(
-           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
-  File "/workspaces/InfraTrack/venv/lib/python3.12/site-packages/anyio/_backends/_asyncio.py", line 2518, in run_sync_in_worker_thread
-    return await future
-           ^^^^^^^^^^^^
-  File "/workspaces/InfraTrack/venv/lib/python3.12/site-packages/anyio/_backends/_asyncio.py", line 1002, in run
-    result = context.run(func, *args)
-             ^^^^^^^^^^^^^^^^^^^^^^^^
-  File "/workspaces/InfraTrack/backend/routes/user_routes.py", line 31, in register
-    "password": hash_password(data.password),
-                ^^^^^^^^^^^^^^^^^^^^^^^^^^^^
-  File "/workspaces/InfraTrack/backend/auth.py", line 27, in hash_password
-    return pwd_context.hash(password)
-           ^^^^^^^^^^^^^^^^^^^^^^^^^^
-  File "/workspaces/InfraTrack/venv/lib/python3.12/site-packages/passlib/context.py", line 2258, in hash
-    return record.hash(secret, **kwds)
-           ^^^^^^^^^^^^^^^^^^^^^^^^^^^
-  File "/workspaces/InfraTrack/venv/lib/python3.12/site-packages/passlib/utils/handlers.py", line 779, in hash
-    self.checksum = self._calc_checksum(secret)
-                    ^^^^^^^^^^^^^^^^^^^^^^^^^^^
-  File "/workspaces/InfraTrack/venv/lib/python3.12/site-packages/passlib/handlers/bcrypt.py", line 591, in _calc_checksum
-    self._stub_requires_backend()
-  File "/workspaces/InfraTrack/venv/lib/python3.12/site-packages/passlib/utils/handlers.py", line 2254, in _stub_requires_backend
-    cls.set_backend()
-  File "/workspaces/InfraTrack/venv/lib/python3.12/site-packages/passlib/utils/handlers.py", line 2156, in set_backend
-    return owner.set_backend(name, dryrun=dryrun)
-           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
-  File "/workspaces/InfraTrack/venv/lib/python3.12/site-packages/passlib/utils/handlers.py", line 2163, in set_backend
-    return cls.set_backend(name, dryrun=dryrun)
-           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
-  File "/workspaces/InfraTrack/venv/lib/python3.12/site-packages/passlib/utils/handlers.py", line 2188, in set_backend
-    cls._set_backend(name, dryrun)
-  File "/workspaces/InfraTrack/venv/lib/python3.12/site-packages/passlib/utils/handlers.py", line 2311, in _set_backend
-    super(SubclassBackendMixin, cls)._set_backend(name, dryrun)
-  File "/workspaces/InfraTrack/venv/lib/python3.12/site-packages/passlib/utils/handlers.py", line 2224, in _set_backend
-    ok = loader(**kwds)
-         ^^^^^^^^^^^^^^
-  File "/workspaces/InfraTrack/venv/lib/python3.12/site-packages/passlib/handlers/bcrypt.py", line 626, in _load_backend_mixin
-    return mixin_cls._finalize_backend_mixin(name, dryrun)
-           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
-  File "/workspaces/InfraTrack/venv/lib/python3.12/site-packages/passlib/handlers/bcrypt.py", line 421, in _finalize_backend_mixin
-    if detect_wrap_bug(IDENT_2A):
-       ^^^^^^^^^^^^^^^^^^^^^^^^^
-  File "/workspaces/InfraTrack/venv/lib/python3.12/site-packages/passlib/handlers/bcrypt.py", line 380, in detect_wrap_bug
-    if verify(secret, bug_hash):
-       ^^^^^^^^^^^^^^^^^^^^^^^^
-  File "/workspaces/InfraTrack/venv/lib/python3.12/site-packages/passlib/utils/handlers.py", line 792, in verify
-    return consteq(self._calc_checksum(secret), chk)
-                   ^^^^^^^^^^^^^^^^^^^^^^^^^^^
-  File "/workspaces/InfraTrack/venv/lib/python3.12/site-packages/passlib/handlers/bcrypt.py", line 655, in _calc_checksum
-    hash = _bcrypt.hashpw(secret, config)
-           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
-ValueError: password cannot be longer than 72 bytes, truncate manually if necessary (e.g. my_password[:72])
-
-[2026-04-13 17:13:49] INFO     infratrack — InfraTrack API started. Environment loaded.
-[2026-04-13 17:14:39] WARNING  passlib.handlers.bcrypt — (trapped) error reading bcrypt version
-Traceback (most recent call last):
-  File "/workspaces/InfraTrack/.venv/lib/python3.12/site-packages/passlib/handlers/bcrypt.py", line 620, in _load_backend_mixin
-    version = _bcrypt.__about__.__version__
-              ^^^^^^^^^^^^^^^^^
-AttributeError: module 'bcrypt' has no attribute '__about__'
-[2026-04-13 17:14:39] ERROR    infratrack — Unhandled exception on POST /auth/register:
-Traceback (most recent call last):
-  File "/workspaces/InfraTrack/.venv/lib/python3.12/site-packages/starlette/middleware/errors.py", line 164, in __call__
-    await self.app(scope, receive, _send)
-  File "/workspaces/InfraTrack/.venv/lib/python3.12/site-packages/starlette/middleware/cors.py", line 85, in __call__
-    await self.app(scope, receive, send)
-  File "/workspaces/InfraTrack/.venv/lib/python3.12/site-packages/starlette/middleware/exceptions.py", line 65, in __call__
-    await wrap_app_handling_exceptions(self.app, conn)(scope, receive, send)
-  File "/workspaces/InfraTrack/.venv/lib/python3.12/site-packages/starlette/_exception_handler.py", line 64, in wrapped_app
-    raise exc
-  File "/workspaces/InfraTrack/.venv/lib/python3.12/site-packages/starlette/_exception_handler.py", line 53, in wrapped_app
-    await app(scope, receive, sender)
-  File "/workspaces/InfraTrack/.venv/lib/python3.12/site-packages/starlette/routing.py", line 756, in __call__
-    await self.middleware_stack(scope, receive, send)
-  File "/workspaces/InfraTrack/.venv/lib/python3.12/site-packages/starlette/routing.py", line 776, in app
-    await route.handle(scope, receive, send)
-  File "/workspaces/InfraTrack/.venv/lib/python3.12/site-packages/starlette/routing.py", line 297, in handle
-    await self.app(scope, receive, send)
-  File "/workspaces/InfraTrack/.venv/lib/python3.12/site-packages/starlette/routing.py", line 77, in app
-    await wrap_app_handling_exceptions(app, request)(scope, receive, send)
-  File "/workspaces/InfraTrack/.venv/lib/python3.12/site-packages/starlette/_exception_handler.py", line 64, in wrapped_app
-    raise exc
-  File "/workspaces/InfraTrack/.venv/lib/python3.12/site-packages/starlette/_exception_handler.py", line 53, in wrapped_app
-    await app(scope, receive, sender)
-  File "/workspaces/InfraTrack/.venv/lib/python3.12/site-packages/starlette/routing.py", line 72, in app
-    response = await func(request)
-               ^^^^^^^^^^^^^^^^^^^
-  File "/workspaces/InfraTrack/.venv/lib/python3.12/site-packages/fastapi/routing.py", line 278, in app
-    raw_response = await run_endpoint_function(
-                   ^^^^^^^^^^^^^^^^^^^^^^^^^^^^
-  File "/workspaces/InfraTrack/.venv/lib/python3.12/site-packages/fastapi/routing.py", line 193, in run_endpoint_function
-    return await run_in_threadpool(dependant.call, **values)
-           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
-  File "/workspaces/InfraTrack/.venv/lib/python3.12/site-packages/starlette/concurrency.py", line 42, in run_in_threadpool
-    return await anyio.to_thread.run_sync(func, *args)
-           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
-  File "/workspaces/InfraTrack/.venv/lib/python3.12/site-packages/anyio/to_thread.py", line 63, in run_sync
-    return await get_async_backend().run_sync_in_worker_thread(
-           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
-  File "/workspaces/InfraTrack/.venv/lib/python3.12/site-packages/anyio/_backends/_asyncio.py", line 2518, in run_sync_in_worker_thread
-    return await future
-           ^^^^^^^^^^^^
-  File "/workspaces/InfraTrack/.venv/lib/python3.12/site-packages/anyio/_backends/_asyncio.py", line 1002, in run
-    result = context.run(func, *args)
-             ^^^^^^^^^^^^^^^^^^^^^^^^
-  File "/workspaces/InfraTrack/backend/routes/user_routes.py", line 31, in register
-    "password": hash_password(data.password),
-                ^^^^^^^^^^^^^^^^^^^^^^^^^^^^
-  File "/workspaces/InfraTrack/backend/auth.py", line 27, in hash_password
-    return pwd_context.hash(password)
-           ^^^^^^^^^^^^^^^^^^^^^^^^^^
-  File "/workspaces/InfraTrack/.venv/lib/python3.12/site-packages/passlib/context.py", line 2258, in hash
-    return record.hash(secret, **kwds)
-           ^^^^^^^^^^^^^^^^^^^^^^^^^^^
-  File "/workspaces/InfraTrack/.venv/lib/python3.12/site-packages/passlib/utils/handlers.py", line 779, in hash
-    self.checksum = self._calc_checksum(secret)
-                    ^^^^^^^^^^^^^^^^^^^^^^^^^^^
-  File "/workspaces/InfraTrack/.venv/lib/python3.12/site-packages/passlib/handlers/bcrypt.py", line 591, in _calc_checksum
-    self._stub_requires_backend()
-  File "/workspaces/InfraTrack/.venv/lib/python3.12/site-packages/passlib/utils/handlers.py", line 2254, in _stub_requires_backend
-    cls.set_backend()
-  File "/workspaces/InfraTrack/.venv/lib/python3.12/site-packages/passlib/utils/handlers.py", line 2156, in set_backend
-    return owner.set_backend(name, dryrun=dryrun)
-           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
-  File "/workspaces/InfraTrack/.venv/lib/python3.12/site-packages/passlib/utils/handlers.py", line 2163, in set_backend
-    return cls.set_backend(name, dryrun=dryrun)
-           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
-  File "/workspaces/InfraTrack/.venv/lib/python3.12/site-packages/passlib/utils/handlers.py", line 2188, in set_backend
-    cls._set_backend(name, dryrun)
-  File "/workspaces/InfraTrack/.venv/lib/python3.12/site-packages/passlib/utils/handlers.py", line 2311, in _set_backend
-    super(SubclassBackendMixin, cls)._set_backend(name, dryrun)
-  File "/workspaces/InfraTrack/.venv/lib/python3.12/site-packages/passlib/utils/handlers.py", line 2224, in _set_backend
-    ok = loader(**kwds)
-         ^^^^^^^^^^^^^^
-  File "/workspaces/InfraTrack/.venv/lib/python3.12/site-packages/passlib/handlers/bcrypt.py", line 626, in _load_backend_mixin
-    return mixin_cls._finalize_backend_mixin(name, dryrun)
-           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
-  File "/workspaces/InfraTrack/.venv/lib/python3.12/site-packages/passlib/handlers/bcrypt.py", line 421, in _finalize_backend_mixin
-    if detect_wrap_bug(IDENT_2A):
-       ^^^^^^^^^^^^^^^^^^^^^^^^^
-  File "/workspaces/InfraTrack/.venv/lib/python3.12/site-packages/passlib/handlers/bcrypt.py", line 380, in detect_wrap_bug
-    if verify(secret, bug_hash):
-       ^^^^^^^^^^^^^^^^^^^^^^^^
-  File "/workspaces/InfraTrack/.venv/lib/python3.12/site-packages/passlib/utils/handlers.py", line 792, in verify
-    return consteq(self._calc_checksum(secret), chk)
-                   ^^^^^^^^^^^^^^^^^^^^^^^^^^^
-  File "/workspaces/InfraTrack/.venv/lib/python3.12/site-packages/passlib/handlers/bcrypt.py", line 655, in _calc_checksum
-    hash = _bcrypt.hashpw(secret, config)
-           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
-ValueError: password cannot be longer than 72 bytes, truncate manually if necessary (e.g. my_password[:72])
-
-[2026-04-13 17:15:54] INFO     infratrack — InfraTrack API shutting down.
-[2026-04-13 17:15:56] INFO     infratrack — InfraTrack API started. Environment loaded.
-[2026-04-13 17:16:04] INFO     infratrack — InfraTrack API shutting down.
-[2026-04-13 17:16:05] INFO     infratrack — InfraTrack API started. Environment loaded.
-[2026-04-13 17:16:15] INFO     infratrack — InfraTrack API shutting down.
-[2026-04-13 17:16:17] INFO     infratrack — InfraTrack API started. Environment loaded.
-[2026-04-13 17:16:19] INFO     infratrack — InfraTrack API shutting down.
-[2026-04-13 17:16:42] INFO     infratrack — InfraTrack API started. Environment loaded.
-[2026-04-13 17:17:48] WARNING  infratrack — HTTP 400 on POST /auth/register — Username already taken
-[2026-04-13 17:17:49] WARNING  infratrack — HTTP 400 on POST /auth/register — Username already taken
-[2026-04-13 17:19:43] INFO     infratrack — InfraTrack API shutting down.
-[2026-04-13 17:19:48] INFO     infratrack — InfraTrack API started. Environment loaded.
-[2026-04-13 17:23:34] WARNING  infratrack — HTTP 400 on POST /auth/register — Username already taken
-[2026-04-13 17:24:03] WARNING  infratrack — Validation error on /auth/register: body → email: value is not a valid email address: The part after the @-sign is not valid. It should have a period.
-[2026-04-13 17:24:14] WARNING  infratrack — HTTP 400 on POST /auth/register — Email already registered
-[2026-04-13 17:24:17] WARNING  infratrack — HTTP 400 on POST /auth/register — Email already registered
-[2026-04-13 17:24:18] WARNING  infratrack — HTTP 400 on POST /auth/register — Email already registered
-[2026-04-13 17:24:18] WARNING  infratrack — HTTP 400 on POST /auth/register — Email already registered
-[2026-04-13 17:24:19] WARNING  infratrack — HTTP 400 on POST /auth/register — Email already registered
-[2026-04-13 17:24:19] WARNING  infratrack — HTTP 400 on POST /auth/register — Email already registered
-[2026-04-13 17:24:19] WARNING  infratrack — HTTP 400 on POST /auth/register — Email already registered
-[2026-04-13 17:24:20] WARNING  infratrack — HTTP 400 on POST /auth/register — Email already registered
-[2026-04-13 17:24:20] WARNING  infratrack — HTTP 400 on POST /auth/register — Email already registered
-[2026-04-13 17:24:20] WARNING  infratrack — HTTP 400 on POST /auth/register — Email already registered
-[2026-04-13 17:24:52] INFO     infratrack — InfraTrack API shutting down.
-[2026-04-13 17:27:35] INFO     infratrack — InfraTrack API started. Environment loaded.
-[2026-04-13 17:29:35] WARNING  infratrack — HTTP 400 on POST /auth/register — Username already taken
-[2026-04-13 17:29:36] WARNING  infratrack — HTTP 400 on POST /auth/register — Username already taken
-[2026-04-13 17:29:54] WARNING  infratrack — HTTP 400 on POST /auth/register — Username already taken
-[2026-04-13 17:29:54] WARNING  infratrack — HTTP 400 on POST /auth/register — Username already taken
-[2026-04-13 17:29:54] WARNING  infratrack — HTTP 400 on POST /auth/register — Username already taken
-[2026-04-13 17:36:36] INFO     infratrack — InfraTrack API shutting down.
-[2026-04-13 17:36:38] INFO     infratrack — InfraTrack API started. Environment loaded.
-[2026-04-13 17:36:52] INFO     infratrack — InfraTrack API shutting down.
-[2026-04-13 17:37:01] INFO     infratrack — InfraTrack API started. Environment loaded.
-[2026-04-13 17:37:20] INFO     infratrack — InfraTrack API started. Environment loaded.
-[2026-04-13 17:37:45] INFO     infratrack — InfraTrack API shutting down.
-[2026-04-13 17:37:49] INFO     infratrack — InfraTrack API started. Environment loaded.
-[2026-04-13 17:39:22] INFO     infratrack — InfraTrack API shutting down.
-[2026-04-13 17:39:31] INFO     infratrack — InfraTrack API started. Environment loaded.
-[2026-04-14 09:04:35] INFO     infratrack — InfraTrack API started. Environment loaded.
-[2026-04-14 09:08:05] WARNING  infratrack — HTTP 400 on POST /auth/register — Username already taken
-[2026-04-14 09:08:13] WARNING  infratrack — HTTP 400 on POST /auth/register — Username already taken
-[2026-04-16 12:49:05] INFO     infratrack — InfraTrack API started. Environment loaded.
-[2026-04-16 12:49:06] INFO     infratrack — InfraTrack API shutting down.
-[2026-04-16 12:49:17] INFO     infratrack — InfraTrack API started. Environment loaded.
-[2026-04-16 12:53:12] WARNING  infratrack — HTTP 401 on POST /auth/login — Invalid credentials
-[2026-04-16 12:54:40] WARNING  infratrack — HTTP 401 on POST /auth/login — Invalid credentials
-[2026-04-16 12:58:26] INFO     infratrack — InfraTrack API shutting down.
-[2026-04-16 12:58:27] INFO     infratrack — InfraTrack API started. Environment loaded.
-[2026-04-16 12:58:35] INFO     infratrack — InfraTrack API shutting down.
-[2026-04-16 12:58:36] INFO     infratrack — InfraTrack API started. Environment loaded.
-[2026-04-16 12:58:39] INFO     infratrack — InfraTrack API shutting down.
-[2026-04-16 12:58:41] INFO     infratrack — InfraTrack API started. Environment loaded.
-[2026-04-16 13:01:18] INFO     infratrack — InfraTrack API shutting down.
-[2026-04-16 13:01:49] INFO     infratrack — InfraTrack API started. Environment loaded.
-[2026-04-16 13:06:40] WARNING  infratrack — HTTP 401 on POST /auth/login — Invalid credentials
-[2026-04-16 13:13:00] INFO     infratrack — InfraTrack API shutting down.
-[2026-04-16 13:13:02] INFO     infratrack — InfraTrack API started. Environment loaded.
-[2026-04-16 13:13:06] INFO     infratrack — InfraTrack API shutting down.
-[2026-04-16 13:13:07] INFO     infratrack — InfraTrack API started. Environment loaded.
-[2026-04-16 13:13:09] INFO     infratrack — InfraTrack API shutting down.
-[2026-04-16 13:13:12] INFO     infratrack — InfraTrack API started. Environment loaded.
-[2026-04-16 13:13:21] INFO     infratrack — InfraTrack API shutting down.
-[2026-04-16 13:13:22] INFO     infratrack — InfraTrack API started. Environment loaded.
-[2026-04-16 13:13:24] INFO     infratrack — InfraTrack API started. Environment loaded.
-[2026-04-16 13:14:52] ERROR    backend.ai_engine — AI engine config error: ANTHROPIC_API_KEY is not configured in .env
-[2026-04-16 13:14:52] WARNING  backend.ai_engine — Using fallback analysis. Reason: API key not configured: ANTHROPIC_API_KEY is not configured in .env
-[2026-04-16 13:14:52] ERROR    infratrack — Unhandled exception on POST /reports/submit:
-Traceback (most recent call last):
-  File "/home/codespace/.local/lib/python3.12/site-packages/starlette/middleware/errors.py", line 164, in __call__
-    await self.app(scope, receive, _send)
-  File "/home/codespace/.local/lib/python3.12/site-packages/starlette/middleware/cors.py", line 85, in __call__
-    await self.app(scope, receive, send)
-  File "/home/codespace/.local/lib/python3.12/site-packages/starlette/middleware/exceptions.py", line 65, in __call__
-    await wrap_app_handling_exceptions(self.app, conn)(scope, receive, send)
-  File "/home/codespace/.local/lib/python3.12/site-packages/starlette/_exception_handler.py", line 64, in wrapped_app
-    raise exc
-  File "/home/codespace/.local/lib/python3.12/site-packages/starlette/_exception_handler.py", line 53, in wrapped_app
-    await app(scope, receive, sender)
-  File "/home/codespace/.local/lib/python3.12/site-packages/starlette/routing.py", line 756, in __call__
-    await self.middleware_stack(scope, receive, send)
-  File "/home/codespace/.local/lib/python3.12/site-packages/starlette/routing.py", line 776, in app
-    await route.handle(scope, receive, send)
-  File "/home/codespace/.local/lib/python3.12/site-packages/starlette/routing.py", line 297, in handle
-    await self.app(scope, receive, send)
-  File "/home/codespace/.local/lib/python3.12/site-packages/starlette/routing.py", line 77, in app
-    await wrap_app_handling_exceptions(app, request)(scope, receive, send)
-  File "/home/codespace/.local/lib/python3.12/site-packages/starlette/_exception_handler.py", line 64, in wrapped_app
-    raise exc
-  File "/home/codespace/.local/lib/python3.12/site-packages/starlette/_exception_handler.py", line 53, in wrapped_app
-    await app(scope, receive, sender)
-  File "/home/codespace/.local/lib/python3.12/site-packages/starlette/routing.py", line 72, in app
-    response = await func(request)
-               ^^^^^^^^^^^^^^^^^^^
-  File "/home/codespace/.local/lib/python3.12/site-packages/fastapi/routing.py", line 278, in app
-    raw_response = await run_endpoint_function(
-                   ^^^^^^^^^^^^^^^^^^^^^^^^^^^^
-  File "/home/codespace/.local/lib/python3.12/site-packages/fastapi/routing.py", line 193, in run_endpoint_function
-    return await run_in_threadpool(dependant.call, **values)
-           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
-  File "/home/codespace/.local/lib/python3.12/site-packages/starlette/concurrency.py", line 42, in run_in_threadpool
-    return await anyio.to_thread.run_sync(func, *args)
-           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
-  File "/home/codespace/.local/lib/python3.12/site-packages/anyio/to_thread.py", line 63, in run_sync
-    return await get_async_backend().run_sync_in_worker_thread(
-           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
-  File "/home/codespace/.local/lib/python3.12/site-packages/anyio/_backends/_asyncio.py", line 2518, in run_sync_in_worker_thread
-    return await future
-           ^^^^^^^^^^^^
-  File "/home/codespace/.local/lib/python3.12/site-packages/anyio/_backends/_asyncio.py", line 1002, in run
-    result = context.run(func, *args)
-             ^^^^^^^^^^^^^^^^^^^^^^^^
-  File "/workspaces/InfraTrack/backend/routes/report_routes.py", line 68, in submit_report
-    "location_source":   data.location_source,
-                         ^^^^^^^^^^^^^^^^^^^^
-  File "/home/codespace/.local/lib/python3.12/site-packages/pydantic/main.py", line 811, in __getattr__
-    raise AttributeError(f'{type(self).__name__!r} object has no attribute {item!r}')
-AttributeError: 'ReportCreate' object has no attribute 'location_source'
-
-[2026-04-16 13:14:54] ERROR    backend.ai_engine — AI engine config error: ANTHROPIC_API_KEY is not configured in .env
-[2026-04-16 13:14:54] WARNING  backend.ai_engine — Using fallback analysis. Reason: API key not configured: ANTHROPIC_API_KEY is not configured in .env
-[2026-04-16 13:14:54] ERROR    infratrack — Unhandled exception on POST /reports/submit:
-Traceback (most recent call last):
-  File "/home/codespace/.local/lib/python3.12/site-packages/starlette/middleware/errors.py", line 164, in __call__
-    await self.app(scope, receive, _send)
-  File "/home/codespace/.local/lib/python3.12/site-packages/starlette/middleware/cors.py", line 85, in __call__
-    await self.app(scope, receive, send)
-  File "/home/codespace/.local/lib/python3.12/site-packages/starlette/middleware/exceptions.py", line 65, in __call__
-    await wrap_app_handling_exceptions(self.app, conn)(scope, receive, send)
-  File "/home/codespace/.local/lib/python3.12/site-packages/starlette/_exception_handler.py", line 64, in wrapped_app
-    raise exc
-  File "/home/codespace/.local/lib/python3.12/site-packages/starlette/_exception_handler.py", line 53, in wrapped_app
-    await app(scope, receive, sender)
-  File "/home/codespace/.local/lib/python3.12/site-packages/starlette/routing.py", line 756, in __call__
-    await self.middleware_stack(scope, receive, send)
-  File "/home/codespace/.local/lib/python3.12/site-packages/starlette/routing.py", line 776, in app
-    await route.handle(scope, receive, send)
-  File "/home/codespace/.local/lib/python3.12/site-packages/starlette/routing.py", line 297, in handle
-    await self.app(scope, receive, send)
-  File "/home/codespace/.local/lib/python3.12/site-packages/starlette/routing.py", line 77, in app
-    await wrap_app_handling_exceptions(app, request)(scope, receive, send)
-  File "/home/codespace/.local/lib/python3.12/site-packages/starlette/_exception_handler.py", line 64, in wrapped_app
-    raise exc
-  File "/home/codespace/.local/lib/python3.12/site-packages/starlette/_exception_handler.py", line 53, in wrapped_app
-    await app(scope, receive, sender)
-  File "/home/codespace/.local/lib/python3.12/site-packages/starlette/routing.py", line 72, in app
-    response = await func(request)
-               ^^^^^^^^^^^^^^^^^^^
-  File "/home/codespace/.local/lib/python3.12/site-packages/fastapi/routing.py", line 278, in app
-    raw_response = await run_endpoint_function(
-                   ^^^^^^^^^^^^^^^^^^^^^^^^^^^^
-  File "/home/codespace/.local/lib/python3.12/site-packages/fastapi/routing.py", line 193, in run_endpoint_function
-    return await run_in_threadpool(dependant.call, **values)
-           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
-  File "/home/codespace/.local/lib/python3.12/site-packages/starlette/concurrency.py", line 42, in run_in_threadpool
-    return await anyio.to_thread.run_sync(func, *args)
-           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
-  File "/home/codespace/.local/lib/python3.12/site-packages/anyio/to_thread.py", line 63, in run_sync
-    return await get_async_backend().run_sync_in_worker_thread(
-           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
-  File "/home/codespace/.local/lib/python3.12/site-packages/anyio/_backends/_asyncio.py", line 2518, in run_sync_in_worker_thread
-    return await future
-           ^^^^^^^^^^^^
-  File "/home/codespace/.local/lib/python3.12/site-packages/anyio/_backends/_asyncio.py", line 1002, in run
-    result = context.run(func, *args)
-             ^^^^^^^^^^^^^^^^^^^^^^^^
-  File "/workspaces/InfraTrack/backend/routes/report_routes.py", line 68, in submit_report
-    "location_source":   data.location_source,
-                         ^^^^^^^^^^^^^^^^^^^^
-  File "/home/codespace/.local/lib/python3.12/site-packages/pydantic/main.py", line 811, in __getattr__
-    raise AttributeError(f'{type(self).__name__!r} object has no attribute {item!r}')
-AttributeError: 'ReportCreate' object has no attribute 'location_source'
-
-[2026-04-16 13:18:08] INFO     infratrack — InfraTrack API shutting down.
-[2026-04-16 13:18:10] INFO     infratrack — InfraTrack API started. Environment loaded.
-[2026-04-16 13:18:22] WARNING  infratrack — HTTP 401 on POST /auth/login — Invalid credentials
-[2026-04-16 13:19:26] ERROR    backend.ai_engine — AI engine config error: ANTHROPIC_API_KEY is not configured in .env
-[2026-04-16 13:19:26] WARNING  backend.ai_engine — Using fallback analysis. Reason: API key not configured: ANTHROPIC_API_KEY is not configured in .env
-[2026-04-16 13:19:26] INFO     backend.routes.report_routes — Report submitted by infra — score=35
-[2026-04-16 13:21:45] INFO     infratrack — InfraTrack API shutting down.
-[2026-04-16 13:21:48] INFO     infratrack — InfraTrack API started. Environment loaded.
-[2026-04-16 13:21:50] INFO     infratrack — InfraTrack API started. Environment loaded.
-[2026-04-16 13:24:36] INFO     infratrack — InfraTrack API shutting down.
-[2026-04-16 13:24:39] INFO     infratrack — InfraTrack API started. Environment loaded.
-[2026-04-16 13:25:25] INFO     infratrack — InfraTrack API shutting down.
-[2026-04-16 13:25:28] INFO     infratrack — InfraTrack API started. Environment loaded.
-[2026-04-16 13:25:29] INFO     infratrack — InfraTrack API started. Environment loaded.
-[2026-04-16 13:25:47] INFO     infratrack — InfraTrack API shutting down.
-[2026-04-16 13:25:53] INFO     infratrack — InfraTrack API started. Environment loaded.
-[2026-04-16 13:25:55] INFO     infratrack — InfraTrack API started. Environment loaded.
-[2026-04-16 13:36:40] INFO     infratrack — InfraTrack API shutting down.
-[2026-04-16 13:37:09] INFO     infratrack — InfraTrack API started. Environment loaded.
-[2026-04-16 13:42:09] INFO     infratrack — InfraTrack API shutting down.
-[2026-04-16 13:42:12] INFO     infratrack — InfraTrack API started. Environment loaded.
-[2026-04-16 13:42:40] INFO     infratrack — InfraTrack API shutting down.
-[2026-04-16 13:42:43] INFO     infratrack — InfraTrack API started. Environment loaded.
-[2026-04-16 13:42:44] INFO     infratrack — InfraTrack API started. Environment loaded.
-[2026-04-16 13:42:48] INFO     infratrack — InfraTrack API shutting down.
-[2026-04-16 13:42:50] INFO     infratrack — InfraTrack API started. Environment loaded.
-[2026-04-16 13:43:06] INFO     infratrack — InfraTrack API shutting down.
-[2026-04-16 13:43:08] INFO     infratrack — InfraTrack API started. Environment loaded.
-[2026-04-16 13:43:09] INFO     infratrack — InfraTrack API shutting down.
-[2026-04-16 13:43:10] INFO     infratrack — InfraTrack API started. Environment loaded.
-[2026-04-16 13:46:26] INFO     infratrack — InfraTrack API shutting down.
-[2026-04-16 13:46:28] INFO     infratrack — InfraTrack API started. Environment loaded.
-[2026-04-16 13:46:29] INFO     infratrack — InfraTrack API started. Environment loaded.
-[2026-04-16 13:47:19] ERROR    backend.ai_engine — AI engine config error: ANTHROPIC_API_KEY is not configured in .env
-[2026-04-16 13:47:19] WARNING  backend.ai_engine — Using fallback analysis. Reason: API key not configured: ANTHROPIC_API_KEY is not configured in .env
-[2026-04-16 13:47:19] INFO     backend.routes.report_routes — Report submitted by Minister — score=35
-[2026-04-16 13:49:42] INFO     infratrack — InfraTrack API shutting down.
-[2026-04-16 13:49:48] INFO     infratrack — InfraTrack API started. Environment loaded.
-[2026-04-16 13:49:53] INFO     infratrack — InfraTrack API started. Environment loaded.
-[2026-04-16 13:49:56] INFO     infratrack — InfraTrack API started. Environment loaded.
-[2026-04-16 13:49:57] INFO     infratrack — InfraTrack API started. Environment loaded.
-[2026-04-16 13:50:11] WARNING  infratrack — HTTP 403 on GET /reports/analytics — Admin access required.
-[2026-04-16 13:50:11] WARNING  infratrack — HTTP 403 on GET /admin/stats — Admins only
-[2026-04-16 13:50:27] INFO     infratrack — InfraTrack API shutting down.
-[2026-04-16 13:50:29] INFO     infratrack — InfraTrack API started. Environment loaded.
-[2026-04-16 13:52:18] INFO     infratrack — InfraTrack API shutting down.
-[2026-04-16 13:52:20] INFO     infratrack — InfraTrack API started. Environment loaded.
-[2026-04-16 13:52:22] INFO     infratrack — InfraTrack API started. Environment loaded.
-[2026-04-16 13:52:25] INFO     infratrack — InfraTrack API shutting down.
-[2026-04-16 13:52:26] INFO     infratrack — InfraTrack API started. Environment loaded.
-[2026-04-16 13:52:33] WARNING  infratrack — HTTP 403 on GET /admin/stats — Admins only
-[2026-04-16 13:52:35] WARNING  infratrack — HTTP 403 on GET /admin/stats — Admins only
-[2026-04-16 13:52:36] WARNING  infratrack — HTTP 403 on GET /admin/stats — Admins only
-[2026-04-16 13:52:37] WARNING  infratrack — HTTP 403 on GET /admin/stats — Admins only
-[2026-04-16 13:52:39] WARNING  infratrack — HTTP 403 on GET /admin/stats — Admins only
-[2026-04-16 13:52:40] WARNING  infratrack — HTTP 403 on GET /admin/stats — Admins only
-[2026-04-16 13:52:41] WARNING  infratrack — HTTP 403 on GET /admin/stats — Admins only
-[2026-04-16 13:52:42] WARNING  infratrack — HTTP 403 on GET /admin/stats — Admins only
-[2026-04-16 13:52:44] WARNING  infratrack — HTTP 403 on GET /admin/stats — Admins only
-[2026-04-16 13:52:45] WARNING  infratrack — HTTP 403 on GET /admin/stats — Admins only
-[2026-04-16 13:52:46] WARNING  infratrack — HTTP 403 on GET /admin/stats — Admins only
-[2026-04-16 13:52:47] WARNING  infratrack — HTTP 403 on GET /admin/stats — Admins only
-[2026-04-16 13:52:49] WARNING  infratrack — HTTP 403 on GET /admin/stats — Admins only
-[2026-04-16 13:52:49] WARNING  infratrack — HTTP 403 on GET /admin/stats — Admins only
-[2026-04-16 13:52:50] WARNING  infratrack — HTTP 403 on GET /admin/stats — Admins only
-[2026-04-16 13:52:52] WARNING  infratrack — HTTP 403 on GET /admin/stats — Admins only
-[2026-04-16 13:52:53] WARNING  infratrack — HTTP 403 on GET /admin/stats — Admins only
-[2026-04-16 13:52:54] WARNING  infratrack — HTTP 403 on GET /admin/stats — Admins only
-[2026-04-16 13:52:56] WARNING  infratrack — HTTP 403 on GET /admin/stats — Admins only
-[2026-04-16 13:52:57] WARNING  infratrack — HTTP 403 on GET /admin/stats — Admins only
-[2026-04-16 13:52:58] WARNING  infratrack — HTTP 403 on GET /admin/stats — Admins only
-[2026-04-16 13:53:00] WARNING  infratrack — HTTP 403 on GET /admin/stats — Admins only
-[2026-04-16 13:53:01] WARNING  infratrack — HTTP 403 on GET /admin/stats — Admins only
-[2026-04-16 13:53:02] WARNING  infratrack — HTTP 403 on GET /admin/stats — Admins only
-[2026-04-16 13:53:03] WARNING  infratrack — HTTP 403 on GET /admin/stats — Admins only
-[2026-04-16 13:53:05] WARNING  infratrack — HTTP 403 on GET /admin/stats — Admins only
-[2026-04-16 13:53:06] WARNING  infratrack — HTTP 403 on GET /admin/stats — Admins only
-[2026-04-16 13:53:07] WARNING  infratrack — HTTP 403 on GET /admin/stats — Admins only
-[2026-04-16 13:53:08] WARNING  infratrack — HTTP 403 on GET /admin/stats — Admins only
-[2026-04-16 13:53:10] WARNING  infratrack — HTTP 403 on GET /admin/stats — Admins only
-[2026-04-16 13:53:11] WARNING  infratrack — HTTP 403 on GET /admin/stats — Admins only
-[2026-04-16 13:53:12] WARNING  infratrack — HTTP 403 on GET /admin/stats — Admins only
-[2026-04-16 13:53:13] WARNING  infratrack — HTTP 403 on GET /admin/stats — Admins only
-[2026-04-16 13:53:15] WARNING  infratrack — HTTP 403 on GET /admin/stats — Admins only
-[2026-04-16 13:53:16] WARNING  infratrack — HTTP 403 on GET /admin/stats — Admins only
-[2026-04-16 13:53:17] WARNING  infratrack — HTTP 403 on GET /admin/stats — Admins only
-[2026-04-16 13:53:18] WARNING  infratrack — HTTP 403 on GET /admin/stats — Admins only
-[2026-04-16 13:53:20] WARNING  infratrack — HTTP 403 on GET /admin/stats — Admins only
-[2026-04-16 13:53:21] WARNING  infratrack — HTTP 403 on GET /admin/stats — Admins only
-[2026-04-16 13:53:22] WARNING  infratrack — HTTP 403 on GET /admin/stats — Admins only
-[2026-04-16 13:53:23] WARNING  infratrack — HTTP 403 on GET /admin/stats — Admins only
-[2026-04-16 13:53:25] WARNING  infratrack — HTTP 403 on GET /admin/stats — Admins only
-[2026-04-16 13:53:26] WARNING  infratrack — HTTP 403 on GET /admin/stats — Admins only
-[2026-04-16 13:53:27] WARNING  infratrack — HTTP 403 on GET /admin/stats — Admins only
-[2026-04-16 13:53:28] WARNING  infratrack — HTTP 403 on GET /admin/stats — Admins only
-[2026-04-16 13:53:30] WARNING  infratrack — HTTP 403 on GET /admin/stats — Admins only
-[2026-04-16 13:53:31] WARNING  infratrack — HTTP 403 on GET /admin/stats — Admins only
-[2026-04-16 13:53:32] WARNING  infratrack — HTTP 403 on GET /admin/stats — Admins only
-[2026-04-16 13:53:33] WARNING  infratrack — HTTP 403 on GET /admin/stats — Admins only
-[2026-04-16 13:53:35] WARNING  infratrack — HTTP 403 on GET /admin/stats — Admins only
-[2026-04-16 13:53:36] WARNING  infratrack — HTTP 403 on GET /admin/stats — Admins only
-[2026-04-16 13:53:37] WARNING  infratrack — HTTP 403 on GET /admin/stats — Admins only
-[2026-04-16 13:53:38] WARNING  infratrack — HTTP 403 on GET /admin/stats — Admins only
-[2026-04-16 13:53:40] WARNING  infratrack — HTTP 403 on GET /admin/stats — Admins only
-[2026-04-16 13:53:41] WARNING  infratrack — HTTP 403 on GET /admin/stats — Admins only
-[2026-04-16 13:53:42] WARNING  infratrack — HTTP 403 on GET /admin/stats — Admins only
-[2026-04-16 13:53:43] WARNING  infratrack — HTTP 403 on GET /admin/stats — Admins only
-[2026-04-16 13:53:45] WARNING  infratrack — HTTP 403 on GET /admin/stats — Admins only
-[2026-04-16 13:53:46] WARNING  infratrack — HTTP 403 on GET /admin/stats — Admins only
-[2026-04-16 13:53:47] WARNING  infratrack — HTTP 403 on GET /admin/stats — Admins only
-[2026-04-16 13:53:49] WARNING  infratrack — HTTP 403 on GET /admin/stats — Admins only
-[2026-04-16 13:53:50] WARNING  infratrack — HTTP 403 on GET /admin/stats — Admins only
-[2026-04-16 13:53:51] WARNING  infratrack — HTTP 403 on GET /admin/stats — Admins only
-[2026-04-16 13:53:52] WARNING  infratrack — HTTP 403 on GET /admin/stats — Admins only
-[2026-04-16 13:53:53] WARNING  infratrack — HTTP 403 on GET /admin/stats — Admins only
-[2026-04-16 13:53:55] WARNING  infratrack — HTTP 403 on GET /admin/stats — Admins only
-[2026-04-16 13:53:56] WARNING  infratrack — HTTP 403 on GET /admin/stats — Admins only
-[2026-04-16 13:53:57] WARNING  infratrack — HTTP 403 on GET /admin/stats — Admins only
-[2026-04-16 13:53:58] WARNING  infratrack — HTTP 403 on GET /admin/stats — Admins only
-[2026-04-16 13:54:00] WARNING  infratrack — HTTP 403 on GET /admin/stats — Admins only
-[2026-04-16 13:54:01] WARNING  infratrack — HTTP 403 on GET /admin/stats — Admins only
-[2026-04-16 13:54:02] WARNING  infratrack — HTTP 403 on GET /admin/stats — Admins only
-[2026-04-16 13:54:03] WARNING  infratrack — HTTP 403 on GET /admin/stats — Admins only
-[2026-04-16 13:54:05] WARNING  infratrack — HTTP 403 on GET /admin/stats — Admins only
-[2026-04-16 13:54:06] WARNING  infratrack — HTTP 403 on GET /admin/stats — Admins only
-[2026-04-16 13:54:07] WARNING  infratrack — HTTP 403 on GET /admin/stats — Admins only
-[2026-04-16 13:54:08] WARNING  infratrack — HTTP 403 on GET /admin/stats — Admins only
-[2026-04-16 13:54:10] WARNING  infratrack — HTTP 403 on GET /admin/stats — Admins only
-[2026-04-16 13:54:11] WARNING  infratrack — HTTP 403 on GET /admin/stats — Admins only
-[2026-04-16 13:54:12] WARNING  infratrack — HTTP 403 on GET /admin/stats — Admins only
-[2026-04-16 13:54:13] WARNING  infratrack — HTTP 403 on GET /admin/stats — Admins only
-[2026-04-16 13:54:15] WARNING  infratrack — HTTP 403 on GET /admin/stats — Admins only
-[2026-04-16 13:54:16] WARNING  infratrack — HTTP 403 on GET /admin/stats — Admins only
-[2026-04-16 13:54:17] WARNING  infratrack — HTTP 403 on GET /admin/stats — Admins only
-[2026-04-16 13:54:19] WARNING  infratrack — HTTP 403 on GET /admin/stats — Admins only
-[2026-04-16 13:54:20] WARNING  infratrack — HTTP 403 on GET /admin/stats — Admins only
-[2026-04-16 13:54:21] WARNING  infratrack — HTTP 403 on GET /admin/stats — Admins only
-[2026-04-16 13:54:22] WARNING  infratrack — HTTP 403 on GET /admin/stats — Admins only
-[2026-04-16 13:54:24] WARNING  infratrack — HTTP 403 on GET /admin/stats — Admins only
-[2026-04-16 13:54:25] WARNING  infratrack — HTTP 403 on GET /admin/stats — Admins only
-[2026-04-16 13:54:27] WARNING  infratrack — HTTP 403 on GET /admin/stats — Admins only
-[2026-04-16 13:54:28] WARNING  infratrack — HTTP 403 on GET /admin/stats — Admins only
-[2026-04-16 13:54:29] WARNING  infratrack — HTTP 403 on GET /admin/stats — Admins only
-[2026-04-16 13:54:30] WARNING  infratrack — HTTP 403 on GET /admin/stats — Admins only
-[2026-04-16 13:54:32] WARNING  infratrack — HTTP 403 on GET /admin/stats — Admins only
-[2026-04-16 13:54:33] WARNING  infratrack — HTTP 403 on GET /admin/stats — Admins only
-[2026-04-16 13:54:35] WARNING  infratrack — HTTP 403 on GET /admin/stats — Admins only
-[2026-04-16 13:54:36] WARNING  infratrack — HTTP 403 on GET /admin/stats — Admins only
-[2026-04-16 13:54:37] WARNING  infratrack — HTTP 403 on GET /admin/stats — Admins only
-[2026-04-16 13:54:38] WARNING  infratrack — HTTP 403 on GET /admin/stats — Admins only
-[2026-04-16 13:54:39] WARNING  infratrack — HTTP 403 on GET /admin/stats — Admins only
-[2026-04-16 13:54:41] WARNING  infratrack — HTTP 403 on GET /admin/stats — Admins only
-[2026-04-16 13:54:42] WARNING  infratrack — HTTP 403 on GET /admin/stats — Admins only
-[2026-04-16 13:54:43] WARNING  infratrack — HTTP 403 on GET /admin/stats — Admins only
-[2026-04-16 13:54:45] WARNING  infratrack — HTTP 403 on GET /admin/stats — Admins only
-[2026-04-16 13:54:46] WARNING  infratrack — HTTP 403 on GET /admin/stats — Admins only
-[2026-04-16 13:54:47] WARNING  infratrack — HTTP 403 on GET /admin/stats — Admins only
-[2026-04-16 13:54:48] WARNING  infratrack — HTTP 403 on GET /admin/stats — Admins only
-[2026-04-16 13:54:50] WARNING  infratrack — HTTP 403 on GET /admin/stats — Admins only
-[2026-04-16 13:54:51] WARNING  infratrack — HTTP 403 on GET /admin/stats — Admins only
-[2026-04-16 13:54:52] WARNING  infratrack — HTTP 403 on GET /admin/stats — Admins only
-[2026-04-16 13:54:53] WARNING  infratrack — HTTP 403 on GET /admin/stats — Admins only
-[2026-04-16 13:54:55] WARNING  infratrack — HTTP 403 on GET /admin/stats — Admins only
-[2026-04-16 13:54:56] WARNING  infratrack — HTTP 403 on GET /admin/stats — Admins only
-[2026-04-16 13:54:57] WARNING  infratrack — HTTP 403 on GET /admin/stats — Admins only
-[2026-04-16 13:54:58] WARNING  infratrack — HTTP 403 on GET /admin/stats — Admins only
-[2026-04-16 13:55:00] WARNING  infratrack — HTTP 403 on GET /admin/stats — Admins only
-[2026-04-16 13:55:01] WARNING  infratrack — HTTP 403 on GET /admin/stats — Admins only
-[2026-04-16 13:55:02] WARNING  infratrack — HTTP 403 on GET /admin/stats — Admins only
-[2026-04-16 13:55:03] WARNING  infratrack — HTTP 403 on GET /admin/stats — Admins only
-[2026-04-16 13:55:05] WARNING  infratrack — HTTP 403 on GET /admin/stats — Admins only
-[2026-04-16 13:55:06] WARNING  infratrack — HTTP 403 on GET /admin/stats — Admins only
-[2026-04-16 13:55:07] WARNING  infratrack — HTTP 403 on GET /admin/stats — Admins only
-[2026-04-16 13:55:09] WARNING  infratrack — HTTP 403 on GET /admin/stats — Admins only
-[2026-04-16 13:55:10] WARNING  infratrack — HTTP 403 on GET /admin/stats — Admins only
-[2026-04-16 13:55:11] WARNING  infratrack — HTTP 403 on GET /admin/stats — Admins only
-[2026-04-16 13:55:12] WARNING  infratrack — HTTP 403 on GET /admin/stats — Admins only
-[2026-04-16 13:55:14] WARNING  infratrack — HTTP 403 on GET /admin/stats — Admins only
-[2026-04-16 13:55:15] WARNING  infratrack — HTTP 403 on GET /admin/stats — Admins only
-[2026-04-16 13:55:16] WARNING  infratrack — HTTP 403 on GET /admin/stats — Admins only
-[2026-04-16 13:55:17] WARNING  infratrack — HTTP 403 on GET /admin/stats — Admins only
-[2026-04-16 13:55:19] WARNING  infratrack — HTTP 403 on GET /admin/stats — Admins only
-[2026-04-16 13:55:20] WARNING  infratrack — HTTP 403 on GET /admin/stats — Admins only
-[2026-04-16 13:55:21] WARNING  infratrack — HTTP 403 on GET /admin/stats — Admins only
-[2026-04-16 13:55:22] WARNING  infratrack — HTTP 403 on GET /admin/stats — Admins only
-[2026-04-16 13:55:24] WARNING  infratrack — HTTP 403 on GET /admin/stats — Admins only
-[2026-04-16 13:55:25] WARNING  infratrack — HTTP 403 on GET /admin/stats — Admins only
-[2026-04-16 13:55:26] WARNING  infratrack — HTTP 403 on GET /admin/stats — Admins only
-[2026-04-16 13:55:28] WARNING  infratrack — HTTP 403 on GET /admin/stats — Admins only
-[2026-04-16 13:55:29] WARNING  infratrack — HTTP 403 on GET /admin/stats — Admins only
-[2026-04-16 13:55:30] WARNING  infratrack — HTTP 403 on GET /admin/stats — Admins only
-[2026-04-16 13:55:31] WARNING  infratrack — HTTP 403 on GET /admin/stats — Admins only
-[2026-04-16 13:55:33] WARNING  infratrack — HTTP 403 on GET /admin/stats — Admins only
-[2026-04-16 13:55:34] WARNING  infratrack — HTTP 403 on GET /admin/stats — Admins only
-[2026-04-16 13:55:35] WARNING  infratrack — HTTP 403 on GET /admin/stats — Admins only
-[2026-04-16 13:55:36] WARNING  infratrack — HTTP 403 on GET /admin/stats — Admins only
-[2026-04-16 13:55:38] WARNING  infratrack — HTTP 403 on GET /admin/stats — Admins only
-[2026-04-16 13:55:39] WARNING  infratrack — HTTP 403 on GET /admin/stats — Admins only
-[2026-04-16 13:55:40] WARNING  infratrack — HTTP 403 on GET /admin/stats — Admins only
-[2026-04-16 13:55:41] WARNING  infratrack — HTTP 403 on GET /admin/stats — Admins only
-[2026-04-16 13:55:43] WARNING  infratrack — HTTP 403 on GET /admin/stats — Admins only
-[2026-04-16 13:55:44] WARNING  infratrack — HTTP 403 on GET /admin/stats — Admins only
-[2026-04-16 13:55:45] WARNING  infratrack — HTTP 403 on GET /admin/stats — Admins only
-[2026-04-16 13:55:46] WARNING  infratrack — HTTP 403 on GET /admin/stats — Admins only
-[2026-04-16 13:55:48] WARNING  infratrack — HTTP 403 on GET /admin/stats — Admins only
-[2026-04-16 13:55:49] WARNING  infratrack — HTTP 403 on GET /admin/stats — Admins only
-[2026-04-16 13:55:50] WARNING  infratrack — HTTP 403 on GET /admin/stats — Admins only
-[2026-04-16 13:55:51] WARNING  infratrack — HTTP 403 on GET /admin/stats — Admins only
-[2026-04-16 13:55:53] WARNING  infratrack — HTTP 403 on GET /admin/stats — Admins only
-[2026-04-16 13:55:54] WARNING  infratrack — HTTP 403 on GET /admin/stats — Admins only
-[2026-04-16 13:55:55] WARNING  infratrack — HTTP 403 on GET /admin/stats — Admins only
-[2026-04-16 13:55:56] WARNING  infratrack — HTTP 403 on GET /admin/stats — Admins only
-[2026-04-16 13:55:58] WARNING  infratrack — HTTP 403 on GET /admin/stats — Admins only
-[2026-04-16 13:55:59] WARNING  infratrack — HTTP 403 on GET /admin/stats — Admins only
-[2026-04-16 13:56:00] WARNING  infratrack — HTTP 403 on GET /admin/stats — Admins only
-[2026-04-16 13:56:01] WARNING  infratrack — HTTP 403 on GET /admin/stats — Admins only
-[2026-04-16 13:56:03] WARNING  infratrack — HTTP 403 on GET /admin/stats — Admins only
-[2026-04-16 13:56:04] WARNING  infratrack — HTTP 403 on GET /admin/stats — Admins only
-[2026-04-16 13:56:05] WARNING  infratrack — HTTP 403 on GET /admin/stats — Admins only
-[2026-04-16 13:56:06] WARNING  infratrack — HTTP 403 on GET /admin/stats — Admins only
-[2026-04-16 13:56:08] WARNING  infratrack — HTTP 403 on GET /admin/stats — Admins only
-[2026-04-16 13:56:09] WARNING  infratrack — HTTP 403 on GET /admin/stats — Admins only
-[2026-04-16 13:56:10] WARNING  infratrack — HTTP 403 on GET /admin/stats — Admins only
-[2026-04-16 13:56:12] WARNING  infratrack — HTTP 403 on GET /admin/stats — Admins only
-[2026-04-16 13:56:13] WARNING  infratrack — HTTP 403 on GET /admin/stats — Admins only
-[2026-04-16 13:56:14] WARNING  infratrack — HTTP 403 on GET /admin/stats — Admins only
-[2026-04-16 13:56:15] WARNING  infratrack — HTTP 403 on GET /admin/stats — Admins only
-[2026-04-16 13:56:17] WARNING  infratrack — HTTP 403 on GET /admin/stats — Admins only
-[2026-04-16 13:56:18] WARNING  infratrack — HTTP 403 on GET /admin/stats — Admins only
-[2026-04-16 13:56:19] WARNING  infratrack — HTTP 403 on GET /admin/stats — Admins only
-[2026-04-16 13:56:20] WARNING  infratrack — HTTP 403 on GET /admin/stats — Admins only
-[2026-04-16 13:56:21] WARNING  infratrack — HTTP 403 on GET /admin/stats — Admins only
-[2026-04-16 13:56:23] WARNING  infratrack — HTTP 403 on GET /admin/stats — Admins only
-[2026-04-16 13:56:24] WARNING  infratrack — HTTP 403 on GET /admin/stats — Admins only
-[2026-04-16 13:56:25] WARNING  infratrack — HTTP 403 on GET /admin/stats — Admins only
-[2026-04-16 13:56:26] WARNING  infratrack — HTTP 403 on GET /admin/stats — Admins only
-[2026-04-16 13:56:28] WARNING  infratrack — HTTP 403 on GET /admin/stats — Admins only
-[2026-04-16 13:56:29] WARNING  infratrack — HTTP 403 on GET /admin/stats — Admins only
-[2026-04-16 13:56:30] WARNING  infratrack — HTTP 403 on GET /admin/stats — Admins only
-[2026-04-16 13:56:32] WARNING  infratrack — HTTP 403 on GET /admin/stats — Admins only
-[2026-04-16 13:56:33] WARNING  infratrack — HTTP 403 on GET /admin/stats — Admins only
-[2026-04-16 13:56:34] WARNING  infratrack — HTTP 403 on GET /admin/stats — Admins only
-[2026-04-16 13:56:35] WARNING  infratrack — HTTP 403 on GET /admin/stats — Admins only
-[2026-04-16 13:56:36] WARNING  infratrack — HTTP 403 on GET /admin/stats — Admins only
-[2026-04-16 13:56:38] WARNING  infratrack — HTTP 403 on GET /admin/stats — Admins only
-[2026-04-16 13:56:39] WARNING  infratrack — HTTP 403 on GET /admin/stats — Admins only
-[2026-04-16 13:56:40] WARNING  infratrack — HTTP 403 on GET /admin/stats — Admins only
-[2026-04-16 13:56:42] WARNING  infratrack — HTTP 403 on GET /admin/stats — Admins only
-[2026-04-16 13:56:43] WARNING  infratrack — HTTP 403 on GET /admin/stats — Admins only
-[2026-04-16 13:56:44] WARNING  infratrack — HTTP 403 on GET /admin/stats — Admins only
-[2026-04-16 13:56:45] WARNING  infratrack — HTTP 403 on GET /admin/stats — Admins only
-[2026-04-16 13:56:47] WARNING  infratrack — HTTP 403 on GET /admin/stats — Admins only
-[2026-04-16 13:56:48] WARNING  infratrack — HTTP 403 on GET /admin/stats — Admins only
-[2026-04-16 13:56:49] WARNING  infratrack — HTTP 403 on GET /admin/stats — Admins only
-[2026-04-16 13:56:51] WARNING  infratrack — HTTP 403 on GET /admin/stats — Admins only
-[2026-04-16 13:56:52] WARNING  infratrack — HTTP 403 on GET /admin/stats — Admins only
-[2026-04-16 13:56:53] WARNING  infratrack — HTTP 403 on GET /admin/stats — Admins only
-[2026-04-16 13:56:55] WARNING  infratrack — HTTP 403 on GET /admin/stats — Admins only
-[2026-04-16 13:56:56] WARNING  infratrack — HTTP 403 on GET /admin/stats — Admins only
-[2026-04-16 13:56:57] WARNING  infratrack — HTTP 403 on GET /admin/stats — Admins only
-[2026-04-16 13:56:58] WARNING  infratrack — HTTP 403 on GET /admin/stats — Admins only
-[2026-04-16 13:57:00] WARNING  infratrack — HTTP 403 on GET /admin/stats — Admins only
-[2026-04-16 13:57:01] WARNING  infratrack — HTTP 403 on GET /admin/stats — Admins only
-[2026-04-16 13:57:02] WARNING  infratrack — HTTP 403 on GET /admin/stats — Admins only
-[2026-04-16 13:57:04] WARNING  infratrack — HTTP 403 on GET /admin/stats — Admins only
-[2026-04-16 13:57:05] WARNING  infratrack — HTTP 403 on GET /admin/stats — Admins only
-[2026-04-16 13:57:06] WARNING  infratrack — HTTP 403 on GET /admin/stats — Admins only
-[2026-04-16 13:57:08] WARNING  infratrack — HTTP 403 on GET /admin/stats — Admins only
-[2026-04-16 13:57:09] WARNING  infratrack — HTTP 403 on GET /admin/stats — Admins only
-[2026-04-16 13:57:10] WARNING  infratrack — HTTP 403 on GET /admin/stats — Admins only
-[2026-04-16 13:57:11] WARNING  infratrack — HTTP 403 on GET /admin/stats — Admins only
-[2026-04-16 13:57:13] WARNING  infratrack — HTTP 403 on GET /admin/stats — Admins only
-[2026-04-16 13:57:14] WARNING  infratrack — HTTP 403 on GET /admin/stats — Admins only
-[2026-04-16 13:57:15] WARNING  infratrack — HTTP 403 on GET /admin/stats — Admins only
-[2026-04-16 13:57:17] WARNING  infratrack — HTTP 403 on GET /admin/stats — Admins only
-[2026-04-16 13:57:18] WARNING  infratrack — HTTP 403 on GET /admin/stats — Admins only
-[2026-04-16 13:57:19] WARNING  infratrack — HTTP 403 on GET /admin/stats — Admins only
-[2026-04-16 13:57:20] WARNING  infratrack — HTTP 403 on GET /admin/stats — Admins only
-[2026-04-16 13:57:22] WARNING  infratrack — HTTP 403 on GET /admin/stats — Admins only
-[2026-04-16 13:57:23] WARNING  infratrack — HTTP 403 on GET /admin/stats — Admins only
-[2026-04-16 13:57:24] WARNING  infratrack — HTTP 403 on GET /admin/stats — Admins only
-[2026-04-16 13:57:25] WARNING  infratrack — HTTP 403 on GET /admin/stats — Admins only
-[2026-04-16 13:57:27] WARNING  infratrack — HTTP 403 on GET /admin/stats — Admins only
-[2026-04-16 13:57:28] WARNING  infratrack — HTTP 403 on GET /admin/stats — Admins only
-[2026-04-16 13:57:29] WARNING  infratrack — HTTP 403 on GET /admin/stats — Admins only
-[2026-04-16 13:57:30] WARNING  infratrack — HTTP 403 on GET /admin/stats — Admins only
-[2026-04-16 13:57:32] WARNING  infratrack — HTTP 403 on GET /admin/stats — Admins only
-[2026-04-16 13:57:33] WARNING  infratrack — HTTP 403 on GET /admin/stats — Admins only
-[2026-04-16 13:57:34] WARNING  infratrack — HTTP 403 on GET /admin/stats — Admins only
-[2026-04-16 13:57:35] WARNING  infratrack — HTTP 403 on GET /admin/stats — Admins only
-[2026-04-16 13:57:37] WARNING  infratrack — HTTP 403 on GET /admin/stats — Admins only
-[2026-04-16 13:57:38] WARNING  infratrack — HTTP 403 on GET /admin/stats — Admins only
-[2026-04-16 13:57:39] WARNING  infratrack — HTTP 403 on GET /admin/stats — Admins only
-[2026-04-16 13:57:41] WARNING  infratrack — HTTP 403 on GET /admin/stats — Admins only
-[2026-04-16 13:57:42] WARNING  infratrack — HTTP 403 on GET /admin/stats — Admins only
-[2026-04-16 13:57:43] WARNING  infratrack — HTTP 403 on GET /admin/stats — Admins only
-[2026-04-16 13:57:44] WARNING  infratrack — HTTP 403 on GET /admin/stats — Admins only
-[2026-04-16 13:57:46] WARNING  infratrack — HTTP 403 on GET /admin/stats — Admins only
-[2026-04-16 13:57:47] WARNING  infratrack — HTTP 403 on GET /admin/stats — Admins only
-[2026-04-16 13:57:48] WARNING  infratrack — HTTP 403 on GET /admin/stats — Admins only
-[2026-04-16 13:57:49] WARNING  infratrack — HTTP 403 on GET /admin/stats — Admins only
-[2026-04-16 13:57:51] WARNING  infratrack — HTTP 403 on GET /admin/stats — Admins only
-[2026-04-16 13:57:52] WARNING  infratrack — HTTP 403 on GET /admin/stats — Admins only
-[2026-04-16 13:57:53] WARNING  infratrack — HTTP 403 on GET /admin/stats — Admins only
-[2026-04-16 13:57:54] WARNING  infratrack — HTTP 403 on GET /admin/stats — Admins only
-[2026-04-16 13:57:56] WARNING  infratrack — HTTP 403 on GET /admin/stats — Admins only
-[2026-04-16 13:57:57] WARNING  infratrack — HTTP 403 on GET /admin/stats — Admins only
-[2026-04-16 13:57:58] WARNING  infratrack — HTTP 403 on GET /admin/stats — Admins only
-[2026-04-16 13:58:00] WARNING  infratrack — HTTP 403 on GET /admin/stats — Admins only
-[2026-04-16 13:58:01] WARNING  infratrack — HTTP 403 on GET /admin/stats — Admins only
-[2026-04-16 13:58:02] WARNING  infratrack — HTTP 403 on GET /admin/stats — Admins only
-[2026-04-16 13:58:03] WARNING  infratrack — HTTP 403 on GET /admin/stats — Admins only
-[2026-04-16 13:58:05] WARNING  infratrack — HTTP 403 on GET /admin/stats — Admins only
-[2026-04-16 13:58:06] WARNING  infratrack — HTTP 403 on GET /admin/stats — Admins only
-[2026-04-16 13:58:07] WARNING  infratrack — HTTP 403 on GET /admin/stats — Admins only
-[2026-04-16 13:58:08] WARNING  infratrack — HTTP 403 on GET /admin/stats — Admins only
-[2026-04-16 13:58:09] WARNING  infratrack — HTTP 403 on GET /admin/stats — Admins only
-[2026-04-16 13:58:11] WARNING  infratrack — HTTP 403 on GET /admin/stats — Admins only
-[2026-04-16 13:58:12] WARNING  infratrack — HTTP 403 on GET /admin/stats — Admins only
-[2026-04-16 13:58:13] WARNING  infratrack — HTTP 403 on GET /admin/stats — Admins only
-[2026-04-16 13:58:15] WARNING  infratrack — HTTP 403 on GET /admin/stats — Admins only
-[2026-04-16 13:58:16] WARNING  infratrack — HTTP 403 on GET /admin/stats — Admins only
-[2026-04-16 13:58:17] WARNING  infratrack — HTTP 403 on GET /admin/stats — Admins only
-[2026-04-16 13:58:18] WARNING  infratrack — HTTP 403 on GET /admin/stats — Admins only
-[2026-04-16 13:58:20] WARNING  infratrack — HTTP 403 on GET /admin/stats — Admins only
-[2026-04-16 13:58:21] WARNING  infratrack — HTTP 403 on GET /admin/stats — Admins only
-[2026-04-16 13:58:22] WARNING  infratrack — HTTP 403 on GET /admin/stats — Admins only
-[2026-04-16 13:58:23] WARNING  infratrack — HTTP 403 on GET /admin/stats — Admins only
-[2026-04-16 13:58:25] WARNING  infratrack — HTTP 403 on GET /admin/stats — Admins only
-[2026-04-16 13:58:26] WARNING  infratrack — HTTP 403 on GET /admin/stats — Admins only
-[2026-04-16 13:58:28] WARNING  infratrack — HTTP 403 on GET /admin/stats — Admins only
-[2026-04-16 13:58:29] WARNING  infratrack — HTTP 403 on GET /admin/stats — Admins only
-[2026-04-16 13:58:30] WARNING  infratrack — HTTP 403 on GET /admin/stats — Admins only
-[2026-04-16 13:58:32] WARNING  infratrack — HTTP 403 on GET /admin/stats — Admins only
-[2026-04-16 13:58:33] WARNING  infratrack — HTTP 403 on GET /admin/stats — Admins only
-[2026-04-16 13:58:35] WARNING  infratrack — HTTP 403 on GET /admin/stats — Admins only
-[2026-04-16 13:58:36] WARNING  infratrack — HTTP 403 on GET /admin/stats — Admins only
-[2026-04-16 13:58:37] WARNING  infratrack — HTTP 403 on GET /admin/stats — Admins only
-[2026-04-16 13:58:40] WARNING  infratrack — HTTP 403 on GET /admin/stats — Admins only
-[2026-04-16 13:58:41] WARNING  infratrack — HTTP 403 on GET /admin/stats — Admins only
-[2026-04-16 13:58:43] WARNING  infratrack — HTTP 403 on GET /admin/stats — Admins only
-[2026-04-16 13:58:44] WARNING  infratrack — HTTP 403 on GET /admin/stats — Admins only
-[2026-04-16 13:58:45] WARNING  infratrack — HTTP 403 on GET /admin/stats — Admins only
-[2026-04-16 13:58:47] WARNING  infratrack — HTTP 403 on GET /admin/stats — Admins only
-[2026-04-16 13:58:48] WARNING  infratrack — HTTP 403 on GET /admin/stats — Admins only
-[2026-04-16 13:58:50] WARNING  infratrack — HTTP 403 on GET /admin/stats — Admins only
-[2026-04-16 13:58:51] WARNING  infratrack — HTTP 403 on GET /admin/stats — Admins only
-[2026-04-16 13:58:52] WARNING  infratrack — HTTP 403 on GET /admin/stats — Admins only
-[2026-04-16 13:58:53] WARNING  infratrack — HTTP 403 on GET /admin/stats — Admins only
-[2026-04-16 13:58:55] WARNING  infratrack — HTTP 403 on GET /admin/stats — Admins only
-[2026-04-16 13:58:56] WARNING  infratrack — HTTP 403 on GET /admin/stats — Admins only
-[2026-04-16 13:58:58] WARNING  infratrack — HTTP 403 on GET /admin/stats — Admins only
-[2026-04-16 13:58:59] WARNING  infratrack — HTTP 403 on GET /admin/stats — Admins only
-[2026-04-16 13:59:00] WARNING  infratrack — HTTP 403 on GET /admin/stats — Admins only
-[2026-04-16 13:59:02] WARNING  infratrack — HTTP 403 on GET /admin/stats — Admins only
-[2026-04-16 13:59:03] WARNING  infratrack — HTTP 403 on GET /admin/stats — Admins only
-[2026-04-16 13:59:04] WARNING  infratrack — HTTP 403 on GET /admin/stats — Admins only
-[2026-04-16 13:59:06] WARNING  infratrack — HTTP 403 on GET /admin/stats — Admins only
-[2026-04-16 13:59:07] WARNING  infratrack — HTTP 403 on GET /admin/stats — Admins only
-[2026-04-16 13:59:09] WARNING  infratrack — HTTP 403 on GET /admin/stats — Admins only
-[2026-04-16 13:59:10] WARNING  infratrack — HTTP 403 on GET /admin/stats — Admins only
-[2026-04-16 13:59:12] WARNING  infratrack — HTTP 403 on GET /admin/stats — Admins only
-[2026-04-16 13:59:13] WARNING  infratrack — HTTP 403 on GET /admin/stats — Admins only
-[2026-04-16 13:59:14] WARNING  infratrack — HTTP 403 on GET /admin/stats — Admins only
-[2026-04-16 13:59:16] WARNING  infratrack — HTTP 403 on GET /admin/stats — Admins only
-[2026-04-16 13:59:17] WARNING  infratrack — HTTP 403 on GET /admin/stats — Admins only
-[2026-04-16 13:59:18] WARNING  infratrack — HTTP 403 on GET /admin/stats — Admins only
-[2026-04-16 13:59:20] WARNING  infratrack — HTTP 403 on GET /admin/stats — Admins only
-[2026-04-16 13:59:21] WARNING  infratrack — HTTP 403 on GET /admin/stats — Admins only
-[2026-04-16 13:59:22] WARNING  infratrack — HTTP 403 on GET /admin/stats — Admins only
-[2026-04-16 13:59:23] WARNING  infratrack — HTTP 403 on GET /admin/stats — Admins only
-[2026-04-16 13:59:25] WARNING  infratrack — HTTP 403 on GET /admin/stats — Admins only
-[2026-04-16 13:59:26] WARNING  infratrack — HTTP 403 on GET /admin/stats — Admins only
-[2026-04-16 13:59:27] WARNING  infratrack — HTTP 403 on GET /admin/stats — Admins only
-[2026-04-16 13:59:29] WARNING  infratrack — HTTP 403 on GET /admin/stats — Admins only
-[2026-04-16 13:59:30] WARNING  infratrack — HTTP 403 on GET /admin/stats — Admins only
-[2026-04-16 13:59:31] WARNING  infratrack — HTTP 403 on GET /admin/stats — Admins only
-[2026-04-16 13:59:32] WARNING  infratrack — HTTP 403 on GET /admin/stats — Admins only
-[2026-04-16 13:59:34] WARNING  infratrack — HTTP 403 on GET /admin/stats — Admins only
-[2026-04-16 13:59:35] WARNING  infratrack — HTTP 403 on GET /admin/stats — Admins only
-[2026-04-16 13:59:36] WARNING  infratrack — HTTP 403 on GET /admin/stats — Admins only
-[2026-04-16 13:59:37] WARNING  infratrack — HTTP 403 on GET /admin/stats — Admins only
-[2026-04-16 13:59:39] WARNING  infratrack — HTTP 403 on GET /admin/stats — Admins only
-[2026-04-16 13:59:40] WARNING  infratrack — HTTP 403 on GET /admin/stats — Admins only
-[2026-04-16 13:59:41] WARNING  infratrack — HTTP 403 on GET /admin/stats — Admins only
-[2026-04-16 13:59:42] WARNING  infratrack — HTTP 403 on GET /admin/stats — Admins only
-[2026-04-16 13:59:44] WARNING  infratrack — HTTP 403 on GET /admin/stats — Admins only
-[2026-04-16 13:59:45] WARNING  infratrack — HTTP 403 on GET /admin/stats — Admins only
-[2026-04-16 13:59:46] WARNING  infratrack — HTTP 403 on GET /admin/stats — Admins only
-[2026-04-16 13:59:48] WARNING  infratrack — HTTP 403 on GET /admin/stats — Admins only
-[2026-04-16 13:59:49] WARNING  infratrack — HTTP 403 on GET /admin/stats — Admins only
-[2026-04-16 13:59:50] WARNING  infratrack — HTTP 403 on GET /admin/stats — Admins only
-[2026-04-16 13:59:51] WARNING  infratrack — HTTP 403 on GET /admin/stats — Admins only
-[2026-04-16 13:59:53] WARNING  infratrack — HTTP 403 on GET /admin/stats — Admins only
-[2026-04-16 13:59:54] WARNING  infratrack — HTTP 403 on GET /admin/stats — Admins only
-[2026-04-16 13:59:55] WARNING  infratrack — HTTP 403 on GET /admin/stats — Admins only
-[2026-04-16 13:59:56] WARNING  infratrack — HTTP 403 on GET /admin/stats — Admins only
-[2026-04-16 13:59:58] WARNING  infratrack — HTTP 403 on GET /admin/stats — Admins only
-[2026-04-16 13:59:59] WARNING  infratrack — HTTP 403 on GET /admin/stats — Admins only
-[2026-04-16 14:00:00] WARNING  infratrack — HTTP 403 on GET /admin/stats — Admins only
-[2026-04-16 14:00:01] WARNING  infratrack — HTTP 403 on GET /admin/stats — Admins only
-[2026-04-16 14:00:03] WARNING  infratrack — HTTP 403 on GET /admin/stats — Admins only
-[2026-04-16 14:00:04] WARNING  infratrack — HTTP 403 on GET /admin/stats — Admins only
-[2026-04-16 14:00:05] WARNING  infratrack — HTTP 403 on GET /admin/stats — Admins only
-[2026-04-16 14:00:06] WARNING  infratrack — HTTP 403 on GET /admin/stats — Admins only
-[2026-04-16 14:00:08] WARNING  infratrack — HTTP 403 on GET /admin/stats — Admins only
-[2026-04-16 14:00:09] WARNING  infratrack — HTTP 403 on GET /admin/stats — Admins only
-[2026-04-16 14:00:10] WARNING  infratrack — HTTP 403 on GET /admin/stats — Admins only
-[2026-04-16 14:00:11] WARNING  infratrack — HTTP 403 on GET /admin/stats — Admins only
-[2026-04-16 14:00:13] WARNING  infratrack — HTTP 403 on GET /admin/stats — Admins only
-[2026-04-16 14:00:14] WARNING  infratrack — HTTP 403 on GET /admin/stats — Admins only
-[2026-04-16 14:00:15] WARNING  infratrack — HTTP 403 on GET /admin/stats — Admins only
-[2026-04-16 14:00:16] WARNING  infratrack — HTTP 403 on GET /admin/stats — Admins only
-[2026-04-16 14:00:18] WARNING  infratrack — HTTP 403 on GET /admin/stats — Admins only
-[2026-04-16 14:00:19] WARNING  infratrack — HTTP 403 on GET /admin/stats — Admins only
-[2026-04-16 14:00:20] WARNING  infratrack — HTTP 403 on GET /admin/stats — Admins only
-[2026-04-16 14:00:21] WARNING  infratrack — HTTP 403 on GET /admin/stats — Admins only
-[2026-04-16 14:00:23] WARNING  infratrack — HTTP 403 on GET /admin/stats — Admins only
-[2026-04-16 14:00:24] WARNING  infratrack — HTTP 403 on GET /admin/stats — Admins only
-[2026-04-16 14:00:25] WARNING  infratrack — HTTP 403 on GET /admin/stats — Admins only
-[2026-04-16 14:00:26] WARNING  infratrack — HTTP 403 on GET /admin/stats — Admins only
-[2026-04-16 14:00:28] WARNING  infratrack — HTTP 403 on GET /admin/stats — Admins only
-[2026-04-16 14:00:29] WARNING  infratrack — HTTP 403 on GET /admin/stats — Admins only
-[2026-04-16 14:00:30] WARNING  infratrack — HTTP 403 on GET /admin/stats — Admins only
-[2026-04-16 14:00:31] WARNING  infratrack — HTTP 403 on GET /admin/stats — Admins only
-[2026-04-16 14:00:33] WARNING  infratrack — HTTP 403 on GET /admin/stats — Admins only
-[2026-04-16 14:00:34] WARNING  infratrack — HTTP 403 on GET /admin/stats — Admins only
-[2026-04-16 14:00:35] WARNING  infratrack — HTTP 403 on GET /admin/stats — Admins only
-[2026-04-16 14:00:36] WARNING  infratrack — HTTP 403 on GET /admin/stats — Admins only
-[2026-04-16 14:00:38] WARNING  infratrack — HTTP 403 on GET /admin/stats — Admins only
-[2026-04-16 14:00:39] WARNING  infratrack — HTTP 403 on GET /admin/stats — Admins only
-[2026-04-16 14:00:40] WARNING  infratrack — HTTP 403 on GET /admin/stats — Admins only
-[2026-04-16 14:00:42] WARNING  infratrack — HTTP 403 on GET /admin/stats — Admins only
-[2026-04-16 14:00:43] WARNING  infratrack — HTTP 403 on GET /admin/stats — Admins only
-[2026-04-16 14:00:44] WARNING  infratrack — HTTP 403 on GET /admin/stats — Admins only
-[2026-04-16 14:00:46] WARNING  infratrack — HTTP 403 on GET /admin/stats — Admins only
-[2026-04-16 14:00:47] WARNING  infratrack — HTTP 403 on GET /admin/stats — Admins only
-[2026-04-16 14:00:48] WARNING  infratrack — HTTP 403 on GET /admin/stats — Admins only
-[2026-04-16 14:00:49] WARNING  infratrack — HTTP 403 on GET /admin/stats — Admins only
-[2026-04-16 14:00:51] WARNING  infratrack — HTTP 403 on GET /admin/stats — Admins only
-[2026-04-16 14:00:53] WARNING  infratrack — HTTP 403 on GET /admin/stats — Admins only
-[2026-04-16 14:00:54] WARNING  infratrack — HTTP 403 on GET /admin/stats — Admins only
-[2026-04-16 14:00:55] WARNING  infratrack — HTTP 403 on GET /admin/stats — Admins only
-[2026-04-16 14:00:57] WARNING  infratrack — HTTP 403 on GET /admin/stats — Admins only
-[2026-04-16 14:00:58] WARNING  infratrack — HTTP 403 on GET /admin/stats — Admins only
-[2026-04-16 14:01:00] WARNING  infratrack — HTTP 403 on GET /admin/stats — Admins only
-[2026-04-16 14:01:01] WARNING  infratrack — HTTP 403 on GET /admin/stats — Admins only
-[2026-04-16 14:01:03] WARNING  infratrack — HTTP 403 on GET /admin/stats — Admins only
-[2026-04-16 14:01:05] WARNING  infratrack — HTTP 403 on GET /admin/stats — Admins only
-[2026-04-16 14:01:06] WARNING  infratrack — HTTP 403 on GET /admin/stats — Admins only
-[2026-04-16 14:01:08] WARNING  infratrack — HTTP 403 on GET /admin/stats — Admins only
-[2026-04-16 14:01:10] WARNING  infratrack — HTTP 403 on GET /admin/stats — Admins only
-[2026-04-16 14:01:11] WARNING  infratrack — HTTP 403 on GET /admin/stats — Admins only
-[2026-04-16 14:01:12] WARNING  infratrack — HTTP 403 on GET /admin/stats — Admins only
-[2026-04-16 14:01:14] WARNING  infratrack — HTTP 403 on GET /admin/stats — Admins only
-[2026-04-16 14:01:16] WARNING  infratrack — HTTP 403 on GET /admin/stats — Admins only
-[2026-04-16 14:01:17] WARNING  infratrack — HTTP 403 on GET /admin/stats — Admins only
-[2026-04-16 14:01:19] WARNING  infratrack — HTTP 403 on GET /admin/stats — Admins only
-[2026-04-16 14:01:20] WARNING  infratrack — HTTP 403 on GET /admin/stats — Admins only
-[2026-04-16 14:01:21] WARNING  infratrack — HTTP 403 on GET /admin/stats — Admins only
-[2026-04-16 14:01:23] WARNING  infratrack — HTTP 403 on GET /admin/stats — Admins only
-[2026-04-16 14:01:25] WARNING  infratrack — HTTP 403 on GET /admin/stats — Admins only
-[2026-04-16 14:01:26] WARNING  infratrack — HTTP 403 on GET /admin/stats — Admins only
-[2026-04-16 14:01:27] WARNING  infratrack — HTTP 403 on GET /admin/stats — Admins only
-[2026-04-16 14:01:29] WARNING  infratrack — HTTP 403 on GET /admin/stats — Admins only
-[2026-04-16 14:01:30] WARNING  infratrack — HTTP 403 on GET /admin/stats — Admins only
-[2026-04-16 14:01:32] WARNING  infratrack — HTTP 403 on GET /admin/stats — Admins only
-[2026-04-16 14:01:33] WARNING  infratrack — HTTP 403 on GET /admin/stats — Admins only
-[2026-04-16 14:01:35] WARNING  infratrack — HTTP 403 on GET /admin/stats — Admins only
-[2026-04-16 14:01:36] WARNING  infratrack — HTTP 403 on GET /admin/stats — Admins only
-[2026-04-16 14:01:38] WARNING  infratrack — HTTP 403 on GET /admin/stats — Admins only
-[2026-04-16 14:01:39] WARNING  infratrack — HTTP 403 on GET /admin/stats — Admins only
-[2026-04-16 14:01:41] WARNING  infratrack — HTTP 403 on GET /admin/stats — Admins only
-[2026-04-16 14:01:42] WARNING  infratrack — HTTP 403 on GET /admin/stats — Admins only
-[2026-04-16 14:01:43] WARNING  infratrack — HTTP 403 on GET /admin/stats — Admins only
-[2026-04-16 14:01:45] WARNING  infratrack — HTTP 403 on GET /admin/stats — Admins only
-[2026-04-16 14:01:46] WARNING  infratrack — HTTP 403 on GET /admin/stats — Admins only
-[2026-04-16 14:01:47] WARNING  infratrack — HTTP 403 on GET /admin/stats — Admins only
-[2026-04-16 14:01:49] WARNING  infratrack — HTTP 403 on GET /admin/stats — Admins only
-[2026-04-16 14:01:50] WARNING  infratrack — HTTP 403 on GET /admin/stats — Admins only
-[2026-04-16 14:01:51] WARNING  infratrack — HTTP 403 on GET /admin/stats — Admins only
-[2026-04-16 14:01:53] WARNING  infratrack — HTTP 403 on GET /admin/stats — Admins only
-[2026-04-16 14:01:55] WARNING  infratrack — HTTP 403 on GET /admin/stats — Admins only
-[2026-04-16 14:01:56] WARNING  infratrack — HTTP 403 on GET /admin/stats — Admins only
-[2026-04-16 14:01:57] WARNING  infratrack — HTTP 403 on GET /admin/stats — Admins only
-[2026-04-16 14:01:59] WARNING  infratrack — HTTP 403 on GET /admin/stats — Admins only
-[2026-04-16 14:02:01] WARNING  infratrack — HTTP 403 on GET /admin/stats — Admins only
-[2026-04-16 14:02:02] WARNING  infratrack — HTTP 403 on GET /admin/stats — Admins only
-[2026-04-16 14:02:03] WARNING  infratrack — HTTP 403 on GET /admin/stats — Admins only
-[2026-04-16 14:02:05] WARNING  infratrack — HTTP 403 on GET /admin/stats — Admins only
-[2026-04-16 14:02:06] WARNING  infratrack — HTTP 403 on GET /admin/stats — Admins only
-[2026-04-16 14:02:07] WARNING  infratrack — HTTP 403 on GET /admin/stats — Admins only
-[2026-04-16 14:02:09] WARNING  infratrack — HTTP 403 on GET /admin/stats — Admins only
-[2026-04-16 14:02:10] WARNING  infratrack — HTTP 403 on GET /admin/stats — Admins only
-[2026-04-16 14:02:11] WARNING  infratrack — HTTP 403 on GET /admin/stats — Admins only
-[2026-04-16 14:02:13] WARNING  infratrack — HTTP 403 on GET /admin/stats — Admins only
-[2026-04-16 14:02:14] WARNING  infratrack — HTTP 403 on GET /admin/stats — Admins only
-[2026-04-16 14:02:15] WARNING  infratrack — HTTP 403 on GET /admin/stats — Admins only
-[2026-04-16 14:02:16] WARNING  infratrack — HTTP 403 on GET /admin/stats — Admins only
-[2026-04-16 14:02:18] WARNING  infratrack — HTTP 403 on GET /admin/stats — Admins only
-[2026-04-16 14:02:19] WARNING  infratrack — HTTP 403 on GET /admin/stats — Admins only
-[2026-04-16 14:02:20] WARNING  infratrack — HTTP 403 on GET /admin/stats — Admins only
-[2026-04-16 14:02:21] WARNING  infratrack — HTTP 403 on GET /admin/stats — Admins only
-[2026-04-16 14:02:23] WARNING  infratrack — HTTP 403 on GET /admin/stats — Admins only
-[2026-04-16 14:02:24] WARNING  infratrack — HTTP 403 on GET /admin/stats — Admins only
-[2026-04-16 14:02:25] WARNING  infratrack — HTTP 403 on GET /admin/stats — Admins only
-[2026-04-16 14:02:27] WARNING  infratrack — HTTP 403 on GET /admin/stats — Admins only
-[2026-04-16 14:02:28] WARNING  infratrack — HTTP 403 on GET /admin/stats — Admins only
-[2026-04-16 14:02:29] WARNING  infratrack — HTTP 403 on GET /admin/stats — Admins only
-[2026-04-16 14:02:30] WARNING  infratrack — HTTP 403 on GET /admin/stats — Admins only
-[2026-04-16 14:02:32] WARNING  infratrack — HTTP 403 on GET /admin/stats — Admins only
-[2026-04-16 14:02:33] WARNING  infratrack — HTTP 403 on GET /admin/stats — Admins only
-[2026-04-16 14:02:34] WARNING  infratrack — HTTP 403 on GET /admin/stats — Admins only
-[2026-04-16 14:02:36] WARNING  infratrack — HTTP 403 on GET /admin/stats — Admins only
-[2026-04-16 14:02:37] WARNING  infratrack — HTTP 403 on GET /admin/stats — Admins only
-[2026-04-16 14:02:38] WARNING  infratrack — HTTP 403 on GET /admin/stats — Admins only
-[2026-04-16 14:02:39] WARNING  infratrack — HTTP 403 on GET /admin/stats — Admins only
-[2026-04-16 14:02:41] WARNING  infratrack — HTTP 403 on GET /admin/stats — Admins only
-[2026-04-16 14:02:42] WARNING  infratrack — HTTP 403 on GET /admin/stats — Admins only
-[2026-04-16 14:02:43] WARNING  infratrack — HTTP 403 on GET /admin/stats — Admins only
-[2026-04-16 14:02:44] WARNING  infratrack — HTTP 403 on GET /admin/stats — Admins only
-[2026-04-16 14:02:46] WARNING  infratrack — HTTP 403 on GET /admin/stats — Admins only
-[2026-04-16 14:02:47] WARNING  infratrack — HTTP 403 on GET /admin/stats — Admins only
-[2026-04-16 14:02:48] WARNING  infratrack — HTTP 403 on GET /admin/stats — Admins only
-[2026-04-16 14:02:49] WARNING  infratrack — HTTP 403 on GET /admin/stats — Admins only
-[2026-04-16 14:02:51] WARNING  infratrack — HTTP 403 on GET /admin/stats — Admins only
-[2026-04-16 14:02:52] WARNING  infratrack — HTTP 403 on GET /admin/stats — Admins only
-[2026-04-16 14:02:53] WARNING  infratrack — HTTP 403 on GET /admin/stats — Admins only
-[2026-04-16 14:02:54] WARNING  infratrack — HTTP 403 on GET /admin/stats — Admins only
-[2026-04-16 14:02:56] WARNING  infratrack — HTTP 403 on GET /admin/stats — Admins only
-[2026-04-16 14:02:57] WARNING  infratrack — HTTP 403 on GET /admin/stats — Admins only
-[2026-04-16 14:02:58] WARNING  infratrack — HTTP 403 on GET /admin/stats — Admins only
-[2026-04-16 14:02:59] WARNING  infratrack — HTTP 403 on GET /admin/stats — Admins only
+# Maintains Log records
+[2026-04-19 05:40:37] INFO     infratrack — InfraTrack API shutting down.
+[2026-04-19 05:40:38] INFO     infratrack — InfraTrack API started. Environment loaded.
+[2026-04-19 05:40:41] INFO     infratrack — InfraTrack API shutting down.
+[2026-04-19 05:40:42] INFO     infratrack — InfraTrack API started. Environment loaded.
+[2026-04-19 05:40:54] INFO     infratrack — InfraTrack API shutting down.
+[2026-04-19 05:40:55] INFO     infratrack — InfraTrack API started. Environment loaded.
+[2026-04-19 05:41:01] INFO     infratrack — InfraTrack API shutting down.
+[2026-04-19 05:41:03] INFO     infratrack — InfraTrack API started. Environment loaded.
+[2026-04-19 05:41:08] INFO     infratrack — InfraTrack API shutting down.
+[2026-04-19 05:41:09] INFO     infratrack — InfraTrack API started. Environment loaded.
+[2026-04-19 05:41:10] INFO     infratrack — InfraTrack API shutting down.
+[2026-04-19 05:41:11] INFO     infratrack — InfraTrack API started. Environment loaded.
+[2026-04-19 05:41:12] INFO     infratrack — InfraTrack API shutting down.
+[2026-04-19 05:41:14] INFO     infratrack — InfraTrack API started. Environment loaded.
+[2026-04-19 05:41:17] INFO     infratrack — InfraTrack API shutting down.
+[2026-04-19 05:41:19] INFO     infratrack — InfraTrack API started. Environment loaded.
+[2026-04-19 05:41:31] INFO     infratrack — InfraTrack API shutting down.
+[2026-04-19 05:41:33] INFO     infratrack — InfraTrack API started. Environment loaded.
+[2026-04-19 05:41:35] INFO     infratrack — InfraTrack API started. Environment loaded.
+[2026-04-19 05:41:36] INFO     infratrack — InfraTrack API started. Environment loaded.
+[2026-04-19 05:41:40] INFO     infratrack — InfraTrack API shutting down.
+[2026-04-19 05:41:43] INFO     infratrack — InfraTrack API started. Environment loaded.
+[2026-04-19 05:42:19] INFO     infratrack — InfraTrack API shutting down.
+[2026-04-19 05:42:20] INFO     infratrack — InfraTrack API started. Environment loaded.
+[2026-04-19 05:42:26] INFO     infratrack — InfraTrack API shutting down.
+[2026-04-19 05:42:28] INFO     infratrack — InfraTrack API started. Environment loaded.
+[2026-04-19 05:42:32] INFO     infratrack — InfraTrack API shutting down.
+[2026-04-19 05:42:34] INFO     infratrack — InfraTrack API started. Environment loaded.
+[2026-04-19 05:42:40] INFO     infratrack — InfraTrack API shutting down.
+[2026-04-19 05:42:41] INFO     infratrack — InfraTrack API started. Environment loaded.
+[2026-04-19 05:42:54] INFO     infratrack — InfraTrack API shutting down.
+[2026-04-19 05:42:56] INFO     infratrack — InfraTrack API started. Environment loaded.
+[2026-04-19 05:43:26] INFO     infratrack — InfraTrack API shutting down.
+[2026-04-19 05:43:29] INFO     infratrack — InfraTrack API started. Environment loaded.
+[2026-04-19 05:43:41] INFO     infratrack — InfraTrack API shutting down.
+[2026-04-19 05:43:43] INFO     infratrack — InfraTrack API started. Environment loaded.
+[2026-04-19 05:43:49] INFO     infratrack — InfraTrack API shutting down.
+[2026-04-19 05:43:52] INFO     infratrack — InfraTrack API started. Environment loaded.
+[2026-04-19 05:43:53] INFO     infratrack — InfraTrack API started. Environment loaded.
+[2026-04-19 05:43:55] INFO     infratrack — InfraTrack API shutting down.
+[2026-04-19 05:43:57] INFO     infratrack — InfraTrack API started. Environment loaded.
+[2026-04-19 05:44:00] INFO     infratrack — InfraTrack API shutting down.
+[2026-04-19 05:44:02] INFO     infratrack — InfraTrack API started. Environment loaded.
+[2026-04-19 05:44:04] INFO     infratrack — InfraTrack API shutting down.
+[2026-04-19 05:44:06] INFO     infratrack — InfraTrack API started. Environment loaded.
+[2026-04-19 05:44:10] INFO     infratrack — InfraTrack API shutting down.
+[2026-04-19 05:44:11] INFO     infratrack — InfraTrack API started. Environment loaded.
+[2026-04-19 05:44:14] INFO     infratrack — InfraTrack API shutting down.
+[2026-04-19 05:44:15] INFO     infratrack — InfraTrack API started. Environment loaded.
+[2026-04-19 05:44:18] INFO     infratrack — InfraTrack API shutting down.
+[2026-04-19 05:44:20] INFO     infratrack — InfraTrack API started. Environment loaded.
+[2026-04-19 05:44:23] INFO     infratrack — InfraTrack API shutting down.
+[2026-04-19 05:44:25] INFO     infratrack — InfraTrack API started. Environment loaded.
+[2026-04-19 05:44:27] INFO     infratrack — InfraTrack API started. Environment loaded.
+[2026-04-19 05:44:39] INFO     infratrack — InfraTrack API shutting down.
+[2026-04-19 05:44:41] INFO     infratrack — InfraTrack API started. Environment loaded.
+[2026-04-19 05:44:44] INFO     infratrack — InfraTrack API shutting down.
+[2026-04-19 05:44:45] INFO     infratrack — InfraTrack API started. Environment loaded.
+[2026-04-19 05:45:06] INFO     infratrack — InfraTrack API shutting down.
+[2026-04-19 05:45:09] INFO     infratrack — InfraTrack API started. Environment loaded.
+[2026-04-19 05:45:11] INFO     infratrack — InfraTrack API shutting down.
+[2026-04-19 05:45:14] INFO     infratrack — InfraTrack API started. Environment loaded.
+[2026-04-19 05:45:16] INFO     infratrack — InfraTrack API started. Environment loaded.
+[2026-04-19 05:45:27] INFO     infratrack — InfraTrack API shutting down.
+[2026-04-19 05:45:30] INFO     infratrack — InfraTrack API started. Environment loaded.
+[2026-04-19 05:45:32] INFO     infratrack — InfraTrack API started. Environment loaded.
+[2026-04-19 05:45:34] INFO     infratrack — InfraTrack API shutting down.
+[2026-04-19 05:45:37] INFO     infratrack — InfraTrack API started. Environment loaded.
+[2026-04-19 05:45:38] INFO     infratrack — InfraTrack API started. Environment loaded.
+[2026-04-19 05:45:42] INFO     infratrack — InfraTrack API shutting down.
+[2026-04-19 05:45:43] INFO     infratrack — InfraTrack API started. Environment loaded.
+[2026-04-19 05:45:46] INFO     infratrack — InfraTrack API shutting down.
+[2026-04-19 05:45:48] INFO     infratrack — InfraTrack API started. Environment loaded.
+[2026-04-19 05:45:48] INFO     infratrack — InfraTrack API shutting down.
+[2026-04-19 05:45:50] INFO     infratrack — InfraTrack API started. Environment loaded.
+[2026-04-19 05:45:56] INFO     infratrack — InfraTrack API shutting down.
+[2026-04-19 05:45:59] INFO     infratrack — InfraTrack API started. Environment loaded.
+[2026-04-19 05:45:59] INFO     infratrack — InfraTrack API shutting down.
+[2026-04-19 05:46:02] INFO     infratrack — InfraTrack API started. Environment loaded.
+[2026-04-19 05:46:07] INFO     infratrack — InfraTrack API shutting down.
+[2026-04-19 05:46:09] INFO     infratrack — InfraTrack API started. Environment loaded.
+[2026-04-19 05:46:31] INFO     infratrack — InfraTrack API shutting down.
+[2026-04-19 05:46:34] INFO     infratrack — InfraTrack API started. Environment loaded.
+[2026-04-19 05:46:36] INFO     infratrack — InfraTrack API shutting down.
+[2026-04-19 05:46:38] INFO     infratrack — InfraTrack API started. Environment loaded.
+[2026-04-19 05:46:49] INFO     infratrack — InfraTrack API shutting down.
+[2026-04-19 05:46:52] INFO     infratrack — InfraTrack API started. Environment loaded.
+[2026-04-19 05:46:58] INFO     infratrack — InfraTrack API shutting down.
+[2026-04-19 05:47:00] INFO     infratrack — InfraTrack API started. Environment loaded.
+[2026-04-19 05:47:03] INFO     infratrack — InfraTrack API shutting down.
+[2026-04-19 05:47:05] INFO     infratrack — InfraTrack API started. Environment loaded.
+[2026-04-19 05:47:06] INFO     infratrack — InfraTrack API shutting down.
+[2026-04-19 05:47:08] INFO     infratrack — InfraTrack API started. Environment loaded.
+[2026-04-19 05:47:16] INFO     infratrack — InfraTrack API shutting down.
+[2026-04-19 05:47:19] INFO     infratrack — InfraTrack API started. Environment loaded.
+[2026-04-19 05:47:20] INFO     infratrack — InfraTrack API shutting down.
+[2026-04-19 05:47:22] INFO     infratrack — InfraTrack API started. Environment loaded.
+[2026-04-19 05:47:24] INFO     infratrack — InfraTrack API shutting down.
+[2026-04-19 05:47:26] INFO     infratrack — InfraTrack API started. Environment loaded.
+[2026-04-19 05:47:42] INFO     infratrack — InfraTrack API shutting down.
+[2026-04-19 05:47:44] INFO     infratrack — InfraTrack API started. Environment loaded.
+[2026-04-19 05:47:45] INFO     infratrack — InfraTrack API shutting down.
+[2026-04-19 05:47:47] INFO     infratrack — InfraTrack API started. Environment loaded.
+[2026-04-19 05:47:51] INFO     infratrack — InfraTrack API shutting down.
+[2026-04-19 05:47:53] INFO     infratrack — InfraTrack API started. Environment loaded.
+[2026-04-19 05:47:56] INFO     infratrack — InfraTrack API shutting down.
+[2026-04-19 05:48:00] INFO     infratrack — InfraTrack API started. Environment loaded.
+[2026-04-19 05:48:03] INFO     infratrack — InfraTrack API started. Environment loaded.
+[2026-04-19 05:48:07] INFO     infratrack — InfraTrack API started. Environment loaded.
+[2026-04-19 05:48:09] INFO     infratrack — InfraTrack API started. Environment loaded.
+[2026-04-19 05:48:10] INFO     infratrack — InfraTrack API shutting down.
+[2026-04-19 05:48:12] INFO     infratrack — InfraTrack API started. Environment loaded.
+[2026-04-19 05:48:16] INFO     infratrack — InfraTrack API shutting down.
+[2026-04-19 05:48:19] INFO     infratrack — InfraTrack API started. Environment loaded.
+[2026-04-19 05:48:20] INFO     infratrack — InfraTrack API shutting down.
+[2026-04-19 05:48:24] INFO     infratrack — InfraTrack API started. Environment loaded.
+[2026-04-19 05:48:24] INFO     infratrack — InfraTrack API shutting down.
+[2026-04-19 05:48:28] INFO     infratrack — InfraTrack API started. Environment loaded.
+[2026-04-19 05:48:31] INFO     infratrack — InfraTrack API shutting down.
+[2026-04-19 05:48:35] INFO     infratrack — InfraTrack API started. Environment loaded.
+[2026-04-19 05:48:37] INFO     infratrack — InfraTrack API shutting down.
+[2026-04-19 05:48:40] INFO     infratrack — InfraTrack API started. Environment loaded.
+[2026-04-19 05:48:43] INFO     infratrack — InfraTrack API started. Environment loaded.
+[2026-04-19 05:48:44] INFO     infratrack — InfraTrack API started. Environment loaded.
+[2026-04-19 05:50:11] INFO     infratrack — InfraTrack API shutting down.
+[2026-04-19 05:50:13] INFO     infratrack — InfraTrack API started. Environment loaded.
+[2026-04-19 05:50:18] INFO     infratrack — InfraTrack API shutting down.
+[2026-04-19 05:50:21] INFO     infratrack — InfraTrack API started. Environment loaded.
+[2026-04-19 05:50:24] INFO     infratrack — InfraTrack API shutting down.
+[2026-04-19 05:50:26] INFO     infratrack — InfraTrack API started. Environment loaded.
+[2026-04-19 05:50:28] INFO     infratrack — InfraTrack API shutting down.
+[2026-04-19 05:50:31] INFO     infratrack — InfraTrack API started. Environment loaded.
+[2026-04-19 05:50:32] INFO     infratrack — InfraTrack API shutting down.
+[2026-04-19 05:50:33] INFO     infratrack — InfraTrack API started. Environment loaded.
+[2026-04-19 05:50:46] INFO     infratrack — InfraTrack API shutting down.
+[2026-04-19 05:50:48] INFO     infratrack — InfraTrack API started. Environment loaded.
+[2026-04-19 05:50:54] INFO     infratrack — InfraTrack API shutting down.
+[2026-04-19 05:50:56] INFO     infratrack — InfraTrack API started. Environment loaded.
+[2026-04-19 05:51:00] INFO     infratrack — InfraTrack API shutting down.
+[2026-04-19 05:51:02] INFO     infratrack — InfraTrack API started. Environment loaded.
+[2026-04-19 05:51:05] INFO     infratrack — InfraTrack API shutting down.
+[2026-04-19 05:51:06] INFO     infratrack — InfraTrack API started. Environment loaded.
+[2026-04-19 05:51:12] INFO     infratrack — InfraTrack API shutting down.
+[2026-04-19 05:51:14] INFO     infratrack — InfraTrack API started. Environment loaded.
+[2026-04-19 05:51:15] INFO     infratrack — InfraTrack API shutting down.
+[2026-04-19 05:51:17] INFO     infratrack — InfraTrack API started. Environment loaded.
+[2026-04-19 05:51:32] INFO     infratrack — InfraTrack API shutting down.
+[2026-04-19 05:51:37] INFO     infratrack — InfraTrack API started. Environment loaded.
+[2026-04-19 05:51:39] INFO     infratrack — InfraTrack API started. Environment loaded.
+[2026-04-19 05:51:40] INFO     infratrack — InfraTrack API started. Environment loaded.
+[2026-04-19 05:51:44] INFO     infratrack — InfraTrack API shutting down.
+[2026-04-19 05:51:47] INFO     infratrack — InfraTrack API started. Environment loaded.
+[2026-04-19 05:52:12] INFO     infratrack — InfraTrack API shutting down.
+[2026-04-19 05:52:13] INFO     infratrack — InfraTrack API started. Environment loaded.
+[2026-04-19 05:52:46] INFO     infratrack — InfraTrack API shutting down.
+[2026-04-19 05:52:50] INFO     infratrack — InfraTrack API started. Environment loaded.
+[2026-04-19 05:52:50] INFO     infratrack — InfraTrack API shutting down.
+[2026-04-19 05:52:52] INFO     infratrack — InfraTrack API started. Environment loaded.
+[2026-04-19 05:52:55] INFO     infratrack — InfraTrack API started. Environment loaded.
+[2026-04-19 05:52:56] INFO     infratrack — InfraTrack API shutting down.
+[2026-04-19 05:52:58] INFO     infratrack — InfraTrack API started. Environment loaded.
+[2026-04-19 05:53:17] INFO     infratrack — InfraTrack API shutting down.
+[2026-04-19 05:53:19] INFO     infratrack — InfraTrack API started. Environment loaded.
+[2026-04-19 05:53:21] INFO     infratrack — InfraTrack API started. Environment loaded.
+[2026-04-19 05:53:32] INFO     infratrack — InfraTrack API shutting down.
+[2026-04-19 05:53:35] INFO     infratrack — InfraTrack API started. Environment loaded.
+[2026-04-19 05:53:37] INFO     infratrack — InfraTrack API shutting down.
+[2026-04-19 05:53:38] INFO     infratrack — InfraTrack API started. Environment loaded.
+[2026-04-19 05:53:40] INFO     infratrack — InfraTrack API shutting down.

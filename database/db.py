@@ -26,10 +26,9 @@ db = client[DB_NAME]
 
 users_collection      = db["users"]
 reports_collection    = db["reports"]
-categories_collection = db["categories"]   # FIX #8 — config stored in DB
-settings_collection   = db["settings"]     # FIX #8 — thresholds stored in DB
+categories_collection = db["categories"]
+settings_collection   = db["settings"]
 
-# ── Indexes ──────────────────────────────────────────────────────────────────
 try:
     users_collection.create_index("username",  unique=True)
     users_collection.create_index("email",     unique=True)

@@ -1,0 +1,201 @@
+description,category,risk_score
+damaged pavement reported in area causing issues,Road Damage,65
+illegal building reported in area causing issues,Illegal Construction,74
+spark reported in area causing issues,Electrical Issues,85
+garbage reported in area causing issues,Waste Management,26
+unauthorized construction reported in area causing issues,Illegal Construction,72
+pothole reported in area causing issues,Road Damage,37
+drain overflow reported in area causing issues,Water Leakage,68
+garbage reported in area causing issues,Waste Management,36
+garbage reported in area causing issues,Waste Management,58
+broken road reported in area causing issues,Road Damage,70
+pothole reported in area causing issues,Road Damage,47
+unauthorized construction reported in area causing issues,Illegal Construction,75
+trash reported in area causing issues,Waste Management,31
+power failure reported in area causing issues,Electrical Issues,91
+road crack reported in area causing issues,Road Damage,48
+streetlight issue reported in area causing issues,Electrical Issues,79
+streetlight issue reported in area causing issues,Electrical Issues,94
+spark reported in area causing issues,Electrical Issues,72
+electric wire reported in area causing issues,Electrical Issues,63
+pipe burst reported in area causing issues,Water Leakage,55
+power failure reported in area causing issues,Electrical Issues,85
+road crack reported in area causing issues,Road Damage,64
+streetlight issue reported in area causing issues,Electrical Issues,76
+water leak reported in area causing issues,Water Leakage,44
+unauthorized construction reported in area causing issues,Illegal Construction,84
+unauthorized construction reported in area causing issues,Illegal Construction,83
+illegal building reported in area causing issues,Illegal Construction,52
+damaged pavement reported in area causing issues,Road Damage,66
+damaged pavement reported in area causing issues,Road Damage,45
+spark reported in area causing issues,Electrical Issues,63
+electric wire reported in area causing issues,Electrical Issues,100
+electric wire reported in area causing issues,Electrical Issues,98
+electric wire reported in area causing issues,Electrical Issues,88
+broken road reported in area causing issues,Road Damage,37
+drain overflow reported in area causing issues,Water Leakage,65
+damaged pavement reported in area causing issues,Road Damage,63
+pothole reported in area causing issues,Road Damage,65
+waste dump reported in area causing issues,Waste Management,52
+waste dump reported in area causing issues,Waste Management,32
+damaged pavement reported in area causing issues,Road Damage,57
+encroachment reported in area causing issues,Illegal Construction,71
+encroachment reported in area causing issues,Illegal Construction,61
+encroachment reported in area causing issues,Illegal Construction,78
+overflowing bin reported in area causing issues,Waste Management,40
+encroachment reported in area causing issues,Illegal Construction,85
+streetlight issue reported in area causing issues,Electrical Issues,100
+streetlight issue reported in area causing issues,Electrical Issues,77
+road crack reported in area causing issues,Road Damage,36
+garbage reported in area causing issues,Waste Management,58
+waste dump reported in area causing issues,Waste Management,26
+streetlight issue reported in area causing issues,Electrical Issues,95
+damaged pavement reported in area causing issues,Road Damage,50
+encroachment reported in area causing issues,Illegal Construction,64
+illegal building reported in area causing issues,Illegal Construction,74
+water leak reported in area causing issues,Water Leakage,58
+drain overflow reported in area causing issues,Water Leakage,61
+overflowing bin reported in area causing issues,Waste Management,34
+encroachment reported in area causing issues,Illegal Construction,76
+damaged pavement reported in area causing issues,Road Damage,57
+flood reported in area causing issues,Water Leakage,80
+water leak reported in area causing issues,Water Leakage,67
+water leak reported in area causing issues,Water Leakage,44
+drain overflow reported in area causing issues,Water Leakage,90
+overflowing bin reported in area causing issues,Waste Management,29
+garbage reported in area causing issues,Waste Management,29
+pipe burst reported in area causing issues,Water Leakage,59
+power failure reported in area causing issues,Electrical Issues,60
+water leak reported in area causing issues,Water Leakage,52
+broken road reported in area causing issues,Road Damage,47
+pothole reported in area causing issues,Road Damage,69
+road crack reported in area causing issues,Road Damage,39
+illegal building reported in area causing issues,Illegal Construction,61
+overflowing bin reported in area causing issues,Waste Management,27
+pipe burst reported in area causing issues,Water Leakage,71
+flood reported in area causing issues,Water Leakage,84
+trash reported in area causing issues,Waste Management,28
+water leak reported in area causing issues,Water Leakage,80
+flood reported in area causing issues,Water Leakage,41
+unauthorized construction reported in area causing issues,Illegal Construction,78
+pothole reported in area causing issues,Road Damage,41
+water leak reported in area causing issues,Water Leakage,40
+pipe burst reported in area causing issues,Water Leakage,80
+electric wire reported in area causing issues,Electrical Issues,94
+garbage reported in area causing issues,Waste Management,30
+power failure reported in area causing issues,Electrical Issues,60
+waste dump reported in area causing issues,Waste Management,21
+trash reported in area causing issues,Waste Management,34
+trash reported in area causing issues,Waste Management,49
+pothole reported in area causing issues,Road Damage,55
+road crack reported in area causing issues,Road Damage,72
+illegal building reported in area causing issues,Illegal Construction,81
+unauthorized construction reported in area causing issues,Illegal Construction,51
+trash reported in area causing issues,Waste Management,47
+encroachment reported in area causing issues,Illegal Construction,83
+power failure reported in area causing issues,Electrical Issues,76
+unauthorized construction reported in area causing issues,Illegal Construction,72
+illegal building reported in area causing issues,Illegal Construction,82
+spark reported in area causing issues,Electrical Issues,91
+encroachment reported in area causing issues,Illegal Construction,53
+illegal building reported in area causing issues,Illegal Construction,65
+spark reported in area causing issues,Electrical Issues,73
+unauthorized construction reported in area causing issues,Illegal Construction,71
+streetlight issue reported in area causing issues,Electrical Issues,92
+flood reported in area causing issues,Water Leakage,69
+encroachment reported in area causing issues,Illegal Construction,68
+damaged pavement reported in area causing issues,Road Damage,67
+drain overflow reported in area causing issues,Water Leakage,86
+water leak reported in area causing issues,Water Leakage,49
+illegal building reported in area causing issues,Illegal Construction,61
+drain overflow reported in area causing issues,Water Leakage,78
+damaged pavement reported in area causing issues,Road Damage,30
+road crack reported in area causing issues,Road Damage,70
+encroachment reported in area causing issues,Illegal Construction,69
+overflowing bin reported in area causing issues,Waste Management,52
+electric wire reported in area causing issues,Electrical Issues,91
+streetlight issue reported in area causing issues,Electrical Issues,79
+streetlight issue reported in area causing issues,Electrical Issues,76
+waste dump reported in area causing issues,Waste Management,39
+illegal building reported in area causing issues,Illegal Construction,60
+flood reported in area causing issues,Water Leakage,78
+drain overflow reported in area causing issues,Water Leakage,41
+power failure reported in area causing issues,Electrical Issues,71
+damaged pavement reported in area causing issues,Road Damage,61
+encroachment reported in area causing issues,Illegal Construction,70
+waste dump reported in area causing issues,Waste Management,31
+trash reported in area causing issues,Waste Management,23
+unauthorized construction reported in area causing issues,Illegal Construction,51
+electric wire reported in area causing issues,Electrical Issues,81
+pipe burst reported in area causing issues,Water Leakage,60
+spark reported in area causing issues,Electrical Issues,62
+waste dump reported in area causing issues,Waste Management,44
+broken road reported in area causing issues,Road Damage,72
+unauthorized construction reported in area causing issues,Illegal Construction,58
+damaged pavement reported in area causing issues,Road Damage,55
+waste dump reported in area causing issues,Waste Management,24
+spark reported in area causing issues,Electrical Issues,66
+overflowing bin reported in area causing issues,Waste Management,32
+waste dump reported in area causing issues,Waste Management,53
+encroachment reported in area causing issues,Illegal Construction,84
+waste dump reported in area causing issues,Waste Management,42
+unauthorized construction reported in area causing issues,Illegal Construction,70
+damaged pavement reported in area causing issues,Road Damage,60
+flood reported in area causing issues,Water Leakage,89
+damaged pavement reported in area causing issues,Road Damage,40
+drain overflow reported in area causing issues,Water Leakage,56
+broken road reported in area causing issues,Road Damage,79
+road crack reported in area causing issues,Road Damage,80
+pothole reported in area causing issues,Road Damage,80
+illegal building reported in area causing issues,Illegal Construction,57
+broken road reported in area causing issues,Road Damage,46
+broken road reported in area causing issues,Road Damage,31
+streetlight issue reported in area causing issues,Electrical Issues,82
+pipe burst reported in area causing issues,Water Leakage,70
+garbage reported in area causing issues,Waste Management,53
+trash reported in area causing issues,Waste Management,49
+power failure reported in area causing issues,Electrical Issues,85
+spark reported in area causing issues,Electrical Issues,85
+road crack reported in area causing issues,Road Damage,48
+electric wire reported in area causing issues,Electrical Issues,64
+encroachment reported in area causing issues,Illegal Construction,68
+trash reported in area causing issues,Waste Management,38
+water leak reported in area causing issues,Water Leakage,82
+flood reported in area causing issues,Water Leakage,65
+flood reported in area causing issues,Water Leakage,58
+drain overflow reported in area causing issues,Water Leakage,65
+garbage reported in area causing issues,Waste Management,20
+waste dump reported in area causing issues,Waste Management,42
+illegal building reported in area causing issues,Illegal Construction,65
+road crack reported in area causing issues,Road Damage,60
+spark reported in area causing issues,Electrical Issues,96
+damaged pavement reported in area causing issues,Road Damage,42
+broken road reported in area causing issues,Road Damage,73
+power failure reported in area causing issues,Electrical Issues,90
+pipe burst reported in area causing issues,Water Leakage,70
+pipe burst reported in area causing issues,Water Leakage,42
+pipe burst reported in area causing issues,Water Leakage,61
+spark reported in area causing issues,Electrical Issues,65
+overflowing bin reported in area causing issues,Waste Management,39
+power failure reported in area causing issues,Electrical Issues,62
+electric wire reported in area causing issues,Electrical Issues,64
+waste dump reported in area causing issues,Waste Management,35
+encroachment reported in area causing issues,Illegal Construction,75
+garbage reported in area causing issues,Waste Management,42
+overflowing bin reported in area causing issues,Waste Management,60
+streetlight issue reported in area causing issues,Electrical Issues,70
+overflowing bin reported in area causing issues,Waste Management,40
+streetlight issue reported in area causing issues,Electrical Issues,64
+overflowing bin reported in area causing issues,Waste Management,60
+damaged pavement reported in area causing issues,Road Damage,37
+flood reported in area causing issues,Water Leakage,83
+road crack reported in area causing issues,Road Damage,38
+unauthorized construction reported in area causing issues,Illegal Construction,52
+garbage reported in area causing issues,Waste Management,43
+trash reported in area causing issues,Waste Management,42
+spark reported in area causing issues,Electrical Issues,82
+electric wire reported in area causing issues,Electrical Issues,98
+unauthorized construction reported in area causing issues,Illegal Construction,82
+illegal building reported in area causing issues,Illegal Construction,65
+spark reported in area causing issues,Electrical Issues,85
+damaged pavement reported in area causing issues,Road Damage,67

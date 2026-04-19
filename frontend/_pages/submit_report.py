@@ -1,13 +1,4 @@
-"""
-FIX #3 — Three location modes:
-  1. Browser GPS (navigator.geolocation — real device coordinates)
-  2. Manual coordinate input
-  3. Interactive map click (Folium)
-FIX #1 — Displays full AI analysis result including reasoning,
-          affected population, and recommended action.
-FIX #8 — Category list fetched from backend (DB-driven).
-"""
-
+import time
 import base64
 import io
 import json
@@ -20,8 +11,6 @@ from frontend.utils.map_utils import build_report_map
 from frontend.components.ui import alert, section_header, priority_badge, ai_badge
 from streamlit_folium import st_folium
 
-
-# ── GPS Component (FIX #3) ────────────────────────────────────────────────────
 GPS_HTML = """
 <style>
   body{margin:0;font-family:'Segoe UI',sans-serif}
@@ -82,7 +71,6 @@ def show():
     st.markdown("<h2 style='color:#0077B6'>📍 Submit Infrastructure Report</h2>",
                 unsafe_allow_html=True)
 
-    # ── Photo Upload ──────────────────────────────────────────────────────────
     section_header("Upload Photo", "📸")
     uploaded = st.file_uploader("Photo of the issue (JPG/PNG)", type=["jpg", "jpeg", "png"])
     image_b64 = ""
@@ -96,7 +84,6 @@ def show():
         image_b64 = base64.b64encode(buf.getvalue()).decode()
         st.image(img, caption="Preview", use_column_width=True)
 
-    # ── Description ───────────────────────────────────────────────────────────
     section_header("Description", "📝")
     description = st.text_area(
         "Describe the issue in detail",
@@ -111,7 +98,6 @@ def show():
             unsafe_allow_html=True,
         )
 
-    # ── Location (FIX #3) ─────────────────────────────────────────────────────
     section_header("Location", "📍")
     mode = st.radio(
         "Location source",
@@ -126,7 +112,6 @@ def show():
     if mode == "📡 Browser GPS (recommended)":
         alert("Click the button below. Your browser will ask for permission.", "info")
 
-        # FIX #3 — real browser geolocation
         gps_result = components.html(GPS_HTML, height=90)
 
         if gps_result:
@@ -143,7 +128,6 @@ def show():
             except Exception:
                 pass
 
-        # Persist GPS result across reruns
         if "gps_lat" in st.session_state and lat is None:
             lat              = st.session_state["gps_lat"]
             lon              = st.session_state["gps_lon"]
@@ -197,9 +181,14 @@ def show():
             location_source = "map_click"
             location_label  = f"{lat:.5f}, {lon:.5f}"
 
-    # ── Submit ────────────────────────────────────────────────────────────────
+    cooldown_seconds = 60
+    current_time = time.time()
+    last_submit = st.session_state.get("last_submit_time", 0)
+    time_left = cooldown_seconds - (current_time - last_submit)
+    submit_disabled = time_left > 0
+
     st.markdown("---")
-    if st.button("🚀 Submit Report", use_container_width=True, type="primary"):
+    if st.button("🚀 Submit Report", use_container_width=True, type="primary", disabled=submit_disabled):
         errors = []
         if not description or len(description.strip()) < 10:
             errors.append("Description must be at least 10 characters.")
@@ -221,15 +210,71 @@ def show():
                 )
 
             if success:
+                st.session_state["last_submit_time"] = time.time()
+                st.components.v1.html("""
+<style>
+#overlay {
+  position: fixed;
+  top: 0; left: 0;
+  width: 100vw; height: 100vh;
+  backdrop-filter: blur(8px);
+  background: rgba(0,0,0,0.2);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  z-index: 9999;
+  animation: fadeIn 0.3s ease-in-out;
+}
+#popup {
+  background: white;
+  padding: 30px 40px;
+  border-radius: 16px;
+  text-align: center;
+  font-family: 'Segoe UI', sans-serif;
+  box-shadow: 0 10px 30px rgba(0,0,0,0.2);
+  animation: popIn 0.4s ease;
+}
+.checkmark {
+  font-size: 48px;
+  color: #10b981;
+  margin-bottom: 10px;
+  animation: scaleUp 0.4s ease;
+}
+@keyframes fadeIn {
+  from {opacity: 0;}
+  to {opacity: 1;}
+}
+@keyframes popIn {
+  from {transform: scale(0.7); opacity: 0;}
+  to {transform: scale(1); opacity: 1;}
+}
+@keyframes scaleUp {
+  from {transform: scale(0);}
+  to {transform: scale(1);}
+}
+</style>
+<div id="overlay">
+  <div id="popup">
+    <div class="checkmark">✔️</div>
+    <h2>Report Submitted</h2>
+    <p>Your issue has been successfully recorded.</p>
+  </div>
+</div>
+<script>
+setTimeout(() => {
+  const el = document.getElementById('overlay');
+  if (el) el.remove();
+}, 2500);
+</script>
+""", height=0)
                 r = data["report"]
-                st.balloons()
                 st.markdown(
                     "<div style='background:#d1fae5;color:#065f46;padding:1rem;"
                     "border-radius:10px;font-weight:600;text-align:center'>"
                     "✅ Report submitted successfully!</div>",
                     unsafe_allow_html=True,
                 )
-                st.markdown("#### 🤖 AI Analysis Result")
+                st.markdown("#### ✦︎ AI Analysis Result")
                 col1, col2, col3 = st.columns(3)
                 with col1:
                     st.metric("Category",   r["category"])
@@ -239,7 +284,6 @@ def show():
                     icon = {"High": "🔴", "Medium": "🟡", "Low": "🟢"}.get(r["priority"], "⚪")
                     st.metric("Priority",   f"{icon} {r['priority']}")
 
-                # Full AI reasoning (FIX #1)
                 if r.get("reasoning"):
                     st.info(f"**AI Reasoning:** {r['reasoning']}")
                 if r.get("affected_population"):
@@ -252,8 +296,6 @@ def show():
                     f"&nbsp; Source: <code>{r.get('location_source','manual')}</code>",
                     unsafe_allow_html=True,
                 )
-
-                # Clear GPS state after submission
                 for k in ["gps_lat", "gps_lon", "gps_acc", "map_lat", "map_lon"]:
                     st.session_state.pop(k, None)
 

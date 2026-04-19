@@ -1,8 +1,3 @@
-"""
-InfraTrack — FastAPI Application Entry Point
-FIX #5 — Structured logging configured at startup.
-"""
-
 import sys
 import os
 import logging
@@ -18,7 +13,6 @@ from backend.routes.report_routes import router as report_router
 from backend.routes.admin_routes  import router as admin_router
 from backend.error_handlers import register_exception_handlers
 
-# ── Logging Setup ─────────────────────────────────────────────────────────────
 LOGGING_CONFIG = {
     "version": 1,
     "disable_existing_loggers": False,
@@ -53,7 +47,6 @@ LOGGING_CONFIG = {
 logging.config.dictConfig(LOGGING_CONFIG)
 logger = logging.getLogger("infratrack")
 
-# ── App ────────────────────────────────────────────────────────────────────────
 app = FastAPI(
     title="InfraTrack API",
     description="Geotagged Infrastructure Monitoring System — production-ready backend",

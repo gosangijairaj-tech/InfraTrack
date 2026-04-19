@@ -1,21 +1,11 @@
-"""
-FIX #9 — Real-time report feed via Server-Sent Events (SSE).
-         /reports/stream endpoint pushes new reports to connected clients.
-FIX #3 — location_source and location_accuracy stored per report.
-FIX #5 — Structured error responses throughout.
-FIX #8 — Category list served from DB.
-"""
-
 import logging
 import asyncio
 from datetime import datetime
 from typing import AsyncGenerator
-
 from fastapi import APIRouter, HTTPException, Depends
 from fastapi.responses import StreamingResponse
 from bson import ObjectId
 from bson.errors import InvalidId
-
 from database.db import reports_collection, categories_collection, settings_collection
 from backend.dependencies import get_current_user
 from backend.models import ReportCreate
@@ -23,10 +13,7 @@ from backend.ai_engine import analyze_report
 
 logger = logging.getLogger(__name__)
 router = APIRouter(prefix="/reports", tags=["Reports"])
-
-# ── In-memory SSE subscriber queues (FIX #9) ────────────────────────────────
 _subscribers: list[asyncio.Queue] = []
-
 
 def _serialize(doc: dict) -> dict:
     doc["_id"] = str(doc["_id"])
@@ -34,7 +21,6 @@ def _serialize(doc: dict) -> dict:
 
 
 def _broadcast(report: dict) -> None:
-    """Push a new report to all active SSE subscribers."""
     import json
     payload = json.dumps(report, default=str)
     dead = []
@@ -46,11 +32,8 @@ def _broadcast(report: dict) -> None:
     for q in dead:
         _subscribers.remove(q)
 
-
-# ── Submit Report ────────────────────────────────────────────────────────────
 @router.post("/submit", status_code=201)
 def submit_report(data: ReportCreate, current_user: dict = Depends(get_current_user)):
-    """FIX #1 AI, FIX #3 location meta, FIX #5 error handling."""
     try:
         ai_result = analyze_report(data.description)
     except Exception as e:
@@ -64,7 +47,6 @@ def submit_report(data: ReportCreate, current_user: dict = Depends(get_current_u
         "latitude":          data.latitude,
         "longitude":         data.longitude,
         "location_label":    data.location_label,
-        # FIX #3 — track how location was obtained
         "location_source":   data.location_source,
         "location_accuracy": data.location_accuracy,
         "image_base64":      data.image_base64,
@@ -88,15 +70,11 @@ def submit_report(data: ReportCreate, current_user: dict = Depends(get_current_u
 
     return {"success": True, "message": "Report submitted successfully.", "report": report}
 
-
-# ── My Reports ───────────────────────────────────────────────────────────────
 @router.get("/my")
 def my_reports(current_user: dict = Depends(get_current_user)):
     docs = list(reports_collection.find({"user_id": str(current_user["_id"])}).sort("created_at", -1))
     return {"success": True, "reports": [_serialize(d) for d in docs]}
 
-
-# ── All Reports (admin) ──────────────────────────────────────────────────────
 @router.get("/all")
 def all_reports(
     category: str = None,
@@ -115,8 +93,6 @@ def all_reports(
     docs = list(reports_collection.find(query).sort("created_at", -1))
     return {"success": True, "reports": [_serialize(d) for d in docs]}
 
-
-# ── Analytics ────────────────────────────────────────────────────────────────
 @router.get("/analytics")
 def analytics(current_user: dict = Depends(get_current_user)):
     if current_user["role"] not in ["admin", "authority"]:
@@ -142,16 +118,11 @@ def analytics(current_user: dict = Depends(get_current_user)):
         "status_stats":   list(reports_collection.aggregate(status_pipeline)),
         "map_data":       [_serialize(d) for d in map_docs],
     }
-
-
-# ── FIX #8 — Categories from DB ─────────────────────────────────────────────
 @router.get("/categories")
 def get_categories():
     cats = list(categories_collection.find({"active": True}, {"_id": 0}))
     return {"success": True, "categories": cats}
 
-
-# ── FIX #9 — SSE Real-Time Stream ───────────────────────────────────────────
 @router.get("/stream")
 async def stream_reports(current_user: dict = Depends(get_current_user)):
     """
@@ -163,7 +134,6 @@ async def stream_reports(current_user: dict = Depends(get_current_user)):
     logger.info(f"SSE client connected: {current_user['username']} (total={len(_subscribers)})")
 
     async def event_generator() -> AsyncGenerator[str, None]:
-        # Send a heartbeat immediately so the client knows the connection is live
         yield "event: connected\ndata: {\"status\": \"listening\"}\n\n"
         try:
             while True:
@@ -171,7 +141,6 @@ async def stream_reports(current_user: dict = Depends(get_current_user)):
                     payload = await asyncio.wait_for(queue.get(), timeout=25)
                     yield f"event: new_report\ndata: {payload}\n\n"
                 except asyncio.TimeoutError:
-                    # Heartbeat every 25 s to keep connection alive
                     yield "event: heartbeat\ndata: {}\n\n"
         except asyncio.CancelledError:
             pass
