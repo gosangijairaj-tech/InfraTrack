@@ -2,7 +2,6 @@ import time
 import base64
 import streamlit as st
 import pandas as pd
-
 from frontend.utils.api import (
     get_all_reports, update_report_status, get_admin_stats,
     get_admin_config, update_thresholds, update_category_config,
@@ -13,7 +12,6 @@ from frontend.components.ui import (
     metric_card, section_header, alert,
 )
 from streamlit_folium import st_folium
-
 REFRESH_INTERVAL = 20
 
 

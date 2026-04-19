@@ -1,7 +1,6 @@
 from pydantic import BaseModel, EmailStr
 from typing import Optional
 
-
 class UserRegister(BaseModel):
     username: str
     email: EmailStr
@@ -24,4 +23,4 @@ class ReportCreate(BaseModel):
 
 
 class ReportStatusUpdate(BaseModel):
-    status: str  # "pending" | "in_progress" | "resolved"
+    status: str

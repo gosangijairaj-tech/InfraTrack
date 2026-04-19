@@ -1,18 +1,9 @@
-# =========================
-# 🔐 Environment Variables
-# =========================
 .env
 .env.*
 *.env
-
-# =========================
-# 🐍 Python
-# =========================
 __pycache__/
 *.py[cod]
 *$py.class
-
-# Distribution / packaging
 .Python
 build/
 develop-eggs/
@@ -28,18 +19,11 @@ var/
 *.egg-info/
 .installed.cfg
 *.egg
-
-# =========================
-# 🧪 Virtual Environments
-# =========================
 venv/
 .venv/
 env/
 ENV/
 
-# =========================
-# 📦 Cache & Temp
-# =========================
 *.log
 *.tmp
 *.temp
@@ -47,65 +31,31 @@ ENV/
 *.swp
 *.swo
 
-# pytest
 .pytest_cache/
-
-# mypy
 .mypy_cache/
 
-# coverage
 .coverage
 .coverage.*
 htmlcov/
 
-# =========================
-# 🧠 AI / Model / Large Files
-# =========================
 *.pt
 *.pth
 *.onnx
 *.bin
 
-# =========================
-# 📁 Database (if local)
-# =========================
 *.sqlite3
 *.db
 
-# =========================
-# 💻 IDE / Editor
-# =========================
-
-# VSCode
 .vscode/
 
-# PyCharm
 .idea/
 
-# Mac
 .DS_Store
-
-# Windows
 Thumbs.db
 
-# =========================
-# 🚀 Streamlit
-# =========================
 .streamlit/secrets.toml
-
-# =========================
-# 📸 Uploads / Media (optional)
-# =========================
 uploads/
 media/
-
-# =========================
-# 🔥 Logs
-# =========================
 logs/
 *.log
-
-# =========================
-# ⚙️ Misc
-# =========================
 node_modules/

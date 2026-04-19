@@ -33,4 +33,4 @@ for _ in range(200):
 df = pd.DataFrame(data, columns=["description", "category", "risk_score"])
 df.to_csv("data.csv", index=False)
 
-print("✅ Dummy dataset created!")
+print("dataset created!")

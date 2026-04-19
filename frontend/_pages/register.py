@@ -1,7 +1,6 @@
 import streamlit as st
 from frontend.utils.api import register_user
 
-
 def show():
     st.markdown("""
     <div style='text-align:center;padding:2rem 0 1rem 0'>
