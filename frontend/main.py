@@ -1,5 +1,5 @@
-import sys
 import os
+import sys
 sys.path.insert(0, os.path.dirname(os.path.dirname(os.path.abspath(__file__))))
 
 import streamlit as st
@@ -25,10 +25,8 @@ html, body, [class*="css"] {
     font-family: 'DM Sans', sans-serif;
 }
 
-/* Hide default sidebar nav */
 [data-testid="stSidebarNav"] {display:none;}
 
-/* App background */
 [data-testid="stAppViewContainer"] {
     background: #0a0c10;
 }
@@ -41,16 +39,13 @@ section[data-testid="stSidebar"] {
 );
 }
             
-/* Remove padding */
 section[data-testid="stSidebar"] > div:first-child {
     padding: 0 !important;
 }
 
-/* Scrollbar */
 ::-webkit-scrollbar { width: 4px; }
 ::-webkit-scrollbar-thumb { background: rgba(56,189,248,0.3); }
 
-/* Brand */
 .brand-box {
     padding: 20px 18px;
     border-bottom: 1px solid rgba(255,255,255,0.05);
@@ -67,7 +62,6 @@ section[data-testid="stSidebar"] > div:first-child {
     text-transform: uppercase;
 }
 
-/* Profile */
 .profile-card {
     margin: 14px;
     padding: 12px;
@@ -100,19 +94,10 @@ section[data-testid="stSidebar"] > div:first-child {
     border: 1px solid rgba(56,189,248,0.2);
 }
 
-/* Nav */
 .nav-section {
     padding: 10px 14px;
 }
-.nav-label {
-    font-size: 9px;
-    color: #334155;
-    letter-spacing: 0.12em;
-    text-transform: uppercase;
-    margin-bottom: 8px;
-}
 
-/* Buttons styled as nav */
 .stButton > button {
     background: transparent;
     border: none;
@@ -129,14 +114,6 @@ section[data-testid="stSidebar"] > div:first-child {
     transform: translateX(3px);
 }
 
-/* Active */
-.active-btn {
-    background: rgba(56,189,248,0.08) !important;
-    color: #e0f2fe !important;
-    border-left: 3px solid #38bdf8 !important;
-}
-
-/* Logout */
 .logout button {
     background: rgba(239,68,68,0.05) !important;
     border: 1px solid rgba(239,68,68,0.2) !important;
@@ -179,8 +156,13 @@ if st.session_state.get("token"):
         # BRAND
         st.markdown("""
         <div class="brand-box">
-            <div class="brand-title">InfraTrack</div>
-            <div class="brand-sub">Smart Infrastructure</div>
+            <div style="display:flex;align-items:center;gap:10px">
+                <span style="font-size:22px">🏬</span>
+                <div>
+                    <div class="brand-title">InfraTrack</div>
+                    <div class="brand-sub">Geo-Tagged Infrastructure</div>
+                </div>
+            </div>
         </div>
         """, unsafe_allow_html=True)
 
@@ -196,6 +178,7 @@ if st.session_state.get("token"):
                 <div>
                     <div class="username">{uname}</div>
                     <div class="role-badge">{role.upper()}</div>
+                    <div style="font-size:9px;color:#334155;text-transform:uppercase;letter-spacing:0.08em;margin-top:2px;">Smart Infrastructure</div>
                 </div>
             </div>
         </div>
@@ -203,32 +186,22 @@ if st.session_state.get("token"):
 
         # NAVIGATION
         st.markdown('<div class="nav-section">', unsafe_allow_html=True)
-        st.markdown('<div class="nav-label">Navigation</div>', unsafe_allow_html=True)
 
         nav_items = [
-            ("submit_report", "📍 Submit Report"),
-            ("user_dashboard", "📊 Dashboard"),
+            ("submit_report", "📍  Submit Report"),
+            ("user_dashboard", "📊  Dashboard"),
         ]
 
         if role == "admin":
             nav_items += [
-                ("admin_dashboard", "🛠 Admin Panel"),
-                ("analytics", "📈 Analytics"),
+                ("admin_dashboard", "🛠  Admin Panel"),
+                ("analytics", "📈  Analytics"),
             ]
 
         current = st.session_state.get("page")
 
         for key, label in nav_items:
-            is_active = current == key
-
-            btn = st.button(label, key=key, use_container_width=True)
-
-            if is_active:
-                st.markdown(
-                    "<style>div[data-testid='stButton'][key='%s'] button {background: rgba(56,189,248,0.08); border-left:3px solid #38bdf8; color:#e0f2fe;}</style>" % key,
-                    unsafe_allow_html=True
-                )
-
+            btn = st.button(label, key=f"nav_{key}", use_container_width=True)
             if btn:
                 st.session_state["page"] = key
                 st.rerun()
@@ -237,7 +210,7 @@ if st.session_state.get("token"):
 
         # LOGOUT
         st.markdown('<div class="logout">', unsafe_allow_html=True)
-        if st.button("🚪 Logout", use_container_width=True):
+        if st.button("🔓  Logout", use_container_width=True):
             for k in list(st.session_state.keys()):
                 del st.session_state[k]
             st.session_state["page"] = "login"

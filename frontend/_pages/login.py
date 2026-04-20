@@ -139,7 +139,7 @@ def show():
     st.markdown("""
     <div>
         <h1 class="main-title">🏗️ <span class="blue">Infra</span>Track</h1>
-        <p class="sub-title">Geotagged Infrastructure Monitoring</p>
+        <p class="sub-title">Geo-Tagged Infrastructure Management</p>
     </div>
     """, unsafe_allow_html=True)
 
