@@ -40,7 +40,7 @@ def _call_llm(prompt: str) -> str:
             "Content-Type": "application/json",
         },
         json={
-            "model": "google/gemma-3-12b-it",
+            "model": "google/gemma-3-4b-it:free",
             "messages": [
                 {"role": "user", "content": prompt}
             ],
