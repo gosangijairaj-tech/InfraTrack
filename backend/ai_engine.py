@@ -15,9 +15,17 @@ _openrouter_api_key: Optional[str] = None
 def _get_api_key() -> str:
     global _openrouter_api_key
     if _openrouter_api_key is None:
-        api_key = os.getenv("OPENROUTER_API_KEY")
+        # Try Streamlit secrets first
+        try:
+            import streamlit as st
+            api_key = st.secrets.get("OPENROUTER_API_KEY")
+        except Exception:
+            api_key = None
+        # Fallback to .env
         if not api_key:
-            raise EnvironmentError("OPENROUTER_API_KEY is not configured in .env")
+            api_key = os.getenv("OPENROUTER_API_KEY")
+        if not api_key:
+            raise EnvironmentError("OPENROUTER_API_KEY not configured")
         _openrouter_api_key = api_key
     return _openrouter_api_key
 

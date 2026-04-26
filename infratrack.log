@@ -109,3 +109,29 @@
 [2026-04-20 13:26:41] INFO     infratrack — InfraTrack API shutting down.
 [2026-04-20 13:26:43] INFO     infratrack — InfraTrack API started. Environment loaded.
 [2026-04-20 13:26:49] INFO     infratrack — InfraTrack API shutting down.
+[2026-04-24 07:08:37] INFO     infratrack — InfraTrack API started. Environment loaded.
+[2026-04-24 07:10:10] INFO     backend.ai_engine — Calling OpenRouter (Gemma 3 12B)...
+[2026-04-24 07:10:11] ERROR    backend.ai_engine — AI error: OpenRouter API error 401: {"error":{"message":"User not found.","code":401}}
+Traceback (most recent call last):
+  File "/workspaces/InfraTrack/backend/ai_engine.py", line 152, in analyze_report
+    raw_text = _call_llm(prompt).strip()
+               ^^^^^^^^^^^^^^^^^
+  File "/workspaces/InfraTrack/backend/ai_engine.py", line 53, in _call_llm
+    raise Exception(f"OpenRouter API error {response.status_code}: {response.text}")
+Exception: OpenRouter API error 401: {"error":{"message":"User not found.","code":401}}
+[2026-04-24 07:10:11] WARNING  backend.ai_engine — Using fallback analysis. Reason: OpenRouter API error 401: {"error":{"message":"User not found.","code":401}}
+[2026-04-24 07:10:11] INFO     backend.routes.report_routes — Report submitted by infra — score=35
+[2026-04-24 07:10:17] INFO     backend.ai_engine — Calling OpenRouter (Gemma 3 12B)...
+[2026-04-24 07:10:17] ERROR    backend.ai_engine — AI error: OpenRouter API error 401: {"error":{"message":"User not found.","code":401}}
+Traceback (most recent call last):
+  File "/workspaces/InfraTrack/backend/ai_engine.py", line 152, in analyze_report
+    raw_text = _call_llm(prompt).strip()
+               ^^^^^^^^^^^^^^^^^
+  File "/workspaces/InfraTrack/backend/ai_engine.py", line 53, in _call_llm
+    raise Exception(f"OpenRouter API error {response.status_code}: {response.text}")
+Exception: OpenRouter API error 401: {"error":{"message":"User not found.","code":401}}
+[2026-04-24 07:10:17] WARNING  backend.ai_engine — Using fallback analysis. Reason: OpenRouter API error 401: {"error":{"message":"User not found.","code":401}}
+[2026-04-24 07:10:17] INFO     backend.routes.report_routes — Report submitted by infra — score=35
+[2026-04-24 07:13:14] INFO     backend.ai_engine — Calling OpenRouter (Gemma 3 12B)...
+[2026-04-24 07:13:17] INFO     backend.ai_engine — AI analysis complete — category=Waste Management score=35 priority=Medium
+[2026-04-24 07:13:17] INFO     backend.routes.report_routes — Report submitted by infra — score=35
