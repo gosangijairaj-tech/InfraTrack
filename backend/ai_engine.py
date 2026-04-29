@@ -15,7 +15,6 @@ _openrouter_api_key: Optional[str] = None
 def _get_api_key() -> str:
     global _openrouter_api_key
     if _openrouter_api_key is None:
-        # Try Streamlit secrets first
         try:
             import streamlit as st
             api_key = st.secrets.get("OPENROUTER_API_KEY")
