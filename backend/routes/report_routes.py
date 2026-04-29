@@ -64,8 +64,6 @@ def submit_report(data: ReportCreate, current_user: dict = Depends(get_current_u
     result  = reports_collection.insert_one(report)
     report["_id"] = str(result.inserted_id)
     logger.info(f"Report submitted by {current_user['username']} — score={ai_result['risk_score']}")
-
-    # FIX #9 — broadcast to all SSE listeners
     _broadcast(report)
 
     return {"success": True, "message": "Report submitted successfully.", "report": report}
