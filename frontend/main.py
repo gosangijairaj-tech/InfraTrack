@@ -3,20 +3,12 @@ import sys
 sys.path.insert(0, os.path.dirname(os.path.dirname(os.path.abspath(__file__))))
 
 import streamlit as st
-
-# ─────────────────────────────────────────────
-# PAGE CONFIG
-# ─────────────────────────────────────────────
 st.set_page_config(
     page_title="InfraTrack",
     page_icon="🏗️",
     layout="wide",
     initial_sidebar_state="expanded",
 )
-
-# ─────────────────────────────────────────────
-# GLOBAL STYLES
-# ─────────────────────────────────────────────
 st.markdown("""
 <style>
 @import url('https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600&display=swap');
@@ -124,10 +116,6 @@ section[data-testid="stSidebar"] > div:first-child {
 }
 </style>
 """, unsafe_allow_html=True)
-
-# ─────────────────────────────────────────────
-# SESSION DEFAULTS
-# ─────────────────────────────────────────────
 defaults = {
     "page": "login",
     "token": None,
@@ -137,18 +125,10 @@ defaults = {
 for k, v in defaults.items():
     if k not in st.session_state:
         st.session_state[k] = v
-
-# ─────────────────────────────────────────────
-# IMPORT PAGES
-# ─────────────────────────────────────────────
 from frontend._pages import (
     login, register, submit_report,
     user_dashboard, admin_dashboard, analytics
 )
-
-# ─────────────────────────────────────────────
-# SIDEBAR UI
-# ─────────────────────────────────────────────
 if st.session_state.get("token"):
 
     with st.sidebar:
@@ -216,10 +196,6 @@ if st.session_state.get("token"):
             st.session_state["page"] = "login"
             st.rerun()
         st.markdown('</div>', unsafe_allow_html=True)
-
-# ─────────────────────────────────────────────
-# PAGE ROUTING
-# ─────────────────────────────────────────────
 PAGE_MAP = {
     "login": login.show,
     "register": register.show,
